@@ -1,9 +1,15 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+import Hero from '../components/Hero'
 
 const page = () => {
   return (
-    <div><Navbar/></div>
+    <div>
+      <Navbar/>
+      <Hero/>
+      <Footer/>
+    </div>
   )
 }
 
