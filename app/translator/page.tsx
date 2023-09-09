@@ -11,36 +11,49 @@ const page = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     const res: any = await languageFetch(input);
-    setresult(res.data);
+    let resStr = JSON.stringify(res.data);
+    console.log(resStr);
+    console.log(typeof resStr);
+    const kannadaPattern = /[\u0C80-\u0CFF]+|[\{\}\[\]"']+/g;
+    const cleanedString = resStr.replace(kannadaPattern, "");
+    setresult(cleanedString.toLowerCase());
+    // // Step 2: Convert the string to lowercase
+    // const lowercaseString = cleanedString.toLowerCase();
+
+    // setresult(lowercaseString);
+
     console.log(res.data);
   };
   return (
-    <div className="flex justify-center">
-      <form action="" onSubmit={handleSubmit}>
-        <div className="flex-col m-10">
-          <input
-            type="text"
-            className=" w-60 p-3 mb-10 border-8"
-            placeholder="Enter the text"
-            value={input}
-            onChange={(e) => handleStateChange(e.target.value)}
-          />
+    <div className="flex flex-col justify-center items-center h-screen my-auto">
+      <div className="flex space-x-2 ">
+        <textarea
+          name="input"
+          className="p-4 text-2xl bg-gray-200 rounded-lg"
+          placeholder="Enter the text"
+          cols={20}
+          rows={5}
+          value={input}
+          onChange={(e) => handleStateChange(e.target.value)}
+        ></textarea>
 
-          <div className="flex justify-center">
-            <button className="flexCenter gap-3 px-4 py-3 bg-violet-500 rounded-xl text-sm font-medium max-md:w-full text-white">
-              Translate
-            </button>
-          </div>
-        </div>
-      </form>
-      <div>
-        <input
-          type="text"
-          className=" w-60 p-3 m-10 border-8"
+        <textarea
+          name="input"
+          className="p-4 text-2xl bg-gray-200 rounded-lg"
           placeholder="Converted text here"
+          cols={20}
+          rows={5}
           value={result}
-          readOnly={true}
-        />
+          readOnly
+        ></textarea>
+      </div>
+      <div className="flex justify-center mt-5">
+        <button
+          className="flexCenter gap-3 px-4 py-3 bg-violet-500 rounded-xl text-sm font-medium max-md:w-full text-white"
+          onClick={handleSubmit}
+        >
+          Translate
+        </button>
       </div>
     </div>
   );
