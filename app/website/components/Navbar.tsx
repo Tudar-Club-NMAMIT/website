@@ -14,7 +14,7 @@ const NavLinks = [
 const Navbar = () => {
   
   return (
-    <nav className=" flexBetween py-5 px-8 border-b border-nav-border gap-4">
+    <nav className="  bg-slate-200 w-full flexBetween py-5 px-8 border-b border-nav-border gap-4">
       <div
         className=" flex-1
       flexStart gap-10 "
