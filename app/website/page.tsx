@@ -2,15 +2,17 @@ import React from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Hero from './components/Hero'
+import Documentation from './components/Documentation'
 
 const page = () => {
   return (
     <div>
       <Navbar/>
       <Hero/>
+      <Documentation/>
       <Footer/>
     </div>
   )
 }
 
-export default page
+export default page;
