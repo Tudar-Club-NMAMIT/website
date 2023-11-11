@@ -1,4 +1,5 @@
 import React from "react";
+import "./navbar.css"
 
 import Link from "next/link";
 
@@ -14,26 +15,29 @@ const NavLinks = [
 const Navbar = () => {
   
   return (
-    <nav className="  bg-slate-200 w-full flexBetween py-5 px-8 border-b border-nav-border gap-4">
+    <nav className=" flexBetween py-5 px-8 border-b border-nav-border gap-4">
       <div
-        className=" flex-1
-      flexStart gap-10 "
+        className="flex w-full "
       >
-        <a href="#" className="flex items-center">
-        <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 mr-3" alt="Tudar logo" />
-        <span className="self-center text-2xl font-semibold whitespace-nowrap ">Tudar</span>
+        <a href="#" className="float-left ml-0">
+        <span className=" text-2xl font-semibold whitespace-nowrap ">Tudar</span>
         </a>
         {/* <p className="text-bold text-3xl m-4">Tudar</p> */}
-        <ul className="xl:flex hidden text-sm gap-7 margin">
+        <div className="flex items-center justify-center w-screen ">
+
+        <ul className="lg:flex justify-center hidden min-w-screen text-sm gap-10 margin-auto">
           {NavLinks.map((link) => (
-            <Link href={link.href} key={link.key}>
+            <Link className="font-extrabold alink" href={link.href} key={link.key}>
               {link.text}
             </Link>
           ))}
         </ul>
+        </div>
+
       </div>
       <div className="flexCenter">
        </div>
+       <div className="fixed  bg-gray-200 bottom-10 right-10 rounded-full w-10 h-10"></div>
     </nav>
   );
 };
