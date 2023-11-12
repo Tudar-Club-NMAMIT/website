@@ -12,7 +12,7 @@ const NavLinks = [
 ];
 const Navbar = () => {
   return (
-    <nav className="w-full bg-gray-100 flexBetween py-5 px-8 border-b border-nav-border gap-4">
+    <nav className=" flexBetween py-5 px-8 border-b border-nav-border gap-4">
       <div className="flex w-full ">
         <a href="#" className="float-left ml-0">
           <span className=" text-2xl font-semibold whitespace-nowrap ">
