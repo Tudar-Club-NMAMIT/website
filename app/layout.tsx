@@ -16,12 +16,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-      <link rel="stylesheet" href="https://use.typekit.net/cch1nog.css" />
-      <script src="//tympanus.net/codrops/adpacks/analytics.js"></script>
-
       <body className={inter.className}>{children}</body>
     </html>
   );
