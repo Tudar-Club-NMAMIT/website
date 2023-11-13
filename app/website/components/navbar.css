@@ -24,9 +24,6 @@
     background-color: black;
     
 }
-
-
-
 .hamburger{
     flex-direction: column;
     justify-content: space-between;
