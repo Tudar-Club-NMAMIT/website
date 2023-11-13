@@ -1,18 +1,20 @@
-import React from 'react'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import Hero from './components/Hero'
-import Documentation from './components/Documentation'
+import React from "react";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Hero from "./components/Hero";
+import Documentation from "./components/Documentation";
+import { Gallery } from "./components/Gallery";
 
 const page = () => {
   return (
     <div>
-      <Navbar/>
-      <Hero/>
-      <Documentation/>
-      <Footer/>
+      <Navbar />
+      <Hero />
+      <Gallery />
+      <Documentation />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
 export default page;
