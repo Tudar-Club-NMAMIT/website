@@ -1,9 +1,15 @@
 import React from 'react'
-import Navbar from '../website/components/Navbar'
+import Keyboard from './components/keyboard'
+import Matchboard from './components/matchboard'
+import Wordtobematched from './components/wordtobematched'
 
 const page = () => {
   return (
-    <div></div>
+    <>
+    <Wordtobematched/>
+    <Matchboard/>
+    <Keyboard/>
+    </>
   )
 }
 
