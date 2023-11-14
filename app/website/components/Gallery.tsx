@@ -47,7 +47,7 @@ export const Gallery = () => {
     console.log("useEffect", inView1);
   }, [inView1, inView2]);
   return (
-    <div >
+    <div>
       <div ref={ref1}>
         <motion.div
           animate={animation1}
