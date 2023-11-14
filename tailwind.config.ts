@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       backgroundImage: {
         "kola-img":
-          'url("https://images.hindustantimes.com/img/2022/10/20/1600x900/Rishab_Kantara_101022_1200_1665677783663_1666271495289_1666271495289.jpg")',
+          'url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Ani_-_this_is_the_tulunadu_%28karnataka%2C_India%29_Bhutaradhane_-_Bhuta_ware_the_ani..JPG/1200px-Ani_-_this_is_the_tulunadu_%28karnataka%2C_India%29_Bhutaradhane_-_Bhuta_ware_the_ani..JPG")',
       },
     },
   },

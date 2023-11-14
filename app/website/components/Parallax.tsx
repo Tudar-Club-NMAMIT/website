@@ -21,7 +21,7 @@ const Parallax = () => {
     <div>
       {/* Parallax Image */}
       <div
-        className="min-h-screen -z-10 flex justify-center items-center bg-kola-img bg-cover bg-center relative"
+        className="min-h-screen -z-10 flex justify-center items-center bg-kola-img bg-cover bg-center relative "
         style={{ transform: `translateY(${scrollY * 0.6}px)` }} // Adjust the multiplier for the desired parallax effect
       >
         <h1 className="font-black text-6xl text-white">Parallax</h1>
