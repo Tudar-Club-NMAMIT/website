@@ -2,19 +2,16 @@ import React from "react";
 import "./navbar.css";
 import Link from "next/link";
 const NavLinks = [
+  { href: "/", key: "Back", text: "Back" },
   { href: "/", key: "Home", text: "Home" },
-  { href: "/", key: "Club", text: "Club" },
   { href: "/", key: "About", text: "About" },
-  { href: "/", key: "Events", text: "Events" },
-  { href: "/", key: "Blog", text: "Blog" },
-  { href: "/", key: "Contact", text: "Contact" },
 ];
 const Navbar = () => {
   return (
-    <nav className="py-5 px-8 border-b border-nav-border">
+    <nav className="py-5 px-8 border-b border-nav-border bg-black">
       <div className="flex w-full">
         <a href="#" className="float-left ml-0">
-          <span className="text-2xl whitespace-nowrap ">Tudar</span>
+          <span className="text-2xl whitespace-nowrap "><strong>TULIPU</strong></span>
         </a>
         {/* <p className="text-bold text-3xl m-4">Tudar</p> */}
         <div className="flex items-center justify-center w-screen ">
