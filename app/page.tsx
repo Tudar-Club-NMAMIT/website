@@ -6,11 +6,13 @@ import Footer from "./website/components/Footer";
 export default function Home() {
   return (
     <>
-      <Navbar />
+   
+    <Navbar />
       <Parallax />
       <Gallery />
       <Documentation />
       <Footer />
+    
     </>
   );
 }

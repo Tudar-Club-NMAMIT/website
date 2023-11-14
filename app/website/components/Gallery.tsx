@@ -16,15 +16,15 @@ export const Gallery = () => {
         x: 0,
         transition: {
           type: "spring",
-          duration: 3,
-          bounce: 0.3,
-          delay: 0.5,
+          duration: 0.5,
+          bounce: 0.1,
+          delay: 0.3,
         },
       });
     }
     if (!inView1) {
       animation1.start({
-        x: "-100vw",
+        x: "-50vw",
       });
     }
     if (inView2) {
@@ -32,22 +32,22 @@ export const Gallery = () => {
         x: 0,
         transition: {
           type: "spring",
-          duration: 3,
-          bounce: 0.3,
-          delay: 0.5,
+          duration: 0.5,
+          bounce: 0.1,
+          delay: 0.3,
         },
       });
     }
     if (!inView2) {
       animation2.start({
-        x: "100vw",
+        x: "50vw",
       });
     }
 
     console.log("useEffect", inView1);
   }, [inView1, inView2]);
   return (
-    <div>
+    <div >
       <div ref={ref1}>
         <motion.div
           animate={animation1}
