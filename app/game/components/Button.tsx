@@ -12,17 +12,17 @@ const Button: React.FC<ButtonProps> = ({ variant = 'primary', ...props }) => {
   const getVariantClass = () => {
     switch (variant) {
       case 'secondary':
-        return 'bg-gray-300 hover:bg-gray-400 text-gray-800';
+        return 'hover:bg-gray-400 text-gray-800';
       case 'danger':
-        return 'bg-red-500 hover:bg-red-600 text-white';
+        return ' hover:bg-red-600 text-white';
       default:
-        return 'bg-gray-900 hover:bg-gray-850 text-white';
+        return ' hover:bg-gray-850';
     }
   };
 
   return (
     <button
-      className={`px-4 py-2 rounded-md focus:outline-none p-5 m-2 ${getVariantClass()}`}
+      className={`px-4 py-2 w-36 rounded border-red-600 border-2 hover:bg-red-600 focus:outline-none p-5 m-2 ${getVariantClass()}`}
       {...props}
     />
   );
