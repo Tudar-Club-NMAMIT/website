@@ -42,7 +42,27 @@
     -o-transition: all 0.5s;
     transition: all 0.5s;
 }    
+
 @keyframes load {
     0%{width: 100%}
     100%{width : 0%}
 }
+@media screen and (max-width: 768px) {
+    .navlist{
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        padding: 1rem;
+        padding-top: 5rem;
+        top: 0;
+        left: 0;
+    }
+    .navlist a{
+        display: block;
+        padding: 1rem;
+    }
+    .hamburger{
+        z-index: 100;
+    }
+  }
