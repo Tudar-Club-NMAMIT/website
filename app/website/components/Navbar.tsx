@@ -6,6 +6,7 @@ const NavLinks = [
   { href: "/", key: "Club", text: "Club" },
   { href: "/", key: "About", text: "About" },
   { href: "/", key: "Events", text: "Events" },
+  { href: "/", key: "Blog", text: "Blog" },
   { href: "/", key: "Contact", text: "Contact" },
 ];
 const Navbar = () => {
