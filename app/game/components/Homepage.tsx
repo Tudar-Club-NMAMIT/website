@@ -37,7 +37,7 @@ const Homepage: React.FC = async () => {
           <div className="flexCenter">
             {session?.user ? "" : <AuthProviders />}
           </div>
-          <Button variant="primary">PLAY</Button>
+          {session?.user ? <Button variant="primary">PLAY</Button> : ""}
         </div>
       </div>
     </div>
