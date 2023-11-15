@@ -3,9 +3,8 @@ import React from 'react';
 
 const Documentation: React.FC = () => {
   return (
-    <div>
+    <div className='bg-gray-900'>
       <head>
-        <title>Documentary</title>
         <link
           rel="stylesheet"
           href="https://www.w3schools.com/w3css/4/w3.css"
@@ -27,12 +26,12 @@ const Documentation: React.FC = () => {
         <div className="w3-display-container w3-container">
           <img src="/src/abc.jpg" alt="Jeans" className="h-screen rounded-3xl shadow-2xl" />
           <div className="w3-display-topleft w3-text-white pl-24 pr-48 " >
-            <h1 className="w3-jumbo w3-hide-small">New arrivals</h1>
-            <h1 className="w3-hide-large w3-hide-medium">New arrivals</h1>
-            <h1 className="w3-hide-small">COLLECTION 2016</h1>
+            <h1 className="w3-jumbo w3-hide-small">Documentation</h1>
+            <h1 className="w3-hide-large w3-hide-medium">Quote-----------Quote</h1>
+            <h1 className="w3-hide-small">2022-2023</h1>
             <p>
               <a href="#jeans" className="w3-button w3-black w3-padding-large w3-large">
-                SHOP NOW
+                Know More
               </a>
             </p>
           </div>

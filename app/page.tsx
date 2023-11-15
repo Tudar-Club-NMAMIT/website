@@ -5,14 +5,13 @@ import Documentation from "./website/components/Documentation";
 import Footer from "./website/components/Footer";
 export default function Home() {
   return (
-    <>
-   
+    <div className="bg-gray-900">
     <Navbar />
       <Parallax />
       <Gallery />
       <Documentation />
       <Footer />
+    </div>
     
-    </>
   );
 }

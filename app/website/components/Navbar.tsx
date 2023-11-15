@@ -35,7 +35,7 @@ const[flag, setflag] = useState(true)
     <nav className="py-5 px-8 border-b border-nav-border">
       <div className="flex w-full">
         <a href="#" className="float-left ml-0">
-          <span className="text-2xl whitespace-nowrap ">Tudar</span>
+          <span className="text-2xl whitespace-nowrap text-white">Tudar</span>
         </a>
         {/* <p className="text-bold text-3xl m-4">Tudar</p> */}
         <div className="flex items-center justify-center w-screen ">
