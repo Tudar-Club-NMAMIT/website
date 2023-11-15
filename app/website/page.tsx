@@ -6,7 +6,7 @@ import { Gallery } from "./components/Gallery";
 
 const page = () => {
   return (
-    <div >
+    <div className="bg-gray-900">
       <Navbar />
       <Gallery />
       <Documentation />

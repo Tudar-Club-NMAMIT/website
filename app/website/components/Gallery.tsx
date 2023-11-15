@@ -47,7 +47,7 @@ export const Gallery = () => {
     console.log("useEffect", inView1);
   }, [inView1, inView2]);
   return (
-    <div>
+    <div  className='bg-gray-900 p-2 m-2 text-white'>
       <div ref={ref1}>
         <motion.div
           animate={animation1}
@@ -57,13 +57,13 @@ export const Gallery = () => {
             src="/grp.jpg"
             className="rounded-lg"
             alt="hbd"
-            width={700}
-            height={1000}
+            width={550}
+            height={750}
           ></Image>
 
-          <div className="flex-col justify-center items-center h-full my-auto">
+          <div className="flex-col justify-center items-center h-full my-auto p-4">
             <h1 className="text-2xl sm:text-xl md:text-4xl">About Us</h1>
-            <h2 className="max-w-lg overflow-auto text-xl sm:text-sm md:text-2xl">
+            <h2 className="max-w-lg overflow-auto text-xl sm:text-sm md:text-xl">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Obcaecati, sunt recusandae nihil mollitia officia nobis aliquid
@@ -76,21 +76,18 @@ export const Gallery = () => {
       <div ref={ref2}>
         <motion.div animate={animation2}>
           <div className="lg:flex justify-center gap-2 my-40  md:block ">
-            <div className="collage_img  ">
+            <div className="collage_img ">
               <Image
                 src="/grp.jpg"
                 className="rounded-lg"
                 alt="hbd"
-                width={700}
-                height={1000}
+                width={550}
+                height={750}
               ></Image>
             </div>
-            <div className="flex-col justify-center items-center h-full my-auto ">
-              <h1 className="lg:text-4xl text-2xl  sm:text-xl md:text-4xl">
-                About Us
-              </h1>
-
-              <h2 className="max-w-lg overflow-auto text-xl sm:text-sm md:text-2xl">
+            <div className="flex-col justify-center items-center h-full my-auto p-4">
+              <h1 className="lg:text-4xl text-2xl  sm:text-xl md:text-4xl">About Us</h1>
+              <h2 className="max-w-lg overflow-auto text-xl sm:text-sm md:text-xl">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Aliquam Lorem, ipsum dolor sit amet consectetur adipisicing
                 elit. Obcaecati, sunt recusandae nihil mollitia officia nobis
