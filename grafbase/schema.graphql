@@ -1,0 +1,31 @@
+extend schema
+  @auth(
+    providers: [
+      {
+        type: jwt
+        issuer: "grafbase"
+        secret: "RJiXkWru1o1xChgJgVEQRJJ1yysi6hvxd2Pqx3bwzk0="
+      }
+    ]
+    rules: [{ allow: private }]
+  )
+type User @model @auth(rules: [{ allow: public, operations: [read] }]) {
+  name: String! @length(min: 2, max: 20)
+  email: String! @unique
+  avatarUrl: URL!
+  performs: Perform
+}
+
+type Perform
+  @model
+  @auth(
+    rules: [
+      { allow: public, operations: [read] }
+      { allow: private, operations: [create, delete, update] }
+    ]
+  ) {
+  score: Int!
+  level: Int!
+  streak: Int!
+  createdBy: User!
+}
