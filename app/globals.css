@@ -7,6 +7,7 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   
+  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,7 +17,7 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-/* styles/FireAnimation.module.css */
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -49,6 +50,7 @@ html {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  
 }
 
 
@@ -253,4 +255,10 @@ border-radius: 25px;
   background-color: #afa18f;
   position: fixed;
   border-radius: 50%;
+}
+.event-heading{
+  color: #afa18f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
