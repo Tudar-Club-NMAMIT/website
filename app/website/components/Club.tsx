@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Club() {
   return (
-    <div id="#club" className=" bg-gray-900  w-full">
+    <div id="#club" className=" bg-gray-900  w-full -z-10">
       <h2 className="club-heading p-6 text-5xl font-bold ">About the Club</h2>
       <section className="">
         <div className="container m-4 w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
@@ -17,7 +17,7 @@ export default function Club() {
             </p>
             <div>
               <div className="mask">
-                <p className="mt-6 mb-8 text-4xl font-bold sm:mb-12">
+                <p className="mt-6 mb-8 text-2xl font-bold sm:mb-12">
                   Solmelu yencha ullar in condimentum ac integer
                   <br className="hidden md:inline lg:hidden" />
                   turpis pulvinar, est scelerisque ligula sem
