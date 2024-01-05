@@ -1,9 +1,14 @@
 "use client"
+
+import StickyCursor from "./StickyCursor";
+
 //import React, { useLayoutEffect, useRef } from "react";
 
 export default function Club() {
   return (
+    
     <div className="h-screen bg-gray-900  w-full">
+      <StickyCursor/>
       <h2 className="club-heading p-6 text-5xl font-bold ">About the Club</h2>
       <section className="">
         <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">

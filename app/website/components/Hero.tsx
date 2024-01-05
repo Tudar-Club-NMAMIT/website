@@ -23,7 +23,7 @@ const Hero = () => {
       <motion.div
         className="min-h-screen bg-contain object-center absolute inset-0 z-0"
         style={{
-          backgroundImage: `url(/src/below-img.png)`,
+          backgroundImage: `url(/src/p-below-img.png)`,
           backgroundPosition: "bottom",
           backgroundSize: "cover",
           y: backgroundY,
@@ -32,7 +32,7 @@ const Hero = () => {
       <div
         className="absolute inset-0 z-20"
         style={{
-          backgroundImage: `url(/src/above-img.png)`,
+          backgroundImage: `url(/src/p-above-img.png)`,
           backgroundPosition: "bottom",
           backgroundSize: "cover",
         }}
