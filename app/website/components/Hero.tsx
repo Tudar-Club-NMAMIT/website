@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 
 
 import { motion, useScroll, useTransform } from "framer-motion";
+import Navbar from "./Navbar";
 const Hero = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -15,6 +16,7 @@ const Hero = () => {
     <div
       ref={ref}
       className="w-full h-screen overflow-hidden relative grid place-items-center">
+        
       <motion.h1
         style={{ y: textY }}
         className="font-bold text-white text-7xl md:text-9xl relative z-30">
