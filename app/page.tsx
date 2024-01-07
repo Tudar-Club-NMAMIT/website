@@ -1,4 +1,3 @@
-
 import Navbar from "./website/components/Navbar/Navbar";
 import Club from "./website/components/Club/Club";
 import Hero from "./website/components/Hero/Hero";
