@@ -1,22 +1,24 @@
 "use client";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import "./Events.css"
+import "./Events.css";
 
 const ShuffleHero = () => {
   return (
-    <section className="m-4 w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
+    <section className="bg-gray-900 z-30 m-4 w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-8xl mx-auto">
       <div className="p-6 flex-col  flex gap-4 ">
-        <h2 className="event-heading   text-5xl font-bold">
+        <h2 className="event-heading  text-5xl font-bold">
           Glimpses of our Events.
         </h2>
         <p className="events-info opacity-50">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum
           veritatis quia nihil at quisquam praesentium tenetur! Veritatis optio
           labore ab nemo explicabo debitis perferendis minus eum! Illum
-          doloremque vitae magnam!
+          doloremque vitae magnam quia nihil at quisquam praesentium tenetur!
+          Veritatis optio labore ab nemo explicabo debitis perferendis minus
+          eum! Illum doloremque vitae magnam!
         </p>
-        <button className="fancy" >
+        <button className="fancy">
           <span className="top-key"></span>
           <span className="text">Know More</span>
           <span className="bottom-key-1"></span>
@@ -83,7 +85,6 @@ const squareData = [
     id: 9,
     src: "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
   },
-
 ];
 
 const generateSquares = () => {
@@ -108,7 +109,7 @@ const ShuffleGrid = () => {
     shuffleSquares();
 
     return () => clearTimeout(timeoutRef.current || 0);
-  },[]);
+  }, []);
 
   const shuffleSquares = () => {
     setSquares(generateSquares());
