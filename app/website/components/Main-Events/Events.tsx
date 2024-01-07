@@ -108,7 +108,7 @@ const ShuffleGrid = () => {
     shuffleSquares();
 
     return () => clearTimeout(timeoutRef.current || 0);
-  },);
+  },[]);
 
   const shuffleSquares = () => {
     setSquares(generateSquares());
