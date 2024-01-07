@@ -1,9 +1,7 @@
 "use client"
-
-
 import Image from "next/image";
-//import React, { useLayoutEffect, useRef } from "react";
 
+import "./Club.css"
 export default function Club() {
   return (
     <div id="#club" className=" bg-gray-900  w-full -z-10">
