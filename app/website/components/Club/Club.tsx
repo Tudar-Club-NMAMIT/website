@@ -8,7 +8,7 @@ export default function Club() {
       <h2 className="club-heading p-6 text-5xl font-bold ">About the Club</h2>
       <section className="">
         <div className="container m-4 w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
-          <div className=" justify-center p-6 text-center  rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
+          <div className=" justify-left p-6 text-center  rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
             <p className="mb-8 text-3xl font-bold  md:text-6xl">
               Tudar Club
               <span className="text-club">senectus</span>
