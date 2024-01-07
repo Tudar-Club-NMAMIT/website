@@ -3,6 +3,7 @@ import Club from "./website/components/Club/Club";
 import Hero from "./website/components/Hero/Hero";
 import StickyCursor from "./website/components/StickyCursor/StickyCursor";
 import Events from "./website/components/Main-Events/Events";
+import Card from "./website/components/Card-section/Card";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <Club />
       <Events />
+      <Card/>
     </div>
   );
 }
