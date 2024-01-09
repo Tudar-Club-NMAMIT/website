@@ -7,6 +7,7 @@ import Card from "./website/components/Card-section/Card";
 import Blog from "./website/components/Blog Carousel/Blog";
 import Footer from "./website/components/Footer/Footer";
 
+
 export default function Home() {
   return (
     <div className="bg-gray-900">
