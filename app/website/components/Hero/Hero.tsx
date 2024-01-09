@@ -10,16 +10,19 @@ const Hero = () => {
     offset: ["start start", "end start"],
   });
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "150%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["-80%", "150%"]);
   return (
     <div
       ref={ref}
       className="w-full h-screen overflow-hidden relative grid place-items-center">
-        
       <motion.div
         style={{ y: textY }}
-        className="opacity-100 font-bold text-white text-7xl md:text-9xl relative z-30">
-        <Image src="/src/tudar.png" alt="Tudar" width={650} height={300}></Image>
+        className="opacity-100 font-bold relative z-30">
+        <Image
+          src="/src/tudar.png"
+          alt="Tudar"
+          width={650}
+          height={300}></Image>
       </motion.div>
       <motion.div
         className="min-h-screen bg-contain object-center absolute inset-0 z-0"
@@ -31,7 +34,7 @@ const Hero = () => {
         }}
       />
       <div
-        className="absolute inset-0 z-20"
+        className="absolute inset-0 z-20 "
         style={{
           backgroundImage: `url(/src/p-above-img.png)`,
           backgroundPosition: "bottom",

@@ -21,11 +21,11 @@ const HorizontalScrollCarousel = () => {
 
   return (
     <section ref={targetRef} className="relative h-[300vh] bg-gray-900">
-      <h1 className="flex justify-center items-center text-[#afa18f] text-6xl font-bold">
+      <h1 className="flex justify-center items-center text-[#afa18f] text-4xl lg:text-6xl font-bold">
         Tulu Chronicles
       </h1>
       <br />
-      <h1 className="flex justify-center items-center text-[#fefefe] text-5xl font-semibold">
+      <h1 className="flex justify-center items-center text-[#fefefe] text-xl lg:text-5xl font-semibold">
         Where Tradition Meets the Digital Age
       </h1>
 
