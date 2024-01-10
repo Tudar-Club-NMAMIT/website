@@ -1,47 +1,27 @@
-"use client"
+"use client";
 import Image from "next/image";
 
-import "./Club.css"
+import "./Club.css";
 export default function Club() {
   return (
-    <div id="#club" className=" bg-gray-900  w-full -z-10">
-      <h2 className="club-heading p-6 text-5xl font-bold ">About the Club</h2>
-      <section className="">
-        <div className="container m-4 w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
-          <div className=" justify-left p-6 text-center  rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
-            <p className="mb-8 text-3xl font-bold  md:text-6xl">
-              Tudar Club
-              <span className="text-club">senectus</span>
-            </p>
-            <div>
-              <div className="mask">
-                <p className="mt-6 mb-8 text-2xl font-bold sm:mb-12">
-                  Solmelu yencha ullar in condimentum ac integer
-                  <br className="hidden md:inline lg:hidden" />
-                  turpis pulvinar, est scelerisque ligula sem
-                </p>
-              </div>
-              {/* <div className="body">
-                  <p className=" mt-6 mb-8 text-4xl font-bold sm:mb-12">
-                    Hey there how are you in condimentum ac integer
-                    <br className="hidden md:inline lg:hidden" />
-                    turpis pulvinar, est scelerisque ligula sem
-                  </p>
-                </div> */}
-            </div>
-          </div>
-          <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
-            <Image
-              src="/src/logo.png"
-              alt=""
-              className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
-              height={288}
-              width={288}
-            />
-          </div>
+    <div className="flex pt-12 px-8 md:px-8  items-center justify-center bg-hero md:h-screen overflow-hidden">
+      <div className="flex flex-col  gap-6 md:flex-row items-center max-w-8xl">
+        <div className="w-full md:w-1/2 lg:pr-10">
+          <h1 className=" m-6 font-bold club-heading text-3xl lg:text-5xl text-left text-[#afa18f] ">
+            Bridging Cultures, Celebrating Tulu Heritage
+          </h1>
+          <h3 className="m-6  md:mt-10 text-md lg:text-xl text-justify  text-white opacity-50  ">
+            At TUDAR Club, we are on a mission to celebrate, preserve, and
+            propagate the vibrant heritage of the Tulu language. Rooted in the
+            cultural mosaic of coastal Karnataka, Tulu is a language that
+            encapsulates centuries of tradition, folklore, and a unique
+            identity.
+          </h3>
         </div>
-      </section>
+        <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+          <Image width={250} height={300} src="/src/logo.png" alt="" />
+        </div>
+      </div>
     </div>
   );
 }
-

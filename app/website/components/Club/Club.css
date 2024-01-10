@@ -1,9 +1,8 @@
 .club-heading{
-  color: #afa18f;
+   color: #afa18f;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
-  
 }
 .text-club{
   color: #afa18f;
