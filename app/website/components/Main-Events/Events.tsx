@@ -6,17 +6,18 @@ import "./Events.css";
 const ShuffleHero = () => {
   return (
     <section className="bg-gray-900 z-30 m-4 w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-8xl mx-auto">
-      <div className="p-6 flex-col  flex gap-4 ">
-        <h2 className="event-heading  text-5xl font-bold">
+      <div className="m-6 flex-col  flex gap-4 ">
+        <h2 className="event-heading text-3xl lg:text-5xl font-bold">
           Glimpses of our Events.
         </h2>
-        <p className="events-info opacity-50">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum
-          veritatis quia nihil at quisquam praesentium tenetur! Veritatis optio
-          labore ab nemo explicabo debitis perferendis minus eum! Illum
-          doloremque vitae magnam quia nihil at quisquam praesentium tenetur!
-          Veritatis optio labore ab nemo explicabo debitis perferendis minus
-          eum! Illum doloremque vitae magnam!
+        <p className="events-info text-justify opacity-50">
+          TUDAR Club has been a catalyst for unforgettable events that celebrate
+          Tulu culture. From engaging workshops and language learning sessions
+          to lively cultural showcases, each event is crafted to illuminate the
+          beauty of Tulu traditions. Stay tuned for more exciting gatherings as
+          we continue to weave the vibrant tapestry of Tulu heritage through our
+          dynamic and enriching events. Join us in the joyous celebration of
+          Tulu identity!
         </p>
         <button className="fancy">
           <span className="top-key"></span>

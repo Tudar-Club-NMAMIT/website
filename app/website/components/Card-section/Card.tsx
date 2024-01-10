@@ -15,10 +15,10 @@ const Card = () => {
             height={300}></Image>
         </div>
 
-        <p className="font-bold text-gray-200 tracking-wider group-hover:text-gray-700 text-4xl">
+        <p className="font-bold text-gray-200 tracking-wider text-center group-hover:text-gray-700 text-4xl">
           Tulu Translator
         </p>
-        <p className=" font-bold text-gray-100 text-xl">
+        <p className=" font-bold text-gray-100 text-center text-xl">
           Discover Tulu's Secrets: Your Language Companion Awaits!
         </p>
         <button className="relative cursor-pointer opacity-90 hover:opacity-100 transition-opacity p-[2px] bg-black rounded-[16px] bg-gradient-to-t from-[#212121] to-[#212121] active:scale-95">
@@ -38,10 +38,10 @@ const Card = () => {
             height={300}></Image>
         </div>
 
-        <p className="font-bold text-gray-200 tracking-wider group-hover:text-gray-700 text-4xl">
+        <p className="font-bold text-gray-200 text-center tracking-wider group-hover:text-gray-700 text-4xl">
           Tulu Quiz
         </p>
-        <p className="font-bold text-gray-100 text-xl">
+        <p className="font-bold text-center text-gray-100 text-xl">
           Quiz Time! How Well Do You Know the Language of Tulu?
         </p>
         <button className="relative cursor-pointer opacity-90 hover:opacity-100 transition-opacity p-[2px] bg-black rounded-[16px] bg-gradient-to-t from-[#212121] to-[#212121] active:scale-95">
