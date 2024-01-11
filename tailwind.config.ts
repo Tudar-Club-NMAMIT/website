@@ -8,12 +8,20 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "kola-img":
-          'url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Ani_-_this_is_the_tulunadu_%28karnataka%2C_India%29_Bhutaradhane_-_Bhuta_ware_the_ani..JPG/1200px-Ani_-_this_is_the_tulunadu_%28karnataka%2C_India%29_Bhutaradhane_-_Bhuta_ware_the_ani..JPG")',
+      animation: {
+        scroll:
+          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+      },
+      keyframes: {
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
       },
     },
   },
   plugins: [],
 };
+
 export default config;
