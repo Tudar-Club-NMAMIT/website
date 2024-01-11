@@ -25,10 +25,10 @@ export default function Club() {
     // </div>
     <div className="flex pt-12 px-14  items-center justify-center bg-hero md:h-screen overflow-hidden">
       <div className="flex flex-col  gap-6 md:flex-row items-center max-w-8xl">
-        <div className="w-full md:w-1/2 lg:pr-10">
+        <div className="w-full  lg:pr-10">
           <MaskContainer
             revealText={
-              <p className="  text-white text-justify font-bold text-2xl">
+              <p className=" text-gray-400 text-justify font-bold text-2xl">
                 At TUDAR Club, we are on a mission to celebrate, preserve, and
                 propagate the vibrant heritage of the Tulu language. Rooted in
                 the cultural mosaic of coastal Karnataka, Tulu is a language
@@ -37,11 +37,10 @@ export default function Club() {
               </p>
             }
             className="h-[40rem] ">
-            Materegla solmelu to celebrate, preserve, and
-            propagate the vibrant heritage of the Tulu language. Rooted in the
-            cultural mosaic of coastal Karnataka, Tulu is a language that
-            encapsulates centuries of tradition, folklore, and a unique
-            identity.
+            Materegla solmelu to celebrate, preserve, and propagate the vibrant
+            heritage of the Tulu language. Rooted in the cultural mosaic of
+            coastal Karnataka, Tulu is a language that encapsulates centuries of
+            tradition, folklore, and a unique identity.
           </MaskContainer>
         </div>
         <div className="w-full md:w-1/2 flex justify-center md:justify-end">
