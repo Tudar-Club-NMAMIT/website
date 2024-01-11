@@ -23,7 +23,7 @@ export default function Club() {
     //     </div>
     //   </div>
     // </div>
-    <div className="flex pt-12 px-14  items-center justify-center bg-hero md:h-screen overflow-hidden">
+    <div className="flex pt-12 px-10 lg:px-14  items-center justify-center bg-hero md:h-screen overflow-hidden">
       <div className="flex flex-col  gap-6 md:flex-row items-center max-w-8xl">
         <div className="w-full  lg:pr-10">
           <MaskContainer
