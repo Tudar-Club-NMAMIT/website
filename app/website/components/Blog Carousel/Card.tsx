@@ -1,7 +1,6 @@
 interface CardProps {
   id: number; // Replace with the actual type of id
   url: string; // Replace with the actual type of url
-  title: string; // Replace with the actual type of title
 }
 
 const Card: React.FC<{ card: CardProps }> = ({ card }) => {

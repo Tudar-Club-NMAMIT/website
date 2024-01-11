@@ -10,7 +10,7 @@ const Hero = () => {
     offset: ["start start", "end start"],
   });
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["-80%", "150%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["-70%", "150%"]);
   return (
     <div
       ref={ref}
