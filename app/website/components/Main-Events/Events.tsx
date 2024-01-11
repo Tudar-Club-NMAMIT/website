@@ -10,14 +10,11 @@ const ShuffleHero = () => {
         <h2 className="event-heading text-3xl lg:text-5xl font-bold">
           Glimpses of our Events.
         </h2>
-        <p className="events-info text-justify opacity-50">
+        <p className="text-2xl font-bold  text-justify text-gray-400">
           TUDAR Club has been a catalyst for unforgettable events that celebrate
           Tulu culture. From engaging workshops and language learning sessions
           to lively cultural showcases, each event is crafted to illuminate the
-          beauty of Tulu traditions. Stay tuned for more exciting gatherings as
-          we continue to weave the vibrant tapestry of Tulu heritage through our
-          dynamic and enriching events. Join us in the joyous celebration of
-          Tulu identity!
+          beauty of Tulu traditions.
         </p>
         <button className="fancy">
           <span className="top-key"></span>

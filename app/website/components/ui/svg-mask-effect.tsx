@@ -66,7 +66,7 @@ export const MaskContainer = ({
         </div>
       </motion.div>
 
-      <div className="w-full h-full flex items-center justify-center text-gray-900">
+      <div className="w-full h-full flex items-center justify-center  text-gray-900">
         {revealText}
       </div>
     </motion.div>
