@@ -25,7 +25,7 @@ const HorizontalScrollCarousel = () => {
         Tulu Chronicles
       </h1>
       <br />
-      <h1 className="flex justify-center items-center text-[#fefefe] text-xl lg:text-5xl font-semibold">
+      <h1 className="flex justify-center items-center text-[#fefefe] text-md md:text-3xl lg:text-5xl font-semibold">
         Where Tradition Meets the Digital Age
       </h1>
 
@@ -44,38 +44,37 @@ export default Blog;
 
 const cards = [
   {
-    url: "/src/logo.png",
-    title: "Title 1",
+    url: "/src/sample.jpg",
     id: 1,
   },
   {
-    url: "/src/logo.png",
-    title: "Title 2",
+    url: "/src/sample.jpg",
+
     id: 2,
   },
   {
-    url: "/src/logo.png",
-    title: "Title 3",
+    url: "/src/sample.jpg",
+
     id: 3,
   },
   {
-    url: "/src/logo.png",
-    title: "Title 4",
+    url: "/src/sample.jpg",
+
     id: 4,
   },
   {
-    url: "/src/logo.png",
-    title: "Title 5",
+    url: "/src/sample.jpg",
+
     id: 5,
   },
   {
-    url: "/src/logo.png",
-    title: "Title 6",
+    url: "/src/sample.jpg",
+
     id: 6,
   },
   {
-    url: "/src/logo.png",
-    title: "Title 7",
+    url: "/src/sample.jpg",
+   
     id: 7,
   },
 ];
