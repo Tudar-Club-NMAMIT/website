@@ -18,7 +18,7 @@ const Navbar = () => {
   const [flag, setflag] = useState(true);
 
   const handleClick = () => {
-    const bars = document.querySelectorAll(".bar-hamburger");
+    const bars = document.querySelectorAll<HTMLElement>(".bar-hamburger");
     let color = "white"
     if(flag) { color = "black"}
     else{ color = "white"}
