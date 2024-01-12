@@ -20,12 +20,12 @@ const HorizontalScrollCarousel = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["1%", "-55%"]);
 
   return (
-    <section ref={targetRef} className="relative h-screen bg-gray-900">
+    <section ref={targetRef} className="relative h-[80vh] bg-gray-900">
       <h1 className="flex justify-center items-center text-[#afa18f] text-4xl lg:text-6xl font-bold">
         Tulu Chronicles
       </h1>
       <br />
-      <h1 className="flex justify-center items-center text-[#fefefe] text-md md:text-3xl lg:text-5xl font-semibold">
+      <h1 className="flex justify-center items-center text-[#fefefe] text-lg md:text-3xl lg:text-5xl font-semibold">
         Where Tradition Meets the Digital Age
       </h1>
       <Card/>
