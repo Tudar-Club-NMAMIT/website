@@ -1,5 +1,5 @@
 "use client"
-import { motion, useTransform, useScroll } from "framer-motion";
+import { useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
 import Card from "./Card";
 
@@ -20,61 +20,17 @@ const HorizontalScrollCarousel = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["1%", "-55%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-gray-900">
+    <section ref={targetRef} className="relative h-[80vh] bg-gray-900">
       <h1 className="flex justify-center items-center text-[#afa18f] text-4xl lg:text-6xl font-bold">
         Tulu Chronicles
       </h1>
       <br />
-      <h1 className="flex justify-center items-center text-[#fefefe] text-md md:text-3xl lg:text-5xl font-semibold">
+      <h1 className="flex justify-center items-center text-[#fefefe] text-lg md:text-3xl lg:text-5xl font-semibold">
         Where Tradition Meets the Digital Age
       </h1>
-
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-8">
-          {cards.map((card) => {
-            return <Card card={card} key={card.id} />;
-          })}
-        </motion.div>
-      </div>
+      <Card/>
     </section>
   );
 };
 
 export default Blog;
-
-const cards = [
-  {
-    url: "/src/sample.jpg",
-    id: 1,
-  },
-  {
-    url: "/src/sample.jpg",
-
-    id: 2,
-  },
-  {
-    url: "/src/sample.jpg",
-
-    id: 3,
-  },
-  {
-    url: "/src/sample.jpg",
-
-    id: 4,
-  },
-  {
-    url: "/src/sample.jpg",
-
-    id: 5,
-  },
-  {
-    url: "/src/sample.jpg",
-
-    id: 6,
-  },
-  {
-    url: "/src/sample.jpg",
-   
-    id: 7,
-  },
-];
