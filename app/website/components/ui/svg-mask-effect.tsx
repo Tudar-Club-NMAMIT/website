@@ -25,7 +25,7 @@ export const MaskContainer = ({
   };
 
   useEffect(() => {
-    containerRef.current.addEventListener("mousemove", updateMousePosition);
+    window.addEventListener("mousemove", updateMousePosition);
     return () => {
       if (containerRef.current) {
         containerRef.current.removeEventListener(
@@ -45,7 +45,7 @@ export const MaskContainer = ({
         backgroundColor: isHovered ? "var(--white)" : "var(--white)",
       }}>
       <motion.div
-        className="w-full h-full flex items-center justify-center text-2xl absolute bg-white  [mask-image:url(/mask.svg)] [mask-size:40px] [mask-repeat:no-repeat]"
+        className="w-full h-full flex items-center justify-center text-2xl absolute bg-white   [mask-image:url(/mask.svg)] [mask-size:40px] [mask-repeat:no-repeat]"
         animate={{
           WebkitMaskPosition: `${mousePosition.x - maskSize / 2}px ${
             mousePosition.y - maskSize / 2
