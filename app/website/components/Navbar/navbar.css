@@ -1,14 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Tilt+Warp&display=swap');
-:root{
-    --flag: 0;
-}
+
 .navbar-bg{
     /* From https://css.glass */
-background: rgba(255, 255, 255, 0.21);
+
+/* background: rgba(255, 255, 255, 0.21); */
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(6.7px);
 -webkit-backdrop-filter: blur(6.7px);
 border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.linkSpan{
+    font-size: 20px;
+    font-weight: 900;
 }
 .alink{
     color: white;
@@ -18,7 +21,6 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     font-family: 'Tilt Warp', sans-serif;
     text-transform: uppercase;
     position: relative;
-    transition-duration: 1s; 
 }
 .alink:hover::before{
     width: 100%;
@@ -33,6 +35,8 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     
 }
 .hamburger{
+    height: 30px;
+    aspect-ratio: 1;
     flex-direction: column;
     justify-content: space-between;
 
@@ -44,33 +48,36 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     position: absolute;
     background-color:white;
     bottom: 0px;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
-}    
+    -webkit-transition: width 0.5s;
+    -moz-transition: width 0.5s;
+    -ms-transition: width 0.5s;
+    -o-transition: width 0.5s;
+    transition: width 0.5s;
+        transition-duration: 1s; 
 
+}    
+.menu-container{
+    display: none;
+}
 @keyframes load {
     0%{width: 100%}
     100%{width : 0%}
 }
 @media screen and (max-width: 768px) {
-    .navlist{
-        width: 100vw;
-        height: 100vh;
-        position: absolute;
-        background-color: rgb(255, 255, 255);
-        padding: 1rem;
-        padding-top: 5rem;
-        top: 0;
-        left: 0;
-    }
-    .navlist a{
-        display: block;
-        padding: 1rem;
-    }
+    
     .hamburger{
         z-index: 100;
     }
+    .alink{
+        color: black;
+        font-size: 30px;
+    }
+    .bar-hamburger{
+        background-color: rgb(255, 255, 255);
+    }
+    
+    #menu{
+        display: block;
+    }
   }
+  
