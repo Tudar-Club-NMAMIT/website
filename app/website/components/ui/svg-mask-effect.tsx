@@ -25,7 +25,7 @@ export const MaskContainer = ({
   };
 
   useEffect(() => {
-    containerRef.current.addEventListener("mousemove", updateMousePosition);
+    window.addEventListener("mousemove", updateMousePosition);
     return () => {
       if (containerRef.current) {
         containerRef.current.removeEventListener(
@@ -42,10 +42,10 @@ export const MaskContainer = ({
       ref={containerRef}
       className={cn("h-screen relative", className)}
       animate={{
-        backgroundColor: isHovered ? "var(--slate-900)" : "var(--white)",
+        backgroundColor: isHovered ? "var(--white)" : "var(--white)",
       }}>
       <motion.div
-        className="w-full h-full flex items-center justify-center text-2xl absolute bg-black  [mask-image:url(/mask.svg)] [mask-size:40px] [mask-repeat:no-repeat]"
+        className="w-full h-full flex items-center justify-center text-2xl absolute bg-white   [mask-image:url(/mask.svg)] [mask-size:40px] [mask-repeat:no-repeat]"
         animate={{
           WebkitMaskPosition: `${mousePosition.x - maskSize / 2}px ${
             mousePosition.y - maskSize / 2
@@ -53,7 +53,7 @@ export const MaskContainer = ({
           WebkitMaskSize: `${maskSize}px`,
         }}
         transition={{ type: "tween", ease: "backOut", duration: 0.1 }}>
-        <div className="absolute inset-0 font-bold bg-white h-full w-full z-0 " />
+        <div className="absolute  font-bold bg-white h-1/2 w-full z-0 " />
         <div
           onMouseEnter={() => {
             setIsHovered(true);
