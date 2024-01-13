@@ -11,18 +11,18 @@ import Testform from "./website/components/Testform";
 
 
  export default async function Home() {
-  const data = await prisma.test.findFirst()
+  // const data = await prisma.test.findFirst()
   return (
     <div className="bg-gray-900">
-      {data?.name}
-      <Testform/>
-      {/* <Navbar />
+      {/* {data?.name} */}
+      {/* <Testform/> */}
+      <Navbar />
       <Hero />
       <Club />
       <Events />
       <Card/>
       <Blog/>
-      <Footer/> */}
+      <Footer/>
     </div>
   );
 }
