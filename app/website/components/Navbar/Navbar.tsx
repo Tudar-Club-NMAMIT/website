@@ -19,41 +19,46 @@ const Navbar = () => {
 
   const handleClick = () => {
     const bars = document.querySelectorAll<HTMLElement>(".bar-hamburger");
-    let color = "white"
-    if(flag) { color = "black"}
-    else{ color = "white"}
+    const menu = document.getElementById("menu");
+    let color = "white"  
+    if (menu) {
+      if (flag) {
+        color = "black"
+        bars[1].style.display = "none";
+        bars[0].style.animation = "cross-1 0.2s ease-in forwards"
+        bars[2].style.animation = "cross-2 0.2s ease-in forwards"
+        menu.style.display = "block"; 
+        menu.style.animation = "menu-click-animation 0.2s ease-in"
+      }
+      if (!flag) {
+        color = "white"
+        menu.style.display = "none"; 
+        menu.style.animation = "none";
+        bars[1].style.display = "block";
+        bars[0].style.animation = "cross-1 0.3s ease-in reverse"
+        bars[2].style.animation = "cross-2 0.3s ease-in reverse"
+      }
       bars.forEach(bar => {
         bar.style.background=color;
       })
-    const menu = document.getElementById("menu");
-    if (menu) {
-      if (flag) {
-        menu.style.display = "block"; 
-      }
-      if (!flag) {
-        menu.style.display = "none"; 
-      }
       setflag(!flag);
     } 
 
   };
   return (
     <nav  className="navbar-bg py-4 px-8 border-b w-screen border-nav-border absolute z-40 ">
-      <div className="menu-container fixed top-0 left-0 w-screen h-screen" id="menu" style={{display:"none"}}>
-      <Menu Navlist={NavLinks} />{
-      }
+      <div className="menu-container absolute top-0 left-0 w-screen" id="menu" style={{display:"none"}}>
+      <Menu Navlist={NavLinks} />
       </div>
       <div className="flex w-full">
         <a href="#" className="float-left ml-0">
-          <span className=" whitespace-nowrap">
+          <span className="whitespace-nowrap">
             <Image src="/src/tudar.png" alt="Tudar" width={120} height={100}></Image>
           </span>
         </a>
-        {/* <p className="text-bold text-3xl m-4">Tudar</p> */}
         <div className="flex items-center justify-center w-screen ">
           <ul
-            className="md:flex  md:justify-center md:flex-row min-w-screen flex-col hidden text-sm gap-10 margin-auto navlist"
-            id="navlist">
+            className="md:flex justify-center flex-row min-w-screen hidden gap-10 navlist">
             {NavLinks.map((link) => (
               <Link
                 className="alink"

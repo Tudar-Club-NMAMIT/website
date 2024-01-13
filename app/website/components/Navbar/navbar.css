@@ -55,12 +55,53 @@ border: 1px solid rgba(255, 255, 255, 0.3);
         transition-duration: 1s; 
 
 }    
-.menu-container{
+#menu{
+    transition: all 2s ease-in;
     display: none;
+}
+#menu-container{
+    opacity: 1;
+}
+.container-menu{
+    display: none;
+}
+.menu-container{
+    height: 100%;
+}
+.container-menu{
+    
 }
 @keyframes load {
     0%{width: 100%}
     100%{width : 0%}
+}
+@keyframes cross-1 {
+    0%{
+        rotate: 0;
+        translate: 0 0;
+    }
+    100%{
+        rotate: 45deg;
+        translate: 0 166%;
+    }
+}
+@keyframes cross-2 {
+    0%{
+        rotate: 0;
+        translate: 0 0;
+    }
+    100%{
+        rotate: -45deg;
+        translate: 0 -166%;
+    }
+}
+@keyframes menu-click-animation {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 @media screen and (max-width: 768px) {
     
@@ -74,7 +115,9 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     .bar-hamburger{
         background-color: rgb(255, 255, 255);
     }
-    
+    .container-menu{
+        display: block;
+    }
     #menu{
         display: block;
     }
