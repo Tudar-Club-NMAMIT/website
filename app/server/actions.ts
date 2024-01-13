@@ -9,6 +9,6 @@ export async function uploadName(name : string) {
         }
     })
     return {
-        message : "created !!"
+        message : name
     }
 }
