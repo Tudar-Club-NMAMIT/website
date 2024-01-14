@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Menu from "./Menu";
-
+import { useSession } from "next-auth/react";
 const NavLinks = [
   { href: "/", key: "Home", text: "Home" },
   { href: "/website/Team", key: "Team", text: "Club Team" },
@@ -16,7 +16,8 @@ const NavLinks = [
 ];
 const Navbar = () => {
   const [flag, setflag] = useState(true);
-
+  const { data: session } = useSession();
+  console.log(session);
   const handleClick = () => {
     const bars = document.querySelectorAll<HTMLElement>(".bar-hamburger");
     const menu = document.getElementById("menu");
@@ -51,6 +52,11 @@ const Navbar = () => {
         id="menu"
         style={{ display: "none" }}>
         <Menu Navlist={NavLinks} />
+        {session ? (
+          <h1>Logged in </h1>
+        ) : (
+          <Link href="/api/auth/signin">Sign in</Link>
+        )}
       </div>
       <div className="flex w-full">
         <a href="#" className="float-left ml-0">
@@ -69,6 +75,11 @@ const Navbar = () => {
                 {link.text}
               </Link>
             ))}
+            {session ? (
+              <h1>Logged in </h1>
+            ) : (
+              <Link href="/api/auth/signin">Sign in</Link>
+            )}
           </ul>
         </div>
         <div
