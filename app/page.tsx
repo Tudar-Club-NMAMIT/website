@@ -7,7 +7,8 @@ import Blog from "./website/components/Blog Carousel/Blog";
 import Footer from "./website/components/Footer/Footer";
 import { prisma } from "./utils/db";
 import { uploadName } from "./server/actions";
-import Testform from "./website/components/Testform";
+
+import ResponsiveVideo from "./website/components/Video/Video";
 
 
  export default async function Home() {
@@ -15,10 +16,12 @@ import Testform from "./website/components/Testform";
   return (
     <div className="bg-gray-900">
       {/* {data?.name} */}
-      {/* <Testform/> */}
       <Navbar />
       <Hero />
       <Club />
+      <ResponsiveVideo 
+      
+      />
       <Events />
       <Card/>
       <Blog/>
