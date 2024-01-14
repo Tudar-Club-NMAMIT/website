@@ -4,7 +4,7 @@ import { MaskContainer } from "../ui/svg-mask-effect";
 import "./Club.css";
 export default function Club() {
   return (
-    <div className="flex pt-12 px-10 lg:px-14  items-center justify-center bg-hero md:h-[80vh] overflow-hidden">
+    <div className=" select-none flex pt-12 px-10 lg:px-14  items-center justify-center bg-hero md:h-[80vh] overflow-hidden">
       <div className="flex flex-col  gap-6 md:flex-row items-center max-w-8xl">
         <div className="w-full lg:pr-10">
           <MaskContainer
@@ -20,10 +20,10 @@ export default function Club() {
               </div>
             }
             className="h-[25rem] ">
-            Materegla solmelu to celebrate, preserve, and propagate the vibrant
-            heritage of the Tulu language. Rooted in the cultural mosaic of
-            coastal Karnataka, Tulu is a language that encapsulates centuries of
-            tradition, folklore, and a unique identity.
+            TUDAR ಕ್ಲಬ್‌ನಲ್ಲಿ, ನಾವು ಆಚರಿಸಲು, ಸಂರಕ್ಷಿಸಲು ಮತ್ತು ಮಿಷನ್‌ನಲ್ಲಿದ್ದೇವೆ
+            ತುಳು ಭಾಷೆಯ ರೋಮಾಂಚಕ ಪರಂಪರೆಯನ್ನು ಪ್ರಚಾರ ಮಾಡಿ. ಬೇರೂರಿದೆ ಕರಾವಳಿ ಕರ್ನಾಟಕದ
+            ಸಾಂಸ್ಕೃತಿಕ ಮೊಸಾಯಿಕ್, ತುಳು ಒಂದು ಭಾಷೆ ಅದು ಶತಮಾನಗಳ ಸಂಪ್ರದಾಯ, ಜಾನಪದ,
+            ಮತ್ತು ಎ ಅನನ್ಯ ಗುರುತು.
           </MaskContainer>
         </div>
         <div className="w-full md:w-1/2 flex justify-center ">
@@ -33,3 +33,7 @@ export default function Club() {
     </div>
   );
 }
+// TUDAR ಕ್ಲಬ್‌ನಲ್ಲಿ, ನಾವು ಆಚರಿಸಲು, ಸಂರಕ್ಷಿಸಲು ಮತ್ತು ಮಿಷನ್‌ನಲ್ಲಿದ್ದೇವೆ
+//             ತುಳು ಭಾಷೆಯ ರೋಮಾಂಚಕ ಪರಂಪರೆಯನ್ನು ಪ್ರಚಾರ ಮಾಡಿ. ಬೇರೂರಿದೆ ಕರಾವಳಿ ಕರ್ನಾಟಕದ
+//             ಸಾಂಸ್ಕೃತಿಕ ಮೊಸಾಯಿಕ್, ತುಳು ಒಂದು ಭಾಷೆ ಅದು ಶತಮಾನಗಳ ಸಂಪ್ರದಾಯ, ಜಾನಪದ,
+//             ಮತ್ತು ಎ ಅನನ್ಯ ಗುರುತು.

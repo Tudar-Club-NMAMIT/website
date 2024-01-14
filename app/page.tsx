@@ -1,3 +1,4 @@
+"use client";
 import Navbar from "./website/components/Navbar/Navbar";
 import Club from "./website/components/Club/Club";
 import Hero from "./website/components/Hero/Hero";
@@ -5,28 +6,27 @@ import Events from "./website/components/Main-Events/Events";
 import Card from "./website/components/Card-section/Card";
 import Blog from "./website/components/Blog Carousel/Blog";
 import Footer from "./website/components/Footer/Footer";
-import { prisma } from "./utils/db";
-import { uploadName } from "./server/actions";
+import Video from "./website/components/Video-section/Video";
+import { useSession } from "next-auth/react";
+import Link from "next/link";
 
-import ResponsiveVideo from "./website/components/Video/Video";
+export default function Home() {
+  const { data: session, status } = useSession();
 
-
- export default async function Home() {
-  // const data = await prisma.test.findFirst()
   return (
-    <div className="bg-gray-900">
-      {/* {data?.name} */}
-      <Navbar />
-      <Hero />
-      <Club />
-      <ResponsiveVideo 
+    <>
       
-      />
-      <Events />
-      <Card/>
-      <Blog/>
-      <Footer/>
-    </div>
+    
+      <div className="bg-gray-900">
+           <Navbar />
+           <Hero />
+          <Video />
+          <Club />
+          <Events />
+          <Card />
+          <Blog />
+          <Footer />
+        </div>
+        </>
   );
 }
-
