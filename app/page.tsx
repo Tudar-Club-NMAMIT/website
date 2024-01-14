@@ -19,7 +19,7 @@ export default  function Home() {
   return (
     <>
     
-      <div className="bg-gray-900">
+      <div className="bg-[#000]">
            <Navbar />
            <Hero />
           <Club />
