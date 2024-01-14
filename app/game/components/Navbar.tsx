@@ -3,9 +3,11 @@ import "./navbar.css";
 // import { getCurrentUser } from "@/libs/session";
 import { HelpCircle, Menu, Flame } from "lucide-react";
 import ProfileMenu from "./ProfileMenu";
+import { useSession } from "next-auth/react";
+import Image from "next/image";
 
 const Navbar = async () => {
-  // const session = await getCurrentUser();
+  const session = useSession();
   return (
     <nav className="py-2 px-8 border-b border-nav-border bg-white">
       <div className="flex w-full">
@@ -20,11 +22,7 @@ const Navbar = async () => {
           <HelpCircle className="h-10   text-black" />
           <Flame className="h-10  text-black" />
           <div className="flex justify-end  ">
-            {/* {session?.user ? (
-          <ProfileMenu session={session} />
-        ) : (
-          <h2>Please Login</h2>
-        )}{" "} */}
+            {session? <Image src={session.data?.user?.image|| ""} width={30} height={30} alt="Profile" className="rounded-xl"></Image>: "Please login"}
           </div>
         </div>
       </div>

@@ -9,13 +9,15 @@ import Footer from "./website/components/Footer/Footer";
 import Video from "./website/components/Video-section/Video";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
+import { prisma } from "./utils/db";
 
-export default function Home() {
+
+export default  function Home() {
   const { data: session, status } = useSession();
-
+  // const user = await prisma.user.findMany();
+  // console.log("user"+user)
   return (
     <>
-      
     
       <div className="bg-gray-900">
            <Navbar />
