@@ -11,13 +11,14 @@ const NavLinks = [
   { href: "/website/Team", key: "Team", text: "Club Team" },
   { href: "/", key: "About", text: "About" },
   { href: "/", key: "Events", text: "Events" },
-  { href: "/", key: "Blog", text: "Blog" },
+  { href: "/Blogs", key: "Blog", text: "Blog" },
   { href: "/website/ContactUs", key: "Contact", text: "Contact" },
 ];
 const Navbar = () => {
   const [flag, setflag] = useState(true);
   const { data: session } = useSession();
-  console.log(session);
+  
+  
   const handleClick = () => {
     const bars = document.querySelectorAll<HTMLElement>(".bar-hamburger");
     const menu = document.getElementById("menu");
@@ -77,6 +78,7 @@ const Navbar = () => {
             ))}
             {session ? (
               <h1>Logged in </h1>
+              
             ) : (
               <Link href="/api/auth/signin">Sign in</Link>
             )}

@@ -4,7 +4,7 @@ const Video = () => {
   return (
     <div className=" ">
       <video autoPlay muted loop className='w-screen h-screen'>
-        <source src="src/video.mp4" />
+        <source src="src/fire.mp4" />
       </video>
     </div>
   );
