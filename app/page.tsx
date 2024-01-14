@@ -22,8 +22,8 @@ export default  function Home() {
       <div className="bg-gray-900">
            <Navbar />
            <Hero />
-          <Video />
           <Club />
+          <Video />
           <Events />
           <Card />
           <Blog />
