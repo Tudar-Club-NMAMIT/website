@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Menu from "./Menu";
-
+import { useSession } from "next-auth/react";
 const NavLinks = [
   { href: "/", key: "Home", text: "Home" },
   { href: "/website/Team", key: "Team", text: "Club Team" },
@@ -16,57 +16,70 @@ const NavLinks = [
 ];
 const Navbar = () => {
   const [flag, setflag] = useState(true);
-
+  const { data: session } = useSession();
+  console.log(session);
   const handleClick = () => {
     const bars = document.querySelectorAll<HTMLElement>(".bar-hamburger");
     const menu = document.getElementById("menu");
-    let color = "white"  
+    let color = "white";
     if (menu) {
       if (flag) {
-        color = "black"
+        color = "black";
         bars[1].style.display = "none";
-        bars[0].style.animation = "cross-1 0.2s ease-in forwards"
-        bars[2].style.animation = "cross-2 0.2s ease-in forwards"
-        menu.style.display = "block"; 
-        menu.style.animation = "menu-click-animation 0.2s ease-in"
+        bars[0].style.animation = "cross-1 0.2s ease-in forwards";
+        bars[2].style.animation = "cross-2 0.2s ease-in forwards";
+        menu.style.display = "block";
+        menu.style.animation = "menu-click-animation 0.2s ease-in";
       }
       if (!flag) {
-        color = "white"
-        menu.style.display = "none"; 
+        color = "white";
+        menu.style.display = "none";
         menu.style.animation = "none";
         bars[1].style.display = "block";
-        bars[0].style.animation = "cross-1 0.3s ease-in reverse"
-        bars[2].style.animation = "cross-2 0.3s ease-in reverse"
+        bars[0].style.animation = "cross-1 0.3s ease-in reverse";
+        bars[2].style.animation = "cross-2 0.3s ease-in reverse";
       }
-      bars.forEach(bar => {
-        bar.style.background=color;
-      })
+      bars.forEach((bar) => {
+        bar.style.background = color;
+      });
       setflag(!flag);
-    } 
-
+    }
   };
   return (
-    <nav  className="navbar-bg py-4 px-8 border-b w-screen border-nav-border absolute z-40 ">
-      <div className="menu-container absolute top-0 left-0 w-screen" id="menu" style={{display:"none"}}>
-      <Menu Navlist={NavLinks} />
+    <nav className="navbar-bg py-4 px-8 border-b w-screen border-nav-border absolute z-40 ">
+      <div
+        className="menu-container absolute top-0 left-0 w-screen"
+        id="menu"
+        style={{ display: "none" }}>
+        <Menu Navlist={NavLinks} />
+        {session ? (
+          <h1>Logged in </h1>
+        ) : (
+          <Link href="/api/auth/signin">Sign in</Link>
+        )}
       </div>
       <div className="flex w-full">
         <a href="#" className="float-left ml-0">
           <span className="whitespace-nowrap">
-            <Image src="/src/tudar.png" alt="Tudar" width={120} height={100}></Image>
+            <Image
+              src="/src/tudar.png"
+              alt="Tudar"
+              width={120}
+              height={100}></Image>
           </span>
         </a>
         <div className="flex items-center justify-center w-screen ">
-          <ul
-            className="md:flex justify-center flex-row min-w-screen hidden gap-10 navlist">
+          <ul className="md:flex justify-center flex-row min-w-screen hidden gap-10 navlist">
             {NavLinks.map((link) => (
-              <Link
-                className="alink"
-                href={link.href}
-                key={link.key}>
+              <Link className="alink" href={link.href} key={link.key}>
                 {link.text}
               </Link>
             ))}
+            {session ? (
+              <h1>Logged in </h1>
+            ) : (
+              <Link href="/api/auth/signin">Sign in</Link>
+            )}
           </ul>
         </div>
         <div

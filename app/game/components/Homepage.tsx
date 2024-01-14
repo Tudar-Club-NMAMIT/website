@@ -2,15 +2,15 @@ import React from "react";
 import Button from "./Button";
 import Link from "next/link";
 import AuthProviders from "./AuthProviders";
-import { getCurrentUser } from "@/libs/session";
+// import { getCurrentUser } from "@/libs/session";
 import ProfileMenu from "./ProfileMenu";
 const NavLinks = [
   { href: "/", key: "Play", text: "Play" },
   
 ];
 const Homepage: React.FC = async () => {
-  const session = await getCurrentUser();
-  console.log(session);
+  // const session = await getCurrentUser();
+  // console.log(session);
   return (
     <div className="h-screen w-full  bg-blue-100 m-0">
       <div className="flex flex-col gap-5 items-center justify-center overflow-hidden ">
@@ -29,12 +29,13 @@ const Homepage: React.FC = async () => {
         <div className="sm:flex-row flex-col flex justify-center items-center">
           <Button>HOW</Button>
           <div className="flexCenter">
-            {session?.user ? "" : <AuthProviders />}
+            {/* {session?.user ? "" : <AuthProviders />}
           </div>
           {session?.user ? <Button variant="primary"><Link className="font-extrabold alink" href="/game/play" key="Play">Play
-            </Link></Button> : ""}
+            </Link></Button> : ""} */}
         </div>
       </div>
+    </div>
     </div>
   );
 };

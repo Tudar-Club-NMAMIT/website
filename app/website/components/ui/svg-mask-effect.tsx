@@ -52,7 +52,7 @@ export const MaskContainer = ({
           }px`,
           WebkitMaskSize: `${maskSize}px`,
         }}
-        transition={{ type: "tween", ease: "backOut", duration: 0.1 }}>
+        transition={{ type: "tween", ease: "backOut", duration: 0.3 }}>
         <div className="absolute  font-bold bg-white h-1/2 w-full z-0 " />
         <div
           onMouseEnter={() => {
