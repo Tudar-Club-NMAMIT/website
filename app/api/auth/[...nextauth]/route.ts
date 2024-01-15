@@ -1,7 +1,7 @@
-
 import { prisma } from "@/app/utils/db";
 import NextAuth, { AuthOptions } from "next-auth";
-import GoogleProvider from "next-auth/providers/google"
+import GoogleProvider from "next-auth/providers/google";
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
 const authOptions: AuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
@@ -15,7 +15,8 @@ const authOptions: AuthOptions = {
 const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
-    function PrismaAdapter(prisma: any): import("next-auth/adapters").Adapter | undefined {
-        throw new Error("Function not implemented.");
-    }
-
+function PrismaAdapter(
+  prisma: any
+): import("next-auth/adapters").Adapter | undefined {
+  throw new Error("Function not implemented.");
+}
