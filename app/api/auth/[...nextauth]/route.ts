@@ -15,8 +15,3 @@ const authOptions: AuthOptions = {
 const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
-function PrismaAdapter(
-  prisma: any
-): import("next-auth/adapters").Adapter | undefined {
-  throw new Error("Function not implemented.");
-}

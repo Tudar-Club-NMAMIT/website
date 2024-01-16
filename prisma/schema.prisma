@@ -13,8 +13,9 @@ model Post {
   id        String  @id @default(cuid())
   title     String
   content   String?
+  imageUrl  String?
   createdAt DateTime @default(now()) 
-  author    User?@relation(fields:[authorId], references:[id]) //name
+  author    User?@relation(fields:[authorId], references:[id]) 
   authorId  String? //email
   }
   
