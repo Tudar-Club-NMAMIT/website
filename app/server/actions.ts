@@ -1,6 +1,5 @@
 "use server";
 
-import { title } from "process";
 import { prisma } from "../utils/db";
 
 export async function createPost(title: string, desc: string) {

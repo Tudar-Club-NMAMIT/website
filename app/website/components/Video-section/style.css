@@ -1,0 +1,8 @@
+/* style.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.gradient-overlay {
+  background: linear-gradient(to bottom, rgb(17, 0, 0,1) 100px, rgba(34, 34, 34, 0) 100%);
+}
