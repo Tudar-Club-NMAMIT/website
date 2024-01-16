@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { ChangeEvent } from "react";
 import { useSession } from "next-auth/react";
+import { createPost } from "../server/actions";
 const index = () => {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
@@ -38,14 +39,16 @@ const index = () => {
       console.log("Response");
       const data = await response.json();
       const imageUrl = data.data.url;
-      if (imageUrl) {
-        const body = { title, desc, imageUrl, email };
-        const response = await fetch("api/post", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(body),
-        });
-      }
+      // if (imageUrl) {
+      //   const body = { title, desc, imageUrl, email };
+      //   const response = await fetch("api/post", {
+      //     method: "POST",
+      //     headers: { "Content-Type": "application/json" },
+      //     body: JSON.stringify(body),
+      //   });
+      // }
+      const res = await createPost(title, desc);
+      console.log(res);
     } catch (e) {
       console.log(e);
     }
