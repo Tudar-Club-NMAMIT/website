@@ -54,19 +54,8 @@ const Navbar = () => {
       <div
         className="menu-container absolute top-0 left-0 w-screen"
         id="menu"
-<<<<<<< HEAD
-        style={{ display: "none" }}
-      >
-        <Menu Navlist={NavLinks} />
-        {session ? (
-          <h1>Logged in </h1>
-        ) : (
-          <Link href="/api/auth/signin">Sign in</Link>
-        )}
-=======
         style={{ display: "none" }}>
         <Menu Navlist={NavLinks}  />
->>>>>>> 4c338067917356f7e0bf354abf5852bcfb832ee2
       </div>
       <div className="flex w-full">
         <a href="#" className="float-left ml-0">
