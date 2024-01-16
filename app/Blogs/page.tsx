@@ -1,17 +1,6 @@
 import React from "react";
 import { prisma } from "../utils/db";
-async function getPosts() {
-  const posts = await prisma.user.findMany({
-    where: {
-      email: "amithjagannath02@gmail.com",
-    },
-    include: {
-      posts: true,
-    },
-  });
-
-  return posts;
-}
+import { getPosts } from "../server/actions";
 
 const page = async () => {
   const posts = await getPosts();
@@ -27,6 +16,7 @@ const page = async () => {
               <li key={post.id}>
                 <strong>Title:</strong> {post.title}, <strong>Content:</strong>{" "}
                 {post.content}
+                <h3>{post.imageUrl}</h3>
               </li>
             ))}
           </ul>
@@ -35,3 +25,4 @@ const page = async () => {
     </div>
   );
 };
+export default page;

@@ -47,8 +47,10 @@ const index = () => {
       //     body: JSON.stringify(body),
       //   });
       // }
-      const res = await createPost(title, desc);
-      console.log(res);
+      if (imageUrl) {
+        const res = await createPost(title, desc, imageUrl);
+        console.log(res);
+      }
     } catch (e) {
       console.log(e);
     }
