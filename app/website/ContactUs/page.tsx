@@ -71,7 +71,7 @@ const Contact = () => {
                       onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
-                  <div className="relative mb-6" data-te-input-wrapper-init>
+                  <div className="relative mb-6" >
                     <textarea
                       name="message"
                       onChange={(e) => setMessage(e.target.value)}
