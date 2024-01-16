@@ -2,7 +2,12 @@
 
 import { prisma } from "../utils/db";
 
-export async function createPost(title: string, desc: string, image: string) {
+export async function createPost(
+  title: string,
+  desc: string,
+  image: string,
+  reference: string
+) {
   const user = await prisma.user.findUnique({
     where: {
       email: "nittetudar@gmail.com",
@@ -13,6 +18,7 @@ export async function createPost(title: string, desc: string, image: string) {
       title: title,
       content: desc,
       imageUrl: image,
+      reference: reference,
       author: { connect: { id: user?.id } },
     },
   });
