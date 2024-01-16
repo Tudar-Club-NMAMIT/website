@@ -20,8 +20,7 @@ const Navbar = () => {
   const [flag, setflag] = useState(true);
 
   const { data: session } = useSession();
-  
-  
+
   const handleClick = () => {
     const bars = document.querySelectorAll<HTMLElement>(".bar-hamburger");
     const menu = document.getElementById("menu");
@@ -54,19 +53,9 @@ const Navbar = () => {
       <div
         className="menu-container absolute top-0 left-0 w-screen"
         id="menu"
-<<<<<<< HEAD
         style={{ display: "none" }}
       >
         <Menu Navlist={NavLinks} />
-        {session ? (
-          <h1>Logged in </h1>
-        ) : (
-          <Link href="/api/auth/signin">Sign in</Link>
-        )}
-=======
-        style={{ display: "none" }}>
-        <Menu Navlist={NavLinks}  />
->>>>>>> 4c338067917356f7e0bf354abf5852bcfb832ee2
       </div>
       <div className="flex w-full">
         <a href="#" className="float-left ml-0">
@@ -86,20 +75,24 @@ const Navbar = () => {
                 {link.text}
               </Link>
             ))}
-            
-
-
           </ul>
         </div>
         <div className="float float-right">
-
-        {session ? (
-          <div className="hidden md:block"><Image width={50} height={50} src={session.user?.image || ""} alt="err" className="rounded-full"></Image> </div>
+          {session ? (
+            <div className="hidden md:block">
+              <Image
+                width={50}
+                height={50}
+                src={session.user?.image || ""}
+                alt="err"
+                className="rounded-full"
+              ></Image>{" "}
+            </div>
           ) : (
             <div>
               <Link href="/api/auth/signin">Sign in</Link>
             </div>
-            )}
+          )}
         </div>
         <div
           className="md:hidden flex  w-10 h float-right m-0 hamburger p-1"
