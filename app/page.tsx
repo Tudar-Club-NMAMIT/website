@@ -11,24 +11,22 @@ import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { prisma } from "./utils/db";
 
-
-export default  function Home() {
+export default function Home() {
   const { data: session, status } = useSession();
   // const user = await prisma.user.findMany();
   // console.log("user"+user)
   return (
     <>
-    
-      <div className="bg-[#000]">
-           <Navbar />
-           <Hero />
-          <Club />
-          <Video />
-          <Events />
-          <Card />
-          <Blog />
-          <Footer />
-        </div>
-        </>
+      <div className="bg-[#000] tulu-font">
+        <Navbar />
+        <Hero />
+        <Club />
+        <Video />
+        <Events />
+        <Card />
+        <Blog />
+        <Footer />
+      </div>
+    </>
   );
 }
