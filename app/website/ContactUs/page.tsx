@@ -22,7 +22,7 @@ const Contact = () => {
                       id="exampleInput91" placeholder="Email address" />
                 
                   </div>
-                  <div className="relative mb-6" data-te-input-wrapper-init>
+                  <div className="relative mb-6" >
                     <textarea
                       className="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none "
                       id="exampleFormControlTextarea1"  placeholder="Your message"></textarea>
