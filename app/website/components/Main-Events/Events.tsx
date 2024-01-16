@@ -7,9 +7,9 @@ const ShuffleHero = () => {
   return (
     <section className="bg-[#000] z-30 m-4 w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-8xl mx-auto">
       <div className=" m-3 lg:m-6 flex-col  flex gap-4 ">
-        <h2 className="event-heading text-3xl lg:text-5xl font-bold">
+        <h1 className="event-heading text-3xl lg:text-5xl font-bold">
           Glimpses of our Events.
-        </h2>
+        </h1>
         <p className="text-2xl font-bold  text-justify text-gray-400">
           TUDAR Club has been a catalyst for unforgettable events that celebrate
           Tulu culture. From engaging workshops and language learning sessions
