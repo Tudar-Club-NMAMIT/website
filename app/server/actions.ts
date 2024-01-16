@@ -4,7 +4,9 @@ export async function createPost(
   title: string,
   desc: string,
   image: string,
-  reference: string
+  createdBy: string,
+  reference: string,
+  credits: string
 ) {
   const user = await prisma.user.findUnique({
     where: {
@@ -17,6 +19,8 @@ export async function createPost(
       content: desc,
       imageUrl: image,
       reference: reference,
+      createdBy: createdBy,
+      credits: credits,
       author: { connect: { id: user?.id } },
     },
   });
@@ -54,4 +58,20 @@ export async function getPosts() {
   });
 
   return posts;
+}
+
+export async function getPostById(id: string) {
+  const post = await prisma.post.findFirst({
+    where: {
+      id: id,
+    },
+    select: {
+      title: true,
+      content: true,
+      imageUrl: true,
+      reference: true,
+      createdBy: true,
+    },
+  });
+  return post;
 }
