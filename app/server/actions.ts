@@ -1,7 +1,5 @@
 "use server";
-
 import { prisma } from "../utils/db";
-
 export async function createPost(
   title: string,
   desc: string,
@@ -22,6 +20,27 @@ export async function createPost(
       author: { connect: { id: user?.id } },
     },
   });
+}
+
+export async function createEvent(
+  image: string,
+  title: string,
+  date: string,
+  organizedBy: string,
+  venue: string,
+  desc: string
+) {
+  const res = await prisma.events.create({
+    data: {
+      imageUrl: image,
+      title: title,
+      date: date,
+      organizedBy: organizedBy,
+      venue: venue,
+      description: desc,
+    },
+  });
+  console.log(res);
 }
 
 export async function getPosts() {
