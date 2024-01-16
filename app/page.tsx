@@ -4,7 +4,7 @@ import Club from "./website/components/Club/Club";
 import Hero from "./website/components/Hero/Hero";
 import Events from "./website/components/Main-Events/Events";
 import Card from "./website/components/Card-section/Card";
-import Blog from "./website/components/Blog Carousel/Blog";
+import Blog from "./website/components/Carousel/Blog";
 import Footer from "./website/components/Footer/Footer";
 import Video from "./website/components/Video-section/Video";
 import { useSession } from "next-auth/react";

@@ -43,7 +43,7 @@ const Hero = () => {
       <div
         className="absolute inset-0 z-20 "
         style={{
-          backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 100px ), url(/src/p-above-img.png)`,
+          backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 100px ), url(/src/p-above-img.png)`,
           backgroundPosition: "bottom",
           backgroundSize: "cover",
         }}

@@ -2,13 +2,14 @@
 
 import { prisma } from "../utils/db"
 
-export async function uploadUser(name : string) {
+export async function uploadUser(formData : FormData) {
     await prisma.user.create({
         data : {
-            name
+            
         }
     })
     return {
-        message : name
+        message : "name"
     }
 }
+
