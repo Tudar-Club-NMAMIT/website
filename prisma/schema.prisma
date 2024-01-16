@@ -18,6 +18,7 @@ model Post {
   createdAt DateTime @default(now()) 
   author    User?@relation(fields:[authorId], references:[id]) 
   authorId  String? //email
+  show      Boolean @default(true)
   }
 
 model Perform {
@@ -82,3 +83,14 @@ model VerificationToken {
 
   @@unique([identifier, token])
   }
+
+model Events {
+  id    String    @id @default(cuid())
+  title String
+  imageUrl String
+  description String
+  date String
+  attendedBy String? 
+  organizedBy String? @default("Core Team")
+  venue String
+}
