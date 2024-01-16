@@ -26,6 +26,7 @@
     "clsx": "^2.1.0",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
+    "flowbite-react": "^0.7.2",
     "framer-motion": "^10.18.0",
     "graceful-fs": "^4.2.11",
     "graphql-request": "^6.1.0",
