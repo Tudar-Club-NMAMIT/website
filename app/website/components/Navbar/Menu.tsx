@@ -9,7 +9,6 @@ const Menu = (NavLists: {
   Navlist: { href: string; key: string; text: string }[];
 }) => {
   const { data: session} = useSession();
-  console.log(session);
   return (
     <div className="container-menu navbar-bg-menu" id="menu-container">
 
@@ -19,7 +18,7 @@ const Menu = (NavLists: {
             <span className="text-black">{session?.user?.name}</span>
         </div>
 ) : (
-          <Link href="/api/auth/signin">Sign in</Link>
+          <Link href="/api/auth/signin" className="text-black">Sign in</Link>
         )}
       
 

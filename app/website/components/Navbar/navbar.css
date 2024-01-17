@@ -21,6 +21,19 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     font-size: 20px;
     font-weight: 900;
 }
+.signIn-button{
+    border: 2px solid #afa18f;
+    border-radius: 5px;
+}
+.signIn-button:hover{
+    background-color: #afa18f;
+    color: black;
+    border: 2px solid white;
+}
+.transition-style{
+    transition: transform 0.5s ease-out;
+
+}
 .alink{
     color: white;
     font-size: 1.00rem ;
@@ -51,7 +64,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .alink::before{
     content: "";
-    height: 5px;
+    height: 4px;
     width: 0%;
     position: absolute;
     background-color:white;
