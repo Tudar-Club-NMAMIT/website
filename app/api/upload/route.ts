@@ -9,13 +9,7 @@ cloudinary.config({
   api_key: "782763488224328",
   api_secret: "ghLKmmoUmfhCgORQdKn09xrmr4A",
 });
-export const config = {
-  api: {
-    bodyParser: {
-      sizeLimit: "8mb", // Set desired value here
-    },
-  },
-};
+
 export async function POST(request: NextRequest, response: NextResponse) {
   const { path } = await request.json();
 
