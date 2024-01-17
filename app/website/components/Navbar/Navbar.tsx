@@ -132,13 +132,13 @@ const Navbar = () => {
                       Profile
                     </Link>
                   </li>
-                  <li>
+                  {session.user?.email === "nittetudar@gmail.com"?<li>
                     <Link
                       href="/Dashboard"
                       className="block px-4 py-2 text-white hover:bg-white hover:text-black">
                       Dashboard
                     </Link>
-                  </li>
+                  </li>:null}
                 </ul>
                 <div className="py-2 ">
                   <button
