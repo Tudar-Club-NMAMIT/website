@@ -10,6 +10,7 @@ import Video from "./website/components/Video-section/Video";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { prisma } from "./utils/db";
+import FAQ from "./website/components/FAQ/FAQ";
 
 export default function Home() {
   const { data: session, status } = useSession();
@@ -25,6 +26,7 @@ export default function Home() {
         <Events />
         <Card />
         <Blog />
+        <FAQ/>
         <Footer />
       </div>
     </>
