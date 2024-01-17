@@ -9,6 +9,7 @@ cloudinary.config({
   api_key: "782763488224328",
   api_secret: "ghLKmmoUmfhCgORQdKn09xrmr4A",
 });
+
 export async function POST(request: NextRequest, response: NextResponse) {
   const { path } = await request.json();
 
