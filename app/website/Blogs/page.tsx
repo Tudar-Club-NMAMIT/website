@@ -4,7 +4,8 @@ import Footer from "../components/Footer/Footer";
 import { getPosts } from "@/app/server/actions";
 import Link from "next/link";
 import Image from "next/image";
-async function Blog() {
+
+const page = async () => {
   const userData = await getPosts();
   const posts = userData[0].posts;
   console.log("pots:" + posts);
@@ -79,4 +80,8 @@ async function Blog() {
   );
 }
 
-export default Blog;
+export default page
+
+
+
+
