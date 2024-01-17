@@ -4,11 +4,15 @@ import React from "react";
 import { useState } from "react";
 import { ChangeEvent } from "react";
 import { createPost } from "../server/actions";
+import Image from "next/image";
 const BlogForm = () => {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [image, setImage] = useState("");
   const [author, setAuthor] = useState("");
+  const [reference, setReference] = useState("");
+  const [credits, setCredits] = useState("");
+  const [added, setAdded] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const handleChangeImage = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -44,7 +48,14 @@ const BlogForm = () => {
       const data = await response.json();
       const imageUrl = data.data.url;
       if (imageUrl) {
-        const res = await createPost(title, desc, imageUrl, author);
+        const res = await createPost(
+          title,
+          desc,
+          imageUrl,
+          author,
+          reference,
+          credits
+        );
         console.log(res);
       }
       setSubmitting(false);
@@ -52,6 +63,9 @@ const BlogForm = () => {
       setDesc("");
       setAuthor("");
       setImage("");
+      setReference("");
+      setCredits("");
+      setAdded(true);
     } catch (e) {
       console.log(e);
     }
@@ -197,11 +211,23 @@ const BlogForm = () => {
                         />
                       </svg>
                       <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                        <span className="font-semibold">Click to upload</span>{" "}
-                        or drag and drop
+                        <span className="font-semibold">
+                          {!image ? "Click to upload" : ""}
+                        </span>
+                        {!image ? "or drag and drop" : ""}
                       </p>
+
+                      {image && (
+                        <Image
+                          src={image}
+                          className="absolute"
+                          alt="image"
+                          width={250}
+                          height={250}
+                        />
+                      )}
                       <p className="text-xs text-gray-500 dark:text-gray-400">
-                        SVG, PNG, JPG or GIF (MAX. 800x400px)
+                        {!image ? "SVG, PNG, JPG or GIF (MAX. 800x400px)" : ""}
                       </p>
                     </div>
                     <input
@@ -227,10 +253,11 @@ const BlogForm = () => {
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                  placeholder="Product brand"
+                  placeholder="Title"
                   required={true}
                 />
               </div>
+
               <div className="w-full">
                 <label
                   htmlFor="author"
@@ -245,10 +272,46 @@ const BlogForm = () => {
                   value={author}
                   onChange={(e) => setAuthor(e.target.value)}
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                  placeholder="Adarsh shetty"
+                  placeholder="Author"
                   required={true}
                 />
               </div>
+
+              <div className="w-full">
+                <label
+                  htmlFor="title"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Reference
+                </label>
+                <input
+                  type="text"
+                  name="reference"
+                  id="reference"
+                  value={reference}
+                  onChange={(e) => setReference(e.target.value)}
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                  placeholder="Optional"
+                />
+              </div>
+              <div className="w-full">
+                <label
+                  htmlFor="title"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Credits
+                </label>
+                <input
+                  type="text"
+                  name="credits"
+                  id="credits"
+                  value={credits}
+                  onChange={(e) => setCredits(e.target.value)}
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                  placeholder="Optional"
+                />
+              </div>
+
               <div className="sm:col-span-2">
                 <label
                   htmlFor="description"
@@ -269,10 +332,14 @@ const BlogForm = () => {
             <button
               type="submit"
               className={`inline-flex ${
-                submitting ? " bg-slate-600" : "bg-white"
+                added ? " bg-green-500" : "bg-white"
               } items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-black  rounded-lg `}
             >
-              {submitting ? "Adding Blog..." : "Add Blog"}
+              {submitting
+                ? "Adding Blog..."
+                : added
+                ? "Blog Added"
+                : "Add Blog"}
             </button>
           </form>
         </div>
