@@ -1,9 +1,13 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Berkshire_Swash } from "next/font/google";
 import { NextAuthProvider } from "./website/components/providers/providers";
 
-const inter = Inter({ subsets: ["latin"] });
+const berkish = Berkshire_Swash({
+  weight: "400",
+  style: "normal",
+  subsets: ["latin", "latin-ext"],
+});
 
 export const metadata: Metadata = {
   title: "Tudar",
@@ -17,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={berkish.className}>
         <NextAuthProvider>{children}</NextAuthProvider>
       </body>
     </html>

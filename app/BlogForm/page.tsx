@@ -71,7 +71,7 @@ const BlogForm = () => {
     }
   };
   return (
-    <div>
+    <div className="font-sans">
       <button
         data-drawer-target="default-sidebar"
         data-drawer-toggle="default-sidebar"
