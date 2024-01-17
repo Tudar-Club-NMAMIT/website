@@ -2,12 +2,17 @@ import React from "react";
 import Navbar from "./Navbar/Navbar";
 import Image from "next/image";
 import Footer from "./Footer/Footer";
+
 type UserProps = {
-  name: string;
-  image: string;
-  bio: string;
-  isMember: boolean;
+  user: string | {
+    isMember: boolean;
+    image: string | null;
+    name: string | null;
+    bio: string | null;
+  };
 };
+
+
 const ProfilePage = (user: UserProps) => {
   return (
     <>
@@ -16,7 +21,7 @@ const ProfilePage = (user: UserProps) => {
         <div className="px-6">
           <div className="flex items-center flex-wrap justify-center pt-10">
             <Image
-              src={user?.image || ""}
+              src={}
               width="100"
               height="100"
               alt="Profile pic"
