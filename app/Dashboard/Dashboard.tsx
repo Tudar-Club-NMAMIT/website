@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import User_edit from "./components/manageUser/User_edit";
 
 const Dashboard = () => {
   return (
@@ -59,7 +60,7 @@ const Dashboard = () => {
                   viewBox="0 0 20 18">
                   <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
                 </svg>
-                <span className="flex-1 ms-3 whitespace-nowrap">User</span>
+                <span className="flex-1 ms-3 whitespace-nowrap">Manage User</span>
               </Link>
             </li>
             <li>
@@ -74,7 +75,7 @@ const Dashboard = () => {
                   viewBox="0 0 20 18">
                   <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
                 </svg>
-                <span className="flex-1 ms-3 whitespace-nowrap">Events</span>
+                <span className="flex-1 ms-3 whitespace-nowrap">Add Events</span>
               </Link>
             </li>
             <li>
@@ -88,7 +89,7 @@ const Dashboard = () => {
                   viewBox="0 0 20 18">
                   <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
                 </svg>
-                <span className="flex-1 ms-3 whitespace-nowrap">Blogs</span>
+                <span className="flex-1 ms-3 whitespace-nowrap">Add Blogs</span>
               </Link>
             </li>
           </ul>
@@ -102,7 +103,7 @@ const Dashboard = () => {
               <p className="text-2xl text-gray-400 dark:text-gray-500">
                 <svg
                   className="w-3.5 h-3.5"
-                  aria-hidden="true"
+                  aria-hidden="false"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 18 18">
@@ -120,7 +121,7 @@ const Dashboard = () => {
               <p className="text-2xl text-gray-400 dark:text-gray-500">
                 <svg
                   className="w-3.5 h-3.5"
-                  aria-hidden="true"
+                  aria-hidden="false"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 18 18">
@@ -138,7 +139,7 @@ const Dashboard = () => {
               <p className="text-2xl text-gray-400 dark:text-gray-500">
                 <svg
                   className="w-3.5 h-3.5"
-                  aria-hidden="true"
+                  aria-hidden="false"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 18 18">
@@ -154,29 +155,14 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
-            <p className="text-2xl text-gray-400 dark:text-gray-500">
-              <svg
-                className="w-3.5 h-3.5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 18 18">
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 1v16M1 9h16"
-                />
-              </svg>
-            </p>
+            <User_edit/>
           </div>
           <div className="grid grid-cols-2 gap-4 mb-4">
             <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
               <p className="text-2xl text-gray-400 dark:text-gray-500">
                 <svg
                   className="w-3.5 h-3.5"
-                  aria-hidden="true"
+                  aria-hidden="false"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 18 18">
@@ -194,7 +180,7 @@ const Dashboard = () => {
               <p className="text-2xl text-gray-400 dark:text-gray-500">
                 <svg
                   className="w-3.5 h-3.5"
-                  aria-hidden="true"
+                  aria-hidden="false"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 18 18">
@@ -212,7 +198,7 @@ const Dashboard = () => {
               <p className="text-2xl text-gray-400 dark:text-gray-500">
                 <svg
                   className="w-3.5 h-3.5"
-                  aria-hidden="true"
+                  aria-hidden="false"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 18 18">
@@ -230,7 +216,7 @@ const Dashboard = () => {
               <p className="text-2xl text-gray-400 dark:text-gray-500">
                 <svg
                   className="w-3.5 h-3.5"
-                  aria-hidden="true"
+                  aria-hidden="false"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 18 18">
@@ -249,7 +235,7 @@ const Dashboard = () => {
             <p className="text-2xl text-gray-400 dark:text-gray-500">
               <svg
                 className="w-3.5 h-3.5"
-                aria-hidden="true"
+                aria-hidden="false"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 18 18">
