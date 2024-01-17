@@ -2,7 +2,7 @@
 import React from "react";
 import "./navbar.css";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Menu from "./Menu";
 import { useSession } from "next-auth/react";
@@ -16,11 +16,31 @@ const NavLinks = [
   { href: "/ContactUs", key: "Contact", text: "Contact" },
 ];
 
+
+
 const Navbar = () => {
   const [flag, setflag] = useState(true);
-
   const { data: session } = useSession();
 
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const controlNavbar = useCallback(() => {
+    if (typeof window !== 'undefined') {
+      window.scrollY > lastScrollY? setShow(false):setShow(true);
+      setLastScrollY(window.scrollY);
+    }
+  }, [lastScrollY]);
+  
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', controlNavbar);
+        return () => {
+        window.removeEventListener('scroll', controlNavbar);
+      };
+    }
+  }, [controlNavbar]);
+    
   const handleClick = () => {
     const bars = document.querySelectorAll<HTMLElement>(".bar-hamburger");
     const menu = document.getElementById("menu");
@@ -39,8 +59,8 @@ const Navbar = () => {
         menu.style.display = "none";
         menu.style.animation = "none";
         bars[1].style.display = "block";
-        bars[0].style.animation = "cross-1 0.3s ease-in reverse";
-        bars[2].style.animation = "cross-2 0.3s ease-in reverse";
+        bars[0].style.animation = "none";
+        bars[2].style.animation = "none";
       }
       bars.forEach((bar) => {
         bar.style.background = color;
@@ -49,7 +69,7 @@ const Navbar = () => {
     }
   };
   return (
-    <nav className="navbar-bg py-4 px-8 border-b w-screen border-nav-border absolute z-40 ">
+    <nav className={`navbar-bg py-4 px-8 border-b w-screen fixed border-nav-border z-40 top-0 transition-style ${flag? (show ? 'translate-y-0' : '-translate-y-full'):'translate-y-0'}`}>
       <div
         className="menu-container absolute top-0 left-0 w-screen"
         id="menu"
@@ -77,20 +97,13 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-        <div className="float float-right">
-          {session ? (
-            <div className="hidden md:block">
-              <Image
-                width={50}
-                height={50}
-                src={session.user?.image || ""}
-                alt="err"
-                className="rounded-full"
-              ></Image>{" "}
-            </div>
+        <div className="float float-right hidden md:block ">
+
+        {session ? (
+          <div className=""><Image width={50} height={50} src={session.user?.image || ""} alt="err" className="rounded-full"></Image> </div>
           ) : (
-            <div>
-              <Link href="/api/auth/signin">Sign in</Link>
+            <div className="flex items-center">
+              <Link href="/api/auth/signin" className="signIn-button"><div className="pointer px-1 whitespace-nowrap">Sign-In</div></Link>
             </div>
           )}
         </div>
