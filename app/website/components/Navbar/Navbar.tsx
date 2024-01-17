@@ -9,11 +9,11 @@ import { useSession } from "next-auth/react";
 
 const NavLinks = [
   { href: "/", key: "Home", text: "Home" },
-  { href: "/Team", key: "Team", text: "Club Team" },
-  { href: "/Aboutus", key: "About", text: "About" },
-  { href: "/Events", key: "Events", text: "Events" },
-  { href: "/Blogs", key: "Blog", text: "Blog" },
-  { href: "/ContactUs", key: "Contact", text: "Contact" },
+  { href: "/website/Team", key: "Team", text: "Club Team" },
+  { href: "/website/Aboutus", key: "About", text: "About" },
+  { href: "/website/Events", key: "Events", text: "Events" },
+  { href: "/website/Blogs", key: "Blog", text: "Blog" },
+  { href: "/website/ContactUs", key: "Contact", text: "Contact" },
 ];
 
 
