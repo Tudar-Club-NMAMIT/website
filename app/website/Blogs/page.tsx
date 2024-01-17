@@ -1,8 +1,13 @@
-import React from 'react'
-import Navbar from '../components/Navbar/Navbar'
-import Footer from '../components/Footer/Footer'
-
-const Blog = () => {
+import React from "react";
+import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
+import { getPosts } from "@/app/server/actions";
+import Link from "next/link";
+import Image from "next/image";
+async function Blog() {
+  const userData = await getPosts();
+  const posts = userData[0].posts;
+  console.log("pots:" + posts);
   return (
     <div>
         <Navbar/>
@@ -70,8 +75,46 @@ const Blog = () => {
                     <button type="button" className="px-6 py-3 text-sm rounded-md hover:underline dark:bg-gray-900 dark:text-gray-400">Load more posts...</button>
                 </div>
             </div>
-        </section>
-        <Footer/>
+          </a>
+          <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 rounded-lg">
+            {posts.map((post) => (
+              <Link
+                href={`Blog/${post.id}`}
+                className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 rounded-lg"
+              >
+                <Image
+                  src={post.imageUrl}
+                  width={500}
+                  height={500}
+                  alt="blog"
+                  className="rounded-lg"
+                ></Image>
+                <div className="p-6 space-y-2">
+                  <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
+                    {post.title}
+                  </h3>
+                  {new Intl.DateTimeFormat("en-US", {
+                    month: "short",
+                    day: "numeric",
+                    year: "numeric",
+                  }).format(post.createdAt)}
+
+                  {/* <p>Mei ex aliquid eleifend forensibus, quo ad dicta apeirian neglegentur, ex has tantas percipit perfecto. At per tempor albucius perfecto, ei probatus consulatu patrioque mea, ei vocent delicata indoctum pri.</p> */}
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="flex justify-center">
+            <button
+              type="button"
+              className="px-6 py-3 text-sm rounded-md hover:underline dark:bg-gray-900 dark:text-gray-400"
+            >
+              Load more posts...
+            </button>
+          </div>
+        </div>
+      </section>
+      <Footer />
     </div>
   );
 }
