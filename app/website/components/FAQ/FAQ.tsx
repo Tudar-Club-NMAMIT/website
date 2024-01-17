@@ -19,7 +19,7 @@ function FAQ() {
           dolorem, doloremque rem aliquid perferendis.
         </p>
       </div>
-{/* 
+
       <div className="mb-6 md:mb-8 lg:mb-12">
         <p className="mb-4 font-bold">Non cupidatat skateboard dolor brunch?</p>
         <p className="text-neutral-500 dark:text-neutral-300">
@@ -29,7 +29,7 @@ function FAQ() {
           unde quod modi magnam ab deserunt ipsam sint aliquid dolores
           libero repellendus cupiditate mollitia quidem dolorem odit
         </p>
-      </div> */}
+      </div>
 
       <div className="mb-6 md:mb-8 lg:mb-12">
         <p className="mb-4 font-bold">
@@ -61,7 +61,7 @@ function FAQ() {
         </p>
       </div>
 
-      {/* <div className="mb-6 md:mb-8 lg:mb-12">
+      <div className="mb-6 md:mb-8 lg:mb-12">
         <p className="mb-4 font-bold">
           Distinctio corporis, iure facere ducimus?
         </p>
@@ -70,7 +70,7 @@ function FAQ() {
           incidunt, fuga non iste dignissimos officiis nam officia obcaecati
           commodi ratione qui nesciunt.
         </p>
-      </div> */}
+      </div>
     </div>
   </section>
 </div>
