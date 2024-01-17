@@ -21,6 +21,7 @@ const NavLinks = [
 const Navbar = () => {
   const [flag, setflag] = useState(true);
   const { data: session } = useSession();
+
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -39,6 +40,7 @@ const Navbar = () => {
       };
     }
   }, [controlNavbar]);
+    
   const handleClick = () => {
     const bars = document.querySelectorAll<HTMLElement>(".bar-hamburger");
     const menu = document.getElementById("menu");
@@ -71,8 +73,9 @@ const Navbar = () => {
       <div
         className="menu-container absolute top-0 left-0 w-screen"
         id="menu"
-        style={{ display: "none" }}>
-        <Menu Navlist={NavLinks}  />
+        style={{ display: "none" }}
+      >
+        <Menu Navlist={NavLinks} />
       </div>
       <div className="flex w-full">
         <a href="#" className="float-left ml-0">
@@ -92,9 +95,6 @@ const Navbar = () => {
                 {link.text}
               </Link>
             ))}
-            
-
-
           </ul>
         </div>
         <div className="float float-right hidden md:block ">
@@ -105,7 +105,7 @@ const Navbar = () => {
             <div className="flex items-center">
               <Link href="/api/auth/signin" className="signIn-button"><div className="pointer px-1 whitespace-nowrap">Sign-In</div></Link>
             </div>
-            )}
+          )}
         </div>
         <div
           className="md:hidden flex  w-10 h float-right m-0 hamburger p-1"
