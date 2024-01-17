@@ -75,3 +75,18 @@ export async function getPostById(id: string) {
   });
   return post;
 }
+
+export async function getCurrentUser(email: string) {
+  const user = await prisma.user.findFirst({
+    where: {
+      email: email,
+    },
+    select: {
+      name: true,
+      image: true,
+      isMember: true,
+      bio: true,
+    },
+  });
+  return user;
+}
