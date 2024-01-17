@@ -76,10 +76,10 @@ export async function getPostById(id: string) {
   return post;
 }
 
-export async function getCurrentUser(email: string) {
+export async function getUserById(id: string) {
   const user = await prisma.user.findFirst({
     where: {
-      email: email,
+      id: id,
     },
     select: {
       name: true,

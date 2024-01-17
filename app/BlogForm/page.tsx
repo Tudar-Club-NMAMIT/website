@@ -16,11 +16,16 @@ const BlogForm = () => {
   const [submitting, setSubmitting] = useState(false);
   const handleChangeImage = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
-    console.log("yeppo");
+
     const file = e.target.files?.[0];
     if (!file) return;
     if (!file.type.includes("image")) {
       alert("Please upload an image");
+    }
+    const fileSizeInMB = file.size / (1024 * 1024);
+    if (fileSizeInMB > 1) {
+      alert("File size exceeds 1MB. Please choose a smaller file.");
+      return;
     }
     const reader = new FileReader();
     reader.readAsDataURL(file);
@@ -28,15 +33,10 @@ const BlogForm = () => {
       const result = reader.result as string;
       setImage(result);
     };
-    console.log(image);
   };
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    console.log(title);
-    console.log(image);
-    console.log(desc);
-    console.log(author);
     setSubmitting(true);
     try {
       const response = await fetch("/api/upload", {
@@ -44,7 +44,7 @@ const BlogForm = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ path: image }),
       });
-      console.log("Response");
+     
       const data = await response.json();
       const imageUrl = data.data.url;
       if (imageUrl) {
@@ -56,7 +56,7 @@ const BlogForm = () => {
           reference,
           credits
         );
-        console.log(res);
+       
       }
       setSubmitting(false);
       setTitle("");
