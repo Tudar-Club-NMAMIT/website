@@ -9,7 +9,7 @@ async function Blog() {
   const posts = userData[0].posts;
   console.log("pots:" + posts);
   return (
-    <div>
+    <>
         <Navbar/>
         <section className="dark:bg-gray-800 dark:text-gray-100 pt-28">
             <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
@@ -75,7 +75,6 @@ async function Blog() {
                     <button type="button" className="px-6 py-3 text-sm rounded-md hover:underline dark:bg-gray-900 dark:text-gray-400">Load more posts...</button>
                 </div>
             </div>
-          </a>
           <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 rounded-lg">
             {posts.map((post) => (
               <Link
@@ -112,10 +111,9 @@ async function Blog() {
               Load more posts...
             </button>
           </div>
-        </div>
-      </section>
+          </section>
       <Footer />
-    </div>
+    </>
   );
 }
 
