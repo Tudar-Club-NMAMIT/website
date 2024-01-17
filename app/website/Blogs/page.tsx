@@ -36,18 +36,22 @@ async function Blog() {
               </p>
             </div>
           </a>
-          <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="flex sm:grid justify-center items-center flex-col grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {posts.map((post) => (
               <Link
                 href={`/Blog/${post.id}`}
                 rel="noopener noreferrer"
-                className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 hidden sm:block"
+                className="sm:max-w-sm mx-auto  w-3/4  group hover:no-underline focus:no-underline dark:bg-gray-900 block"
               >
-                <img
-                  role="presentation"
-                  className="object-cover w-full rounded h-44 dark:bg-gray-500"
-                  src={post.imageUrl}
-                />
+                <div className="">
+                  <Image
+                    alt="Blog-pic"
+                    width={500}
+                    height={500}
+                    className="object-cover w-full rounded h-44 dark:bg-gray-500 min-w-full"
+                    src={post.imageUrl}
+                  ></Image>
+                </div>
                 <div className="p-6 space-y-2">
                   <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
                     {post.title}
