@@ -1,6 +1,7 @@
 // Team.tsx
 import React from 'react';
 import Navbar from '../components/Navbar/Navbar';
+import Footer from '../components/Footer/Footer';
 
 const Team = () => {
   return (
@@ -711,6 +712,7 @@ const Team = () => {
       </div>
     </div>
     </div>
+    <Footer/>
     </>
   );
 };

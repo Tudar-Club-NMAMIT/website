@@ -1,8 +1,12 @@
 import React from 'react'
 import Navbar from '../components/Navbar/Navbar'
 import Footer from '../components/Footer/Footer'
+import { resolve } from 'path'
 
-export default  function Profile() {
+export default async function Profile() {
+
+    await new Promise(resolve=>setTimeout(resolve,2300))
+
   return (
     <>
         <Navbar/>
@@ -11,7 +15,7 @@ export default  function Profile() {
             <div className="flex flex-wrap justify-center">
                 <div className="w-full flex justify-center">
                     <div className="relative">
-                        <img src="https://github.com/Htivus" className="shadow-xl rounded-full align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-[150px]"/>
+                        <img src="./src/Core/proffffli (1) (1).jpg" className="shadow-xl rounded-full align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-[150px]"/>
                     </div>
                 </div>
                 <div className="w-full text-center mt-20">
