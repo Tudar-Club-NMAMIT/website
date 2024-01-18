@@ -3,6 +3,8 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import { getUserByEmail } from "@/app/server/actions";
 import Image from "next/image";
+
+import EditProfile from "../../components/EditProfile";
 export default async function Profile({
   params: { id },
 }: {
@@ -12,8 +14,6 @@ export default async function Profile({
   console.log(decodedEmail);
   const user = await getUserByEmail(decodedEmail);
 
-  console.log(user);
-
   return (
     <>
       <Navbar />
@@ -22,10 +22,10 @@ export default async function Profile({
           <div className="flex items-center flex-wrap justify-center pt-10">
             <Image
               src={user?.image || ""}
-              width="100"
-              height="100"
+              width="200"
+              height="200"
               alt="Profile pic"
-              className="rounded-full"
+              className="rounded-lg"
             ></Image>
           </div>
 
@@ -49,6 +49,13 @@ export default async function Profile({
           </div>
         </div>
       </div>
+      <EditProfile
+        email={decodedEmail}
+        name={user?.name || ""}
+        imageUrl={user?.image || ""}
+        bio={user?.bio || ""}
+      />
+
       <Footer />
     </>
   );
