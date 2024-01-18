@@ -10,11 +10,14 @@ import Video from "./website/components/Video-section/Video";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { prisma } from "./utils/db";
+import FAQ from "./website/components/FAQ/FAQ";
 
-export default function Home() {
+
+export default async function Home() {
   const { data: session, status } = useSession();
   // const user = await prisma.user.findMany();
   // console.log("user"+user)
+  await new Promise(resolve=>setTimeout(resolve,2000))
   return (
     <>
       <div className="bg-[#000] tulu-font">
@@ -25,6 +28,7 @@ export default function Home() {
         <Events />
         <Card />
         <Blog />
+        <FAQ/>
         <Footer />
       </div>
     </>
