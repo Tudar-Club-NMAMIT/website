@@ -7,7 +7,7 @@ const Card = () => {
   return (
     <section className="m-4 w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-8xl mx-auto">
       <div className=" m-4 group px-8 py-8 bg-white/10 rounded-lg flex flex-col items-center justify-center gap-2 relative after:absolute after:h-full after:bg-[#afa18f] z-20 shadow-lg after:-z-20 after:w-full after:inset-0 after:rounded-lg transition-all duration-300 hover:transition-all hover:duration-300 after:transition-all after:duration-500 after:hover:transition-all after:hover:duration-500 overflow-hidden cursor-pointer after:-translate-y-full after:hover:translate-y-0 [&amp;_p]:delay-200 [&amp;_p]:transition-all">
-        <div className="w-44 flex justify-center items-center aspect-square text-[rgb(83,82,82)] group-hover:bg-gray-600 text-5xl rounded-full p-2 transition-all duration-300 group-hover:transition-all group-hover:duration-300 group-hover:-translate-y-2 mx-auto">
+        <div className="w-44 flex justify-center items-center aspect-square text-[rgb(83,82,82)] group-hover:bg-gray-900 text-5xl rounded-full p-2 transition-all duration-300 group-hover:transition-all group-hover:duration-300 group-hover:-translate-y-2 mx-auto">
           <Image
             src="/src/tudar.png"
             alt="Tudar-logo"
@@ -30,7 +30,7 @@ const Card = () => {
       </div>
 
       <div className="m-4 group px-8 py-8 bg-white/10 rounded-lg flex flex-col items-center justify-center gap-2 relative after:absolute after:h-full after:bg-[#afa18f] z-20 shadow-lg after:-z-20 after:w-full after:inset-0 after:rounded-lg transition-all duration-300 hover:transition-all hover:duration-300 after:transition-all after:duration-500 after:hover:transition-all after:hover:duration-500 overflow-hidden cursor-pointer after:-translate-y-full after:hover:translate-y-0 [&amp;_p]:delay-200 [&amp;_p]:transition-all">
-        <div className="w-44 flex justify-center items-center aspect-square text-[rgb(83,82,82)] group-hover:bg-gray-600 text-5xl rounded-full p-2 transition-all duration-300 group-hover:transition-all group-hover:duration-300 group-hover:-translate-y-2 mx-auto">
+        <div className="w-44 flex justify-center items-center aspect-square text-[rgb(83,82,82)] group-hover:bg-gray-900 text-5xl rounded-full p-2 transition-all duration-300 group-hover:transition-all group-hover:duration-300 group-hover:-translate-y-2 mx-auto">
           <Image
             src="/src/tudar.png"
             alt="Tudar-logo"
