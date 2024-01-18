@@ -1,5 +1,6 @@
 "use server";
 import { prisma } from "../utils/db";
+
 export async function createPost(
   title: string,
   desc: string,
@@ -74,4 +75,29 @@ export async function getPostById(id: string) {
     },
   });
   return post;
+}
+
+export async function getUsers(){
+  const users = await prisma.user.findMany();
+  return users;
+}
+
+export async function getEvents(){
+  const events = await prisma.events.findMany();
+  return events;
+}
+
+export async function updateUserfromDashboard(id:string, name:string, email:string, role:string, member:boolean){
+  const updatequery = await prisma.user.update({
+    where:{
+        id: id,
+    },
+    data:{
+        name: name,
+        role: role,
+        email: email,
+        isMember: member
+    
+    },
+})
 }
