@@ -101,3 +101,16 @@ export async function updateUserfromDashboard(id:string, name:string, email:stri
     },
 })
 }
+
+export async function updateBlogfromDashboard(id:string, title:string, createdBy:string, show: boolean){
+  const updatequery = await prisma.post.update({
+    where:{
+      id: id,
+    },
+    data:{
+      title: title,
+      createdBy: createdBy,
+      show: show,
+    }
+  })
+}
