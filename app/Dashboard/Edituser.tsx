@@ -61,14 +61,14 @@ const Edituser = (para:{user:User}) => {
                         <label htmlFor="category" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Membership</label>
                         <ul className="grid w-full gap-6 md:grid-cols-2">
                             <li>
-                                <div onClick={()=>setmemeber(true)}  className={`flex items-center justify-center w-full p-2  text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 border-box ${member?"dark:text-blue-500 border-blue-600 text-blue-600":""}  hover:text-gray-600 hover:bg-gray-400 dark:text-gray-400 dark:hover:border-gray-200 dark:hover:border-2 dark:bg-gray-800 dark:hover:bg-gray-700`}>                           
+                                <div onClick={()=>setmemeber(true)}  className={`flex items-center justify-between w-full p-2  border  rounded-lg cursor-pointer dark:hover:text-gray-300  ${member?"dark:text-blue-500 dark:border-2 dark:bg-gray-800 border-blue-600 text-blue-600":" border-gray-200 dark:border-gray-700 dark:text-gray-400 text-gray-500 bg-white dark:bg-gray-800"} hover:text-gray-600 hover:bg-gray-100  dark:hover:border-gray-200 dark:hover:border-2  dark:hover:bg-gray-700`}>                           
                                     <div className="flex justify-center w-full">
                                         <div className="w-full text-sm font-semibold">Member</div>
                                     </div>
                                 </div>
                             </li>
                             <li>
-                                <div  onClick={()=>setmemeber(false)}  className={`flex items-center justify-between w-full p-2 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:border-gray-200 dark:hover:border-2 dark:bg-gray-800 dark:hover:bg-gray-700`}>
+                                <div  onClick={()=>setmemeber(false)}  className={`flex items-center justify-between w-full p-2  border  rounded-lg cursor-pointer dark:hover:text-gray-300  ${!member?"dark:text-blue-500 dark:border-2 dark:bg-gray-800 border-blue-600 text-blue-600":" border-gray-200 dark:border-gray-700 dark:text-gray-400 text-gray-500 bg-white dark:bg-gray-800"} hover:text-gray-600 hover:bg-gray-100  dark:hover:border-gray-200 dark:hover:border-2  dark:hover:bg-gray-700`}>
                                     <div className="flex justify-center w-full">
                                         <div className="w-full text-sm font-semibold">Not a member</div>
                                     </div>
