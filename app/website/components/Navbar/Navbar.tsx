@@ -142,7 +142,7 @@ const Navbar = () => {
                 </ul>
                 <div className="py-2 ">
                   <button
-                    onClick={() => signOut}
+                    onClick={() => signOut()}
                     className="block px-4 py-2 w-44 text-left text-white hover:bg-white hover:text-black">
                     Sign out
                   </button>
