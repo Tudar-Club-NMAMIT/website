@@ -1,4 +1,5 @@
 "use server";
+import { emit } from "process";
 import { prisma } from "../utils/db";
 export async function createPost(
   title: string,
@@ -76,10 +77,10 @@ export async function getPostById(id: string) {
   return post;
 }
 
-export async function getUserById(id: string) {
+export async function getUserByEmail(email: string) {
   const user = await prisma.user.findFirst({
     where: {
-      id: id,
+      email: email,
     },
     select: {
       name: true,
