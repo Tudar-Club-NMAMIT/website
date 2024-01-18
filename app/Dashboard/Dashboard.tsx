@@ -44,16 +44,16 @@ const Dashboard = () => {
 
   const initialvalue_users:Users = [{
     id:" ",
-    name: "",
-    email: "",
+    name: "-",
+    email: "-",
     emailVerified: "" as unknown as Date,
     image: "",
     isMember: true,
     bio: "",
-    role: ""}]
+    role: "-"}]
     const initialvalue_blogs:Blogs = [{
       id: "",
-        title: "",
+        title: "-",
         content: "",
         imageUrl: "",
         reference: "",
@@ -66,12 +66,12 @@ const Dashboard = () => {
    
   const initialvalue_events:Events = [{
     id: "",
-    title: "",
+    title: "-",
     imageUrl: "",
     description: "",
-    date: "",
-    attendedBy: "",
-    organizedBy: "",
+    date: "-",
+    attendedBy: "-",
+    organizedBy: "-",
     venue: "",
   }]
 
@@ -207,7 +207,7 @@ const Dashboard = () => {
       <div className="p-4 sm:ml-64">
         <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
           <ul
-            className="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400 "
+            className="flex flex-wrap text-sm pb-5 font-medium text-center text-gray-500 dark:text-gray-400 "
             id="default-tab"
             data-tabs-toggle="#default-tab-content"
             role="tablist"
@@ -215,7 +215,7 @@ const Dashboard = () => {
             <li className="me-2" role="presentation">
               <button
               onClick={()=>settabflag(0)}
-                className={`inline-block p-4 border-b-2 rounded-t-lg ${tabflag === 0 ? "text-blue-300":"hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"}`}
+                className={`inline-block p-4 border-b-2 rounded-t-lg ${tabflag === 0 ? "text-blue-300 bg-gray-50 dark:bg-gray-800":"hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"}`}
                 id="user-tab"
                 data-tabs-target="#user"
                 type="button"
@@ -230,7 +230,7 @@ const Dashboard = () => {
             <li className="me-2" role="presentation">
               <button
                 onClick={()=>settabflag(1)}
-                className={`inline-block p-4 border-b-2 rounded-t-lg ${tabflag === 1 ? "text-blue-300":"hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"} `}
+                className={`inline-block p-4 border-b-2 rounded-t-lg ${tabflag === 1 ? "text-blue-300 bg-gray-50 dark:bg-gray-800":"hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"} `}
                 id="blog-tab"
                 data-tabs-target="#blog"
                 type="button"
@@ -244,7 +244,7 @@ const Dashboard = () => {
             <li role="presentation">
               <button
                 onClick={()=>settabflag(2)}
-                className={`inline-block p-4 border-b-2 rounded-t-lg ${tabflag === 2 ? "text-blue-300":"hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"}`}
+                className={`inline-block p-4 border-b-2 rounded-t-lg ${tabflag === 2 ? "text-blue-300 bg-gray-50 dark:bg-gray-800":"hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"}`}
                 id="event-tab"
                 data-tabs-target="#event"
                 type="button"
@@ -258,6 +258,7 @@ const Dashboard = () => {
           </ul>
 
           <div id="default-tab-content">
+            {/* users */}
             <div
               className={`p-4 rounded-lg bg-gray-50 dark:bg-gray-800 ${tabflag === 0 ? "" : "hidden"}`}
               id="user"
@@ -303,7 +304,7 @@ const Dashboard = () => {
                         </th>
                         <td className="px-6 py-4">{user.email}</td>
                         <td className="px-6 py-4">
-                          {user.isMember ? "YEs" : "No"}
+                          {user.isMember ? "Yes" : "No"}
                         </td>
                         <td className="px-6 py-4">{user.role}</td>
                         <td className="px-6 py-4 text-right">
@@ -315,7 +316,7 @@ const Dashboard = () => {
                 </table>
               </div>
             </div>
-
+            {/* Blog */}
             <div
               className={`p-4 rounded-lg bg-gray-50 dark:bg-gray-800 ${tabflag === 1 ? "" : "hidden"}`}
               id="blogs"
@@ -388,6 +389,7 @@ const Dashboard = () => {
 
 
             </div>
+            {/* Events */}
             <div
               className={`${tabflag === 2 ? "" : "hidden"} p-4 rounded-lg bg-gray-50 dark:bg-gray-800`}
               id="events"
@@ -413,6 +415,9 @@ const Dashboard = () => {
                       </th>
                       <th scope="col" className="px-6 py-3">
                         Organised by
+                      </th>
+                      <th scope="col" className="px-6 py-3">
+                        Attended by
                       </th>
                       <th scope="col" className="px-6 py-3">
                         Venue
@@ -441,6 +446,8 @@ const Dashboard = () => {
                           {event.date}
                         </td>
                         <td className="px-6 py-4">{event.organizedBy}</td>
+                        <td className="px-6 py-4">{event.attendedBy|| 0}</td>
+
                         <td className="px-6 py-4">{event.venue}</td>
 
                         <td className="px-6 py-4 text-right">
