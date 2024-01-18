@@ -1,8 +1,10 @@
 "use client";
-import React from "react";
+import React, { Suspense } from "react";
 import { useRef, MutableRefObject } from "react";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
+import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
 
 const Contact = () => {
   const [submitting, setSubmitting] = useState(false);
@@ -40,7 +42,8 @@ const Contact = () => {
         setMessage("");
       });
   };
-  return (
+  return (<>
+    <Navbar/>
     <div className="container my-24 mx-auto md:px-6">
       <section className="mb-32">
         <div className="relative h-[300px] overflow-hidden bg-cover bg-[50%] bg-no-repeat bg-[url('https://mdbcdn.b-cdn.net/img/new/textures/full/284.jpg')]"></div>
@@ -233,6 +236,8 @@ const Contact = () => {
         </div>
       </section>
     </div>
+    <Footer/>
+    </>
   );
 };
 

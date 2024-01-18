@@ -11,15 +11,20 @@ import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { prisma } from "./utils/db";
 import FAQ from "./website/components/FAQ/FAQ";
+import  {Suspense}  from "react";
+import Loading from "./loading";
 
-export default function Home() {
+export default async function Home() {
   const { data: session, status } = useSession();
   // const user = await prisma.user.findMany();
   // console.log("user"+user)
+  await new Promise(resolve=>setTimeout(resolve,2000))
   return (
     <>
       <div className="bg-[#000] tulu-font">
         <Navbar />
+
+        <Suspense fallback={<Loading/>}>
         <Hero />
         <Club />
         <Video />
@@ -27,6 +32,8 @@ export default function Home() {
         <Card />
         <Blog />
         <FAQ/>
+        </Suspense>
+
         <Footer />
       </div>
     </>
