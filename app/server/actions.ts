@@ -91,7 +91,21 @@ export async function getUserByEmail(email: string) {
   });
   return user;
 }
-export async function getAllEvents(){
+export async function getAllEvents() {
   const events = await prisma.events.findMany();
   return events;
+}
+
+export async function updateUserProfile(image:string, name:string, bio:string,email:string) {
+  const res = await prisma.user.update({
+    where:{
+      email:email
+    },
+    data:{
+      name:name,
+      bio:bio,
+      image:image,
+    }
+
+})
 }
