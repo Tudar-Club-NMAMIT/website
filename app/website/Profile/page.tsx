@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar/Navbar'
 import Footer from '../components/Footer/Footer'
-import { resolve } from 'path'
+
 
 export default async function Profile() {
 
@@ -9,13 +9,12 @@ export default async function Profile() {
 
   return (
     <>
-        <Navbar/>
         <div className="relative max-w-md mx-auto md:max-w-2xl mt-28 p-15 min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-xl ">
         <div className="px-6">
             <div className="flex flex-wrap justify-center">
                 <div className="w-full flex justify-center">
                     <div className="relative">
-                        <img src="./src/Core/proffffli (1) (1).jpg" className="shadow-xl rounded-full align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-[150px]"/>
+                        <img src="https://res.cloudinary.com/deax1ssmv/image/upload/t_Blogs/v1705486062/ofylahkstcmu0vdpfnwb.jpg" className="shadow-xl rounded-full align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-[150px]"/>
                     </div>
                 </div>
                 <div className="w-full text-center mt-20">
@@ -52,7 +51,6 @@ export default async function Profile() {
             </div>
         </div>
         </div>
-        <Footer/>
     </>
   )
 }
