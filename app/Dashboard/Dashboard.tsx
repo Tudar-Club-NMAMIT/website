@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import Edituser from "./Edituser";
+import Editblog from "./Editblog";
 import { useState, useEffect } from "react";
 import { getUsers, getPosts, getEvents } from "../server/actions";
 type Users={
@@ -369,12 +370,7 @@ const Dashboard = () => {
                           
                         </td>
                         <td className="px-6 py-4 text-right">
-                          <a
-                            href="#"
-                            className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                          >
-                            Edit
-                          </a>
+                          <Editblog blog={blog}/>
                         </td>
                       </tr>
                     ))}
