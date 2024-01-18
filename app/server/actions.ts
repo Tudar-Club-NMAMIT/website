@@ -91,3 +91,7 @@ export async function getUserByEmail(email: string) {
   });
   return user;
 }
+export async function getAllEvents(){
+  const events = await prisma.events.findMany();
+  return events;
+}
