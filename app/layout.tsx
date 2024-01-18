@@ -1,12 +1,38 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Berkshire_Swash } from "next/font/google";
+import Berkshire_Swash from "next/font/local";
 import { NextAuthProvider } from "./website/components/providers/providers";
 
 const berkish = Berkshire_Swash({
-  weight: "400",
-  style: "normal",
-  subsets: ["latin", "latin-ext"],
+  src: [
+    {
+      path: "../public/BerkshireSwash-Regular.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../public/BerkshireSwash-Regular.ttf",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "../public/BerkshireSwash-Regular.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/BerkshireSwash-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/BerkshireSwash-Regular.ttf",
+      weight: "600",
+      style: "normal",
+    },
+  ],
+  display: "swap",
+  variable: "--font-berkish-swash-regular",
 });
 
 export const metadata: Metadata = {
