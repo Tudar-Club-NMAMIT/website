@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from 'react'
-import { PrismaClient } from '@prisma/client'
 import { updateUserfromDashboard } from '../server/actions'
 type User={
     id: string;
@@ -12,15 +11,12 @@ type User={
     bio: string | null;
     role: string;
   }
-export 
 const Edituser = (para:{user:User}) => {
     const [name,setname] = useState(para.user.name)
     const [email,setemail] = useState(para.user.email)
     const [role,setrole] = useState(para.user.role)
-
     const [member, setmemeber] = useState(para.user.isMember);
     const [close, setclose] = useState(true);
-    const prisma = new PrismaClient();
     const handleSubmit = async () => {
         const update = await updateUserfromDashboard(para.user.id,name||"",email||"",role,member);
         setclose(true)
@@ -28,13 +24,11 @@ const Edituser = (para:{user:User}) => {
     
   return (
     <>
-    <button
-        className="font-medium text-blue-600 dark:text-blue-500 hover:underline" data-modal-target="crud-modal" data-modal-toggle="crud-modal" onClick={()=>
-            setclose(false)
-        }>edit</button>
+    <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline" data-modal-target="crud-modal" data-modal-toggle="crud-modal" onClick={()=>setclose(false)}>edit</button>
     
-<div id="crud-modal" tabIndex={-1} aria-hidden="true" className={` ${close? "hidden" : ""} overflow-y-auto text-left overflow-x-hidden absolute top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full`}>
-    <div className=" p-4 w-full max-w-md max-h-full">
+<div id="crud-modal" onClick={()=>setclose(true)} tabIndex={-1} aria-hidden="true" className={` ${close? "hidden" : ""} z-10 overflow-y-auto text-left overflow-x-hidden absolute top-0 flex left-0 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full`}>
+    <div onClick={(e) => {
+      e.stopPropagation()}} className=" p-4 w-full max-w-md max-h-full z-20">
         <div className=" bg-white rounded-lg shadow dark:bg-gray-700">
             <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
