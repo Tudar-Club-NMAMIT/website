@@ -6,6 +6,8 @@ import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Menu from "./Menu";
 import { useSession } from "next-auth/react";
+import { signOut } from "next-auth/react";
+import { redirect } from "next/navigation";
 
 const NavLinks = [
   { href: "/", key: "Home", text: "Home" },
@@ -16,31 +18,30 @@ const NavLinks = [
   { href: "/website/ContactUs", key: "Contact", text: "Contact" },
 ];
 
-
-
 const Navbar = () => {
   const [flag, setflag] = useState(true);
   const { data: session } = useSession();
 
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [open, setOpen] = useState(false);
 
   const controlNavbar = useCallback(() => {
-    if (typeof window !== 'undefined') {
-      window.scrollY > lastScrollY? setShow(false):setShow(true);
+    if (typeof window !== "undefined") {
+      window.scrollY > lastScrollY ? setShow(false) : setShow(true);
       setLastScrollY(window.scrollY);
     }
   }, [lastScrollY]);
-  
+
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', controlNavbar);
-        return () => {
-        window.removeEventListener('scroll', controlNavbar);
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlNavbar);
+      return () => {
+        window.removeEventListener("scroll", controlNavbar);
       };
     }
   }, [controlNavbar]);
-    
+
   const handleClick = () => {
     const bars = document.querySelectorAll<HTMLElement>(".bar-hamburger");
     const menu = document.getElementById("menu");
@@ -68,8 +69,18 @@ const Navbar = () => {
       setflag(!flag);
     }
   };
+
+  const signout = (e: any) => {
+    e.preventDefault();
+    signOut();
+    // return redirect("/");
+  };
   return (
-    <nav className={`navbar-bg py-4 px-8 border-b w-screen fixed border-nav-border z-40 top-0 transition-style ${flag? (show ? 'translate-y-0' : '-translate-y-full'):'translate-y-0'}`}>
+    <nav
+      className={`navbar-bg py-4 px-8 border-b w-screen fixed border-nav-border z-40 top-0 transition-style ${
+        flag ? (show ? "translate-y-0" : "-translate-y-full") : "translate-y-0"
+      }`}
+    >
       <div
         className="menu-container absolute top-0 left-0 w-screen"
         id="menu"
@@ -98,12 +109,68 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="float float-right hidden md:block ">
-
-        {session ? (
-          <div className=""><Image width={50} height={50} src={session.user?.image || ""} alt="err" className="rounded-full"></Image> </div>
+          {session ? (
+            <div>
+              <button
+                onClick={() => setOpen(!open)}
+                className="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                type="button"
+              >
+                <span className="sr-only">Open user menu</span>
+                <Image
+                  className="w-11 h-9 rounded-full"
+                  src={session.user?.image || ""}
+                  alt="user photo"
+                  width={50}
+                  height={50}
+                />
+              </button>
+              <div
+                className={`z-30 ${
+                  open ? null : `hidden`
+                } font-sans right-0 mr-8 mt-1 absolute bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-900 opacity-70  dark:divide-gray-100`}
+              >
+                <div className="px-4 py-3 text-sm text-white">
+                  <div>{session.user?.name}</div>
+                  <div className="font-medium truncate">
+                    {session.user?.email}
+                  </div>
+                </div>
+                <ul className="py-2 text-gray-700 ">
+                  <li>
+                    <Link
+                      href={`/website/Profile/${session.user?.email}`}
+                      className="block px-4 py-2 text-white hover:bg-white hover:text-black"
+                    >
+                      Profile
+                    </Link>
+                  </li>
+                  {session.user?.email === "nittetudar@gmail.com" ? (
+                    <li>
+                      <Link
+                        href="/Dashboard"
+                        className="block px-4 py-2 text-white hover:bg-white hover:text-black"
+                      >
+                        Dashboard
+                      </Link>
+                    </li>
+                  ) : null}
+                </ul>
+                <div className="py-2 ">
+                  <button
+                    onClick={signout}
+                    className="block px-4 py-2 w-44 text-left text-white hover:bg-white hover:text-black"
+                  >
+                    Sign out
+                  </button>
+                </div>
+              </div>
+            </div>
           ) : (
             <div className="flex items-center">
-              <Link href="/api/auth/signin" className="signIn-button"><div className="pointer px-1 whitespace-nowrap">Sign-In</div></Link>
+              <Link href="/api/auth/signin" className="signIn-button">
+                <div className="pointer px-1 whitespace-nowrap">Sign-In</div>
+              </Link>
             </div>
           )}
         </div>

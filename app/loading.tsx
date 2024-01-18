@@ -1,4 +1,26 @@
-export default function Loading() {
-  // Or a custom loading skeleton component
-  return <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
-}
+// import React from 'react';
+
+import React from "react";
+
+const loading = () => {
+  return <div>loading</div>;
+};
+
+export default loading;
+// const Loading = () => {
+
+//   return (
+//     <div className='flex items-center justify-center h-screen'>
+//       <div className="container-l">
+//         <div className="loader-l"></div>
+//         <div className="loader-l"></div>
+//         <div className="loader-l"></div>
+//         <div className="loader-l"></div>
+//         <div className="loader-l"></div>
+//       </div>
+
+//     </div>
+//   );
+// }
+
+// export default Loading;
