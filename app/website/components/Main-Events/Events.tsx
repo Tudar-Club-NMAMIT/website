@@ -52,7 +52,7 @@ const shuffle = (array: any) => {
 const squareData = [
   {
     id: 1,
-    src: "/src/events/DSC_0263.JPG",
+    src: "https://res.cloudinary.com/deax1ssmv/image/upload/f_auto,q_auto/cbmtx2mublivnejdfbnx",
   },
   {
     id: 2,
