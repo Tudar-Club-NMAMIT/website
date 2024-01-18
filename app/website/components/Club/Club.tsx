@@ -20,17 +20,21 @@ export default function Club() {
               </div>
             }
             className="h-[30rem] ">
-              <p className="relative md:text-2xl">
-
-            TUDAR ಕ್ಲಬ್‌ನಲ್ಲಿ, ನಾವು ಆಚರಿಸಲು, ಸಂರಕ್ಷಿಸಲು ಮತ್ತು ಮಿಷನ್‌ನಲ್ಲಿದ್ದೇವೆ
-            ತುಳು ಭಾಷೆಯ ರೋಮಾಂಚಕ ಪರಂಪರೆಯನ್ನು ಪ್ರಚಾರ ಮಾಡಿ. ಬೇರೂರಿದೆ ಕರಾವಳಿ ಕರ್ನಾಟಕದ
-            ಸಾಂಸ್ಕೃತಿಕ ಮೊಸಾಯಿಕ್, ತುಳು ಒಂದು ಭಾಷೆ ಅದು ಶತಮಾನಗಳ ಸಂಪ್ರದಾಯ, ಜಾನಪದ,
-            ಮತ್ತು ಎ ಅನನ್ಯ ಗುರುತು.
-              </p>
+            <p className="relative md:text-2xl">
+              ತುಡರ್ ಕೂಟೊಡು, ತುಳುನಾಡ ಪೊರ್ಲ ಪರತಿರಿನ್, ಒರಿಪಾವೊಡು ಬುಲೆಪಾವೊಡು ಪನ್ಪಿ
+              ಅಂಗಲಪ್ಪುಡು ಎಂಕುಲು ಉಲ್ಲ. ತುಳು ಬಾಸೆ ಅವು ಸಾರ ವರ್ಸರ್ದಿಂಚ ತನ್ನಾಲ್ಮೆಡೇ
+              ಬೊಲ್ಲಗ್ ಎದುರಾದ್ ಮೀಂದೊಂದು ಬೈದಿನವು.
+            </p>
           </MaskContainer>
-        </div> 
+        </div>
         <div className="w-full md:w-1/4 flex justify-center ">
-          <Image width={250} height={300} src="/src/logo.png" alt="" className="pr-0 md:pr-4 m-0"/>
+          <Image
+            width={250}
+            height={300}
+            src="https://res.cloudinary.com/deax1ssmv/image/upload/f_auto,q_auto/klqbxupxjh776obmsubz"
+            alt=""
+            className="pr-0 md:pr-4 m-0"
+          />
         </div>
       </div>
     </div>
