@@ -80,15 +80,15 @@ const Navbar = () => {
         <Menu Navlist={NavLinks} />
       </div>
       <div className="flex w-full">
-        <a href="#" className="float-left ml-0">
+        <Link href="/" className="float-left ml-0">
           <span className="whitespace-nowrap">
             <Image
-              src="/src/tudar.png"
+              src="https://res.cloudinary.com/deax1ssmv/image/upload/f_auto,q_auto/xczsl6fzq0clalmthj6f"
               alt="Tudar"
-              width={120}
-              height={100}></Image>
+              width={40}
+              height={30}></Image>
           </span>
-        </a>
+        </Link>
         <div className="flex items-center justify-center w-screen ">
           <ul className="md:flex justify-center flex-row min-w-screen hidden gap-10 navlist">
             {NavLinks.map((link) => (
@@ -132,17 +132,19 @@ const Navbar = () => {
                       Profile
                     </Link>
                   </li>
-                  {session.user?.email === "nittetudar@gmail.com"?<li>
-                    <Link
-                      href="/Dashboard"
-                      className="block px-4 py-2 text-white hover:bg-white hover:text-black">
-                      Dashboard
-                    </Link>
-                  </li>:null}
+                  {session.user?.email === "nittetudar@gmail.com" ? (
+                    <li>
+                      <Link
+                        href="/Dashboard"
+                        className="block px-4 py-2 text-white hover:bg-white hover:text-black">
+                        Dashboard
+                      </Link>
+                    </li>
+                  ) : null}
                 </ul>
                 <div className="py-2 ">
                   <button
-                    onClick={() => signOut}
+                    onClick={() => signOut()}
                     className="block px-4 py-2 w-44 text-left text-white hover:bg-white hover:text-black">
                     Sign out
                   </button>
