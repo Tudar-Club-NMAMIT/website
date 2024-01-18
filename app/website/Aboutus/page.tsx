@@ -1,11 +1,7 @@
-import React from 'react'
-import Navbar from '../components/Navbar/Navbar'
-import Footer from '../components/Footer/Footer'
 
 function Info() {
   return (
     <div>
-        <Navbar/>
 
         {/* Hero page  */}
             <section className="bg-white dark:bg-black pt-24">
@@ -108,7 +104,7 @@ function Info() {
             </div>
         </section>
 
-        <Footer/>
+
     </div>
   )
 }

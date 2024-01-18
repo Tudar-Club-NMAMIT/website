@@ -1,9 +1,7 @@
 import React from "react";
-import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
 import { getPosts } from "@/app/server/actions";
 import Link from "next/link";
-import Image from "next/image";
+
 
 const page = async () => {
   const userData = await getPosts();
@@ -11,7 +9,6 @@ const page = async () => {
   console.log("pots:" + posts);
   return (
     <>
-      <Navbar />
       <section className="dark:bg-gray-800 dark:text-gray-100 font-sans pt-28">
         <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
           <a
@@ -75,7 +72,6 @@ const page = async () => {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 }
