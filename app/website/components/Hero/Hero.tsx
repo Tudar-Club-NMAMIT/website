@@ -16,24 +16,21 @@ const Hero = () => {
   return (
     <div
       ref={ref}
-      className="w-full h-screen overflow-hidden relative grid place-items-center"
-    >
+      className="w-full h-screen overflow-hidden relative grid place-items-center">
       <motion.div
         style={{ y: textY }}
-        className="opacity-100 font-bold relative z-30"
-      >
+        className="opacity-100 font-bold relative z-30">
         <Image
-          src="/src/tudar.png"
+          src="/src/tudar-text-1.png"
           alt="Tudar"
-          width={650}
-          height={300}
-        ></Image>
+          width={420}
+          height={250}></Image>
       </motion.div>
 
       <motion.div
         className="min-h-screen bg-contain object-center absolute inset-0 z-0"
         style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2) 100px), url(/src/p-below-img.png)`,
+          backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2) 100px), url(https://res.cloudinary.com/deax1ssmv/image/upload/f_auto,q_auto/jcczha2q8yqbzuxufnvh)`,
           backgroundPosition: "bottom",
           backgroundSize: "cover",
           y: backgroundY,
@@ -43,7 +40,7 @@ const Hero = () => {
       <div
         className="absolute inset-0 z-20 "
         style={{
-          backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 100px ), url(/src/p-above-img.png)`,
+          backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 100px ), url(https://res.cloudinary.com/deax1ssmv/image/upload/f_auto,q_auto/bmpstgrsc7uqet7eyeim)`,
           backgroundPosition: "bottom",
           backgroundSize: "cover",
         }}

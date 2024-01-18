@@ -55,8 +55,6 @@ export default async function Profile({
         imageUrl={user?.image || ""}
         bio={user?.bio || ""}
       />
-
-      <Footer />
     </>
   );
 }
