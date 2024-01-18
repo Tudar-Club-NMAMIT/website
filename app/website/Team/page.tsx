@@ -1,12 +1,10 @@
 // Team.tsx
-import React from 'react';
-import Navbar from '../components/Navbar/Navbar';
-import Footer from '../components/Footer/Footer';
+
+
 
 const Team = () => {
   return (
     <>
-    <Navbar/>
     <div className="pt-10 pb-48 bg-black">
       
     <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -24,12 +22,12 @@ const Team = () => {
           <div className="relative w-full h-48 max-h-full rounded shadow sm:h-auto">
             <img
               className="absolute object-cover w-full h-full rounded"
-              src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
+              src="https://res.cloudinary.com/deax1ssmv/image/upload/v1705581186/Tudar/mayur_m_shet_-_NNM22IS090_MAYUR_M_SHET_bqwqiu.jpg"
               alt="Person"
             />
           </div>
           <div className="flex flex-col justify-center mt-5 sm:mt-0 sm:p-5 sm:col-span-2">
-            <p className="text-lg font-bold">Oliver Aguilerra</p>
+            <p className="text-lg font-bold">Mayur Shet</p>
             <p className="mb-4 text-xs text-gray-100">Product Manager</p>
             <p className="mb-4 text-sm tracking-wide text-gray-100">
               Vincent Van Gogh’s most popular painting, The Starry Night.
@@ -58,12 +56,11 @@ const Team = () => {
           <div className="relative w-full h-48 max-h-full rounded shadow sm:h-auto">
             <img
               className="absolute object-cover w-full h-full rounded"
-              src="https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-              alt="Person"
+              src="https://res.cloudinary.com/deax1ssmv/image/upload/v1705581177/Tudar/SPV00316_-_4NM22AI405_VISHNUPRASAD_V_BHAT_jwyz6z.jpg"
             />
           </div>
           <div className="flex flex-col justify-center mt-5 sm:mt-0 sm:p-5 sm:col-span-2">
-            <p className="text-lg font-bold">Marta Clermont</p>
+            <p className="text-lg font-bold">Vishnu</p>
             <p className="mb-4 text-xs text-gray-100">Design Team Lead</p>
             <p className="mb-4 text-sm tracking-wide text-gray-100">
               Amet I love liquorice jujubes pudding croissant I love pudding.
@@ -92,12 +89,11 @@ const Team = () => {
           <div className="relative w-full h-48 max-h-full rounded shadow sm:h-auto">
             <img
               className="absolute object-cover w-full h-full rounded"
-              src="https://images.pexels.com/photos/3747435/pexels-photo-3747435.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-              alt="Person"
+              src="https://res.cloudinary.com/deax1ssmv/image/upload/v1705581172/Tudar/Shreya_-_NNM22BT034_SHREYA_P_V_jz5arh.jpg"
             />
           </div>
           <div className="flex flex-col justify-center mt-5 sm:mt-0 sm:p-5 sm:col-span-2">
-            <p className="text-lg font-bold">Alice Melbourne</p>
+            <p className="text-lg font-bold">Shreya</p>
             <p className="mb-4 text-xs text-gray-100">Human Resources</p>
             <p className="mb-4 text-sm tracking-wide text-gray-100">
               Lorizzle ipsum bling bling sit amizzle, consectetuer adipiscing
@@ -127,12 +123,11 @@ const Team = () => {
           <div className="relative w-full h-48 max-h-full rounded shadow sm:h-auto">
             <img
               className="absolute object-cover w-full h-full rounded"
-              src="https://images.pexels.com/photos/3931603/pexels-photo-3931603.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-              alt="Person"
+              src="https://res.cloudinary.com/deax1ssmv/image/upload/v1705581160/Tudar/IMG_2558_-_4NM20AI013_BRIJWIN_BALAKRISHNA_qzmftp.jpg"
             />
           </div>
           <div className="flex flex-col justify-center mt-5 sm:mt-0 sm:p-5 sm:col-span-2">
-            <p className="text-lg font-bold">John Doe</p>
+            <p className="text-lg font-bold">Bala</p>
             <p className="mb-4 text-xs text-gray-100">Good guy</p>
             <p className="mb-4 text-sm tracking-wide text-gray-100">
               Bacon ipsum dolor sit amet salami jowl corned beef, andouille
@@ -162,12 +157,11 @@ const Team = () => {
           <div className="relative w-full h-48 max-h-full rounded shadow sm:h-auto">
             <img
               className="absolute object-cover w-full h-full rounded"
-              src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
-              alt="Person"
+              src="https://res.cloudinary.com/deax1ssmv/image/upload/v1705581160/Tudar/vignesh_mallya_lipi_-_NNM22BT040_VIGNESH_MALLYA_rsbmgo.jpg"
             />
           </div>
           <div className="flex flex-col justify-center mt-5 sm:mt-0 sm:p-5 sm:col-span-2">
-            <p className="text-lg font-bold">Oliver Aguilerra</p>
+            <p className="text-lg font-bold">vig</p>
             <p className="mb-4 text-xs text-gray-100">Product Manager</p>
             <p className="mb-4 text-sm tracking-wide text-gray-100">
               Vincent Van Gogh’s most popular painting, The Starry Night.
@@ -196,12 +190,11 @@ const Team = () => {
           <div className="relative w-full h-48 max-h-full rounded shadow sm:h-auto">
             <img
               className="absolute object-cover w-full h-full rounded"
-              src="https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-              alt="Person"
+              src="https://res.cloudinary.com/deax1ssmv/image/upload/v1705581155/Tudar/IMG_20240107_141407_-_Amrith_R_Naik_tsdjgy.jpg"
             />
           </div>
           <div className="flex flex-col justify-center mt-5 sm:mt-0 sm:p-5 sm:col-span-2">
-            <p className="text-lg font-bold">Blenson Cardoza</p>
+            <p className="text-lg font-bold">amrith</p>
             <p className="mb-4 text-xs text-gray-100">Head - Tulu Lipi</p>
             <p className="mb-4 text-sm tracking-wide text-gray-100">
               Amet I love liquorice jujubes pudding croissant I love pudding.
@@ -230,8 +223,7 @@ const Team = () => {
           <div className="relative w-full h-48 max-h-full rounded shadow sm:h-auto">
             <img
               className="absolute object-cover w-full h-full rounded"
-              src="https://images.pexels.com/photos/3747435/pexels-photo-3747435.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-              alt="Person"
+              src="https://res.cloudinary.com/deax1ssmv/image/upload/v1705581155/Tudar/Gagan_Rai_-_Gagan_Rai_xuucv8.jpg"
             />
           </div>
           <div className="flex flex-col justify-center mt-5 sm:mt-0 sm:p-5 sm:col-span-2">
@@ -264,8 +256,7 @@ const Team = () => {
           <div className="relative w-full h-48 max-h-full rounded shadow sm:h-auto">
             <img
               className="absolute object-cover w-full h-full rounded"
-              src="https://images.pexels.com/photos/3931603/pexels-photo-3931603.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-              alt="Person"
+              src="https://res.cloudinary.com/deax1ssmv/image/upload/v1705581153/Tudar/Sampreeth_T_Poojary_-_Sampreeth_poojary_ejye9q.jpg"
             />
           </div>
           <div className="flex flex-col justify-center mt-5 sm:mt-0 sm:p-5 sm:col-span-2">
@@ -299,8 +290,7 @@ const Team = () => {
           <div className="relative w-full h-48 max-h-full rounded shadow sm:h-auto">
             <img
               className="absolute object-cover w-full h-full rounded"
-              src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
-              alt="Person"
+              src="https://res.cloudinary.com/deax1ssmv/image/upload/v1705581151/Tudar/IMG-20231122-WA0008_-_4NM21CS115_Prathama_S_J_pfcl6j.jpg"
             />
           </div>
           <div className="flex flex-col justify-center mt-5 sm:mt-0 sm:p-5 sm:col-span-2">
@@ -712,7 +702,6 @@ const Team = () => {
       </div>
     </div>
     </div>
-    <Footer/>
     </>
   );
 };

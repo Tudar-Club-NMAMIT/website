@@ -7,7 +7,6 @@ import Image from "next/image";
 import Menu from "./Menu";
 import { useSession } from "next-auth/react";
 import { signOut } from "next-auth/react";
-import { redirect } from "next/navigation";
 
 const NavLinks = [
   { href: "/", key: "Home", text: "Home" },
@@ -69,12 +68,6 @@ const Navbar = () => {
       setflag(!flag);
     }
   };
-
-  const signout = (e: any) => {
-    e.preventDefault();
-    signOut();
-    // return redirect("/");
-  };
   return (
     <nav
       className={`navbar-bg py-4 px-8 border-b w-screen fixed border-nav-border z-40 top-0 transition-style ${
@@ -89,16 +82,16 @@ const Navbar = () => {
         <Menu Navlist={NavLinks} />
       </div>
       <div className="flex w-full">
-        <a href="#" className="float-left ml-0">
+        <Link href="/" className="float-left ml-0">
           <span className="whitespace-nowrap">
             <Image
-              src="/src/tudar.png"
+              src="https://res.cloudinary.com/deax1ssmv/image/upload/f_auto,q_auto/xczsl6fzq0clalmthj6f"
               alt="Tudar"
-              width={120}
-              height={100}
+              width={40}
+              height={30}
             ></Image>
           </span>
-        </a>
+        </Link>
         <div className="flex items-center justify-center w-screen ">
           <ul className="md:flex justify-center flex-row min-w-screen hidden gap-10 navlist">
             {NavLinks.map((link) => (
@@ -139,7 +132,7 @@ const Navbar = () => {
                 <ul className="py-2 text-gray-700 ">
                   <li>
                     <Link
-                      href={`/website/Profile/${session.user?.email}`}
+                      href={`/website/Profile/${session?.user?.email}`}
                       className="block px-4 py-2 text-white hover:bg-white hover:text-black"
                     >
                       Profile
@@ -158,7 +151,7 @@ const Navbar = () => {
                 </ul>
                 <div className="py-2 ">
                   <button
-                    onClick={signout}
+                    onClick={() => signOut()}
                     className="block px-4 py-2 w-44 text-left text-white hover:bg-white hover:text-black"
                   >
                     Sign out

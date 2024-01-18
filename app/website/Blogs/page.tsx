@@ -1,11 +1,9 @@
 import React from "react";
-import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
 import { getPosts } from "@/app/server/actions";
-
 import Image from "next/image";
+import Navbar from "../components/Navbar/Navbar";
 import Link from "next/link";
-
+import Footer from "../components/Footer/Footer";
 const page = async () => {
   const userData = await getPosts();
   const posts = userData[0].posts;
