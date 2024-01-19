@@ -23,16 +23,24 @@ const Menu = (NavLists: {
           <div className={`${!flag?"bg-black":"bg-white"} bar-hamburger`} style={!flag?{animation:"cross-2 0.2s ease-in forwards"}:{animation:"none"}}></div>
         </div>
     <div className={`${flag?"hidden": ""} container-menu w-full absolute navbar-bg-menu z-40 top-0 left-0`} style={flag?{animation: "none"}:{animation:"menu-click-animation 0.2s ease-in"}} id="menu-container">
-
       <ul className="flex justify-center flex-col p-10 gap-3 ">
-      {session ? (
-        <div className=" flex items-center gap-7"><Image width={50} height={50} src={session?.user?.image || ""} alt="err" className="rounded-full border border-white"></Image>
-            <span className="text-black">{session?.user?.name}</span>
-        </div>
-) : (
-          <Link href="/api/auth/signin" className="text-black">Sign in</Link>
+        {session ? (
+          <Link href={`/website/Profile/${session.user?.email}`}>
+            <div className=" flex items-center gap-7">
+              <Image
+                width={50}
+                height={50}
+                src={session?.user?.image || ""}
+                alt="err"
+                className="rounded-full border border-white"></Image>
+              <span className="text-black">{session?.user?.name}</span>
+            </div>
+          </Link>
+        ) : (
+          <Link href="/api/auth/signin" className="text-black">
+            Sign in
+          </Link>
         )}
-      
 
         {NavLists.Navlist.map((link) => (
           <Link
@@ -46,7 +54,6 @@ const Menu = (NavLists: {
               </button>
           </Link>
         ))}
-        
       </ul>
     </div>
     </>
