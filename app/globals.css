@@ -87,6 +87,7 @@ html::-webkit-scrollbar-thumb {
   background-color: #8bac74;
 }
 
+
 .loader-l:nth-child(4) {
   animation-delay: 0.74s;
   left: 50px;

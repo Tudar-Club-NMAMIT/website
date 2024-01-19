@@ -1,6 +1,7 @@
 "use server";
 import { emit } from "process";
 import { prisma } from "../utils/db";
+
 export async function createPost(
   title: string,
   desc: string,
@@ -77,6 +78,15 @@ export async function getPostById(id: string) {
   return post;
 }
 
+export async function getUsers(){
+  const users = await prisma.user.findMany();
+  return users;
+}
+
+export async function getEvents(){
+  const events = await prisma.events.findMany();
+  return events;
+}
 export async function getUserByEmail(email: string) {
   const user = await prisma.user.findFirst({
     where: {
@@ -96,6 +106,47 @@ export async function getAllEvents() {
   return events;
 }
 
+export async function updateUserfromDashboard(id:string, name:string, email:string, role:string, member:boolean){
+  const updatequery = await prisma.user.update({
+    where:{
+        id: id,
+    },
+    data:{
+        name: name,
+        role: role,
+        email: email,
+        isMember: member
+    
+    },
+})
+}
+
+export async function updateBlogfromDashboard(id:string, title:string, createdBy:string, show: boolean){
+  const updatequery = await prisma.post.update({
+    where:{
+      id: id,
+    },
+    data:{
+      title: title,
+      createdBy: createdBy,
+      show: show,
+    }
+  })
+}
+
+export async function updateEventsfromDashboard(id:string, title:string, attendedBy: string, venue: string, date:string){
+  const updatequery = await prisma.events.update({
+    where:{
+      id: id,
+    },
+    data:{
+        title: title,
+        attendedBy: attendedBy,
+        venue: venue,
+        date: date,
+    }
+  })
+}
 export async function updateUserProfile(image:string, name:string, bio:string,email:string) {
   const res = await prisma.user.update({
     where:{
