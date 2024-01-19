@@ -1,10 +1,11 @@
+
 import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 import { getUserByEmail } from "@/app/server/actions";
 import Image from "next/image";
 
 import EditProfile from "../../components/EditProfile";
+import { signOut } from "next-auth/react";
+import SignOut from "../../components/SignOut";
 export default async function Profile({
   params: { id },
 }: {
@@ -16,7 +17,6 @@ export default async function Profile({
 
   return (
     <>
-      <Navbar />
       <div className="font-serif relative max-w-md mx-auto md:max-w-2xl mt-28 p-15 min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-xl ">
         <div className="px-6">
           <div className="flex items-center flex-wrap justify-center pt-10">
@@ -25,8 +25,7 @@ export default async function Profile({
               width="200"
               height="200"
               alt="Profile pic"
-              className="rounded-lg"
-            ></Image>
+              className="rounded-lg"></Image>
           </div>
 
           <div className="text-center mt-2">
@@ -49,12 +48,15 @@ export default async function Profile({
           </div>
         </div>
       </div>
-      <EditProfile
-        email={decodedEmail}
-        name={user?.name || ""}
-        imageUrl={user?.image || ""}
-        bio={user?.bio || ""}
-      />
+      <div className="flex justify-center items-center gap-8">
+        <EditProfile
+          email={decodedEmail}
+          name={user?.name || ""}
+          imageUrl={user?.image || ""}
+          bio={user?.bio || ""}
+        />
+        <SignOut/>
+      </div>
     </>
   );
 }
