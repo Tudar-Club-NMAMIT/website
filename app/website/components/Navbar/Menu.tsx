@@ -6,51 +6,44 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 
-const Menu = (NavLists: {
-  Navlist: { href: string; key: string; text: string }[];
-}) => {
-  const [flag, setflag] = useState(true);
+const Menu = (NavLists: {Navlist: { href: string; key: string; text: string }[];}) => {
+  const [menuToggleFlag, setmenuToggleFlag] = useState(true);
   const { data: session} = useSession();
   return (
-    <>
-    <div
-          className="md:hidden flex  w-10 h float-right m-0 hamburger p-1 "
-          id="hamburger"
-          onClick={()=>{setflag(!flag)}}
-        >
-          <div className={`${!flag?"bg-black":"bg-white"} bar-hamburger`} style={!flag?{animation:"cross-1 0.2s ease-in forwards"}:{animation:"none"}}></div>
-          <div className={`${!flag?"hidden bg-black":"block bg-white"} bar-hamburger`}></div>
-          <div className={`${!flag?"bg-black":"bg-white"} bar-hamburger`} style={!flag?{animation:"cross-2 0.2s ease-in forwards"}:{animation:"none"}}></div>
-        </div>
-    <div className={`${flag?"hidden": ""} container-menu w-full absolute navbar-bg-menu z-40 top-0 left-0`} style={flag?{animation: "none"}:{animation:"menu-click-animation 0.2s ease-in"}} id="menu-container">
+    <div className="flex justify-center items-center">
+      {/* Hamberger*/}
+      <div className="md:hidden flex w-8 aspect-square float-right m-0 hamburger p-1 "
+            id="hamburger"
+            onClick={()=>{setmenuToggleFlag(!menuToggleFlag)}}>
+            <div className={`${!menuToggleFlag?"bg-black":"bg-white"} bar-hamburger`} style={!menuToggleFlag?{animation:"cross-1 0.2s ease-in forwards"}:{animation:"none"}}></div>
+            <div className={`${!menuToggleFlag?"hidden bg-black":"block bg-white"} bar-hamburger`}></div>
+            <div className={`${!menuToggleFlag?"bg-black":"bg-white"} bar-hamburger`} style={!menuToggleFlag?{animation:"cross-2 0.2s ease-in forwards"}:{animation:"none"}}></div>
+      </div>
 
-      <ul className="flex justify-center flex-col p-10 gap-3 ">
-      {session ? (
-        <div className=" flex items-center gap-7"><Image width={50} height={50} src={session?.user?.image || ""} alt="err" className="rounded-full border border-white"></Image>
-            <span className="text-black">{session?.user?.name}</span>
-        </div>
-) : (
-          <Link href="/api/auth/signin" className="text-black">Sign in</Link>
-        )}
-      
+      {/* Menu */}
+      <div className={`${menuToggleFlag?"hidden": ""} container-menu w-full absolute navbar-bg-menu top-0 left-0`} style={menuToggleFlag?{animation: "none"}:{animation:"menu-click-animation 0.2s ease-in"}} id="menu-container">
 
-        {NavLists.Navlist.map((link) => (
-          <Link
-            className="h-20 flex justify-start items-center text-black"
-            onClick={()=>setflag(!flag)}
-            href={link.href}
-            key={link.key}>
-              <button >
-
-            <span className="linkSpan">{link.text}</span>
-              </button>
-          </Link>
-        ))}
-        
-      </ul>
+        <ul className="flex justify-center flex-col p-10 gap-3 ">
+          {session ? (
+            <div className=" flex items-center gap-7"><Image width={50} height={50} src={session?.user?.image || ""} alt="err" className="rounded-full border border-white"></Image>
+                <span className="text-black">{session?.user?.name}</span>
+            </div> ) : 
+            (
+              <Link href="/api/auth/signin" className="text-black">Sign in</Link>
+            )
+          }
+          {NavLists.Navlist.map((link) => (
+              <Link
+                className="h-20 flex justify-start items-center text-black"
+                onClick={()=>setmenuToggleFlag(!menuToggleFlag)}
+                href={link.href}
+                key={link.key}>
+                  <span className="linkSpan">{link.text}</span>
+              </Link>
+            ))}
+        </ul>
+      </div>
     </div>
-    </>
-
   );
 };
 export default Menu;
