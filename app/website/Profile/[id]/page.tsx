@@ -1,9 +1,7 @@
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 import { getUserByEmail } from "@/app/server/actions";
 import Image from "next/image";
-
 import EditProfile from "../../components/EditProfile";
 export default async function Profile({
   params: { id },
@@ -11,9 +9,7 @@ export default async function Profile({
   params: { id: string };
 }) {
   const decodedEmail = decodeURIComponent(id);
-  console.log(decodedEmail);
   const user = await getUserByEmail(decodedEmail);
-
   return (
     <>
       <Navbar />
