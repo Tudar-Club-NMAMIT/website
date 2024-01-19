@@ -3,7 +3,7 @@ import React from 'react'
 function FAQ() {
   return (
     <div>
-      <div className="container m-5 p-5  mx-auto md:px-6">
+      <div className="container mx-auto md:px-6">
         <section className="mb-32">
           <h2 className="mb-16 text-center text-3xl font-bold">
             Frequently asked questions
