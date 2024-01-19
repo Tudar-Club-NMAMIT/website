@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import "./Events.css";
+import Link from "next/link";
 
 const ShuffleHero = () => {
   return (
@@ -16,12 +17,14 @@ const ShuffleHero = () => {
           to lively cultural showcases, each event is crafted to illuminate the
           beauty of Tulu traditions.
         </p>
-        <button className="fancy">
+        <Link href="/website/Events">
+         <button className="fancy">
           <span className="top-key"></span>
           <span className="text">Know More</span>
           <span className="bottom-key-1"></span>
           <span className="bottom-key-2"></span>
         </button>
+        </Link>
       </div>
 
       <ShuffleGrid />
@@ -49,7 +52,7 @@ const shuffle = (array: any) => {
 const squareData = [
   {
     id: 1,
-    src: "/src/events/DSC_0263.JPG",
+    src: "https://res.cloudinary.com/deax1ssmv/image/upload/f_auto,q_auto/cbmtx2mublivnejdfbnx",
   },
   {
     id: 2,
@@ -91,7 +94,7 @@ const generateSquares = () => {
       key={sq.id}
       layout
       transition={{ duration: 1.5, type: "spring" }}
-      className=" rounded-md w-full h-full"
+      className=" rounded-md w-full h-auto"
       style={{
         backgroundImage: `url(${sq.src})`,
         backgroundSize: "cover",
@@ -116,7 +119,7 @@ const ShuffleGrid = () => {
   };
 
   return (
-    <div className="grid grid-cols-3 grid-rows-3 h-[350px] lg:h-[450px] gap-1 ">
+    <div className="grid grid-cols-3 grid-rows-3  h-[350px] lg:h-[450px] gap-1 ">
       {squares.map((sq: any) => sq)}
     </div>
   );

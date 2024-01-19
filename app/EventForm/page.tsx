@@ -4,6 +4,7 @@ import React from "react";
 import { ChangeEvent } from "react";
 import { useState } from "react";
 import { createEvent } from "../server/actions";
+import Image from "next/image";
 const EventForm = () => {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
@@ -20,6 +21,11 @@ const EventForm = () => {
     if (!file) return;
     if (!file.type.includes("image")) {
       alert("Please upload an image");
+    }
+    const fileSizeInMB = file.size / (1024 * 1024);
+    if (fileSizeInMB > 1) {
+      alert("File size exceeds 1MB. Please choose a smaller file.");
+      return;
     }
     const reader = new FileReader();
     reader.readAsDataURL(file);
@@ -59,6 +65,7 @@ const EventForm = () => {
       console.log("Response");
       const data = await response.json();
       const imageUrl = data.data.url;
+      console.log("img" + imageUrl);
       if (imageUrl) {
         const res = await createEvent(
           imageUrl,
@@ -73,9 +80,10 @@ const EventForm = () => {
         setDesc("");
         setOrganiser("");
         setVenue("");
+        setImage("");
         setAdded(true);
         setSubmitting(false);
-        console.log(res);
+        console.log("res" + res);
       }
     } catch (e) {
       console.log(e);
@@ -83,7 +91,7 @@ const EventForm = () => {
   };
 
   return (
-    <div>
+    <div className="font-sans">
       <button
         data-drawer-target="default-sidebar"
         data-drawer-toggle="default-sidebar"
@@ -180,7 +188,7 @@ const EventForm = () => {
                 >
                   <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
                 </svg>
-                <span className="flex-1 ms-3 whitespace-nowrap">Events</span>
+                <span className="flex-1 ms-3 whitespace-nowrap">Blogs</span>
               </Link>
             </li>
           </ul>
@@ -198,7 +206,7 @@ const EventForm = () => {
                   htmlFor="name"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Enter event image
+                  Event Image
                 </label>
                 <div className="flex items-center justify-center w-full">
                   <label
@@ -206,28 +214,54 @@ const EventForm = () => {
                     className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
                   >
                     <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                      <svg
-                        className="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 20 16"
-                      >
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
-                        />
-                      </svg>
-                      <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                        <span className="font-semibold">Click to upload</span>{" "}
-                        or drag and drop
-                      </p>
-                      <p className="text-xs text-gray-500 dark:text-gray-400">
-                        SVG, PNG, JPG or GIF (MAX. 800x400px)
-                      </p>
+                      {!image ? (
+                        <svg
+                          className="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 20 16"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+                          />
+                        </svg>
+                      ) : (
+                        ""
+                      )}
+
+                      {image && (
+                        <div className="h-full">
+                          <Image
+                            src={image}
+                            className=""
+                            alt="image"
+                            width={150}
+                            height={150}
+                          />
+                        </div>
+                      )}
+
+                      {!image ? (
+                        <>
+                          {" "}
+                          <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                            <span className="font-semibold">
+                              Click to upload
+                            </span>{" "}
+                            or drag and drop
+                          </p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">
+                            SVG, PNG, JPG or GIF (MAX. 800x400px)
+                          </p>
+                        </>
+                      ) : (
+                        " "
+                      )}
                     </div>
                     <input
                       id="blog-image"
@@ -271,7 +305,7 @@ const EventForm = () => {
                   name="brand"
                   id="date"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                  placeholder="Enter the title"
+                  placeholder="Enter event date"
                   required={true}
                 />
               </div>
@@ -325,6 +359,7 @@ const EventForm = () => {
                   onChange={(e) => setDesc(e.target.value)}
                   className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   placeholder="Your description here"
+                  required
                 ></textarea>
               </div>
             </div>

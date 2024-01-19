@@ -103,7 +103,7 @@ const Dashboard = () => {
     getevents();
   },[])
   return (
-    <div>
+    <div className="font-sans">
       <button
         data-drawer-target="default-sidebar"
         data-drawer-toggle="default-sidebar"
@@ -132,7 +132,7 @@ const Dashboard = () => {
         className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
         aria-label="Sidebar"
       >
-        
+
         <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
           <ul className="space-y-2 font-medium">
             <li>
@@ -167,7 +167,9 @@ const Dashboard = () => {
                 >
                   <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
                 </svg>
-                <span className="flex-1 ms-3 whitespace-nowrap">User</span>
+                <span className="flex-1 ms-3 whitespace-nowrap">
+                  Manage User
+                </span>
               </Link>
             </li>
             <li>
@@ -184,7 +186,9 @@ const Dashboard = () => {
                 >
                   <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
                 </svg>
-                <span className="flex-1 ms-3 whitespace-nowrap">Events</span>
+                <span className="flex-1 ms-3 whitespace-nowrap">
+                  Add Events
+                </span>
               </Link>
             </li>
             <li>
@@ -201,7 +205,7 @@ const Dashboard = () => {
                 >
                   <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
                 </svg>
-                <span className="flex-1 ms-3 whitespace-nowrap">Blogs</span>
+                <span className="flex-1 ms-3 whitespace-nowrap">Add Blogs</span>
               </Link>
             </li>
           </ul>
@@ -457,10 +461,9 @@ const Dashboard = () => {
                   </tbody>
                 </table>
               </div>
+         
             </div>
           </div>
-
-          
         </div>
       </div>
     </div>
