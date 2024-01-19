@@ -87,10 +87,7 @@ html::-webkit-scrollbar-thumb {
   background-color: #8bac74;
 }
 
-<<<<<<< HEAD
 
-
-=======
 .loader-l:nth-child(4) {
   animation-delay: 0.74s;
   left: 50px;
@@ -117,4 +114,3 @@ html::-webkit-scrollbar-thumb {
     opacity: 1;
   }
 }
->>>>>>> 2ae38edd2f7cf77cc8727b54c4975e6740aa87f6
