@@ -41,7 +41,7 @@ const Contact = () => {
       });
   };
   return (<>
-    <div className="container my-24 mx-auto md:px-6">
+    <div className="container mt-20 mb-5 mx-auto md:px-6">
       <section className="mb-32">
         <div className="relative h-[300px] overflow-hidden bg-cover bg-[50%] bg-no-repeat bg-[url('https://mdbcdn.b-cdn.net/img/new/textures/full/284.jpg')]"></div>
         <div className="container px-6 md:px-12">
@@ -121,10 +121,10 @@ const Contact = () => {
                           Technical support
                         </p>
                         <p className="text-neutral-500 dark:text-neutral-200">
-                          support@example.com
+                          nitttetudar@gmail.com
                         </p>
                         <p className="text-neutral-500 dark:text-neutral-200">
-                          +1 234-567-89
+                          +91 8088957450
                         </p>
                       </div>
                     </div>
@@ -151,18 +151,18 @@ const Contact = () => {
                       </div>
                       <div className="ml-6 grow">
                         <p className="mb-2 font-bold dark:text-white">
-                          Sales questions
+                          Media Queries
                         </p>
                         <p className="text-neutral-500 dark:text-neutral-200">
-                          sales@example.com
+                          nitttetudar@gmail.com
                         </p>
                         <p className="text-neutral-500 dark:text-neutral-200">
-                          +1 234-567-89
+                          +91 8088782845
                         </p>
                       </div>
                     </div>
                   </div>
-                  <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:mb-12 lg:w-full lg:px-6 xl:w-6/12">
+                  {/* <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:mb-12 lg:w-full lg:px-6 xl:w-6/12">
                     <div className="align-start flex">
                       <div className="shrink-0">
                         <div className="inline-block rounded-md bg-primary-100 p-4 text-primary">
@@ -190,10 +190,10 @@ const Contact = () => {
                         <p className="text-neutral-500 dark:text-neutral-200">
                           +1 234-567-89
                         </p>
-                      </div>
+                      </div> 
                     </div>
-                  </div>
-                  <div className="w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:mb-12 xl:w-6/12">
+                  </div> 
+                   <div className="w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:mb-12 xl:w-6/12">
                     <div className="align-start flex">
                       <div className="shrink-0">
                         <div className="inline-block rounded-md bg-primary-100 p-4 text-primary">
@@ -225,7 +225,7 @@ const Contact = () => {
                         </p>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
