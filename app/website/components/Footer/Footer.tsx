@@ -22,7 +22,7 @@ const Footer = () => {
           </div>
           <div className="px-5 py-2">
             <Link
-              href="/website/Team"
+              href="/website/DevTeam"
               className="text-base leading-6 text-white hover:text-gray-200">
               Team
             </Link>
