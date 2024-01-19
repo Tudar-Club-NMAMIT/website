@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -25,9 +25,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-    
 }
-
 
 html {
   height: 100%;
@@ -35,32 +33,88 @@ html {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-  font-family:"Berkshire Swash";
-  
-}
-.tulu-font{
   font-family: "Berkshire Swash";
 }
 
 html::-webkit-scrollbar {
-  width: 10px; 
+  width: 10px;
 }
 
 html::-webkit-scrollbar-track {
-background-color: black;
+  background-color: black;
 }
 
 html::-webkit-scrollbar-thumb {
-background: #4e4e4e;
-border-radius: 25px;
+  background: #4e4e4e;
+  border-radius: 25px;
 }
-.cursor-styles{
+.cursor-styles {
   width: 100vh;
 }
+/* loader ui */
+.container-l {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.loader-l {
+  width: 20px;
+  height: 40px;
+  border-radius: 10px 50px;
+  box-shadow: 0px 0px 5px black;
+  animation: dominos 1s ease infinite;
+}
+
+.loader-l:nth-child(1) {
+  --left: 80px;
+  animation-delay: 0.325s;
+  background-color: #5d9960;
+}
+
+.loader-l:nth-child(2) {
+  --left: 70px;
+  animation-delay: 0.5s;
+  background-color: #82a587;
+}
+
+.loader-l:nth-child(3) {
+  left: 60px;
+  animation-delay: 0.625s;
+  background-color: #8bac74;
+}
+
+<<<<<<< HEAD
 
 
+=======
+.loader-l:nth-child(4) {
+  animation-delay: 0.74s;
+  left: 50px;
+  background-color: #b9bf90;
+}
 
+.loader-l:nth-child(5) {
+  animation-delay: 0.865s;
+  left: 40px;
+  background-color: #e7d2ab;
+}
 
+@keyframes dominos {
+  50% {
+    opacity: 0.7;
+  }
 
+  75% {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
 
-
+  80% {
+    opacity: 1;
+  }
+}
+>>>>>>> 2ae38edd2f7cf77cc8727b54c4975e6740aa87f6
