@@ -30,7 +30,7 @@ const Hero = () => {
       <motion.div
         className="min-h-screen bg-contain object-center absolute inset-0 z-0"
         style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2) 100px), url(https://res.cloudinary.com/deax1ssmv/image/upload/f_auto,q_auto/jcczha2q8yqbzuxufnvh)`,
+          backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2) 100px), url(https://res.cloudinary.com/deax1ssmv/image/upload/f_auto,q_auto/v1/Tudar/h67xebdfxglmsx3l8f8i)`,
           backgroundPosition: "bottom",
           backgroundSize: "cover",
           y: backgroundY,
@@ -40,7 +40,7 @@ const Hero = () => {
       <div
         className="absolute inset-0 z-20 "
         style={{
-          backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 100px ), url(https://res.cloudinary.com/deax1ssmv/image/upload/f_auto,q_auto/bmpstgrsc7uqet7eyeim)`,
+          backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 100px ), url(https://res.cloudinary.com/deax1ssmv/image/upload/f_auto,q_auto/v1/Tudar/cujh3cq4rorvbibsdbgl)`,
           backgroundPosition: "bottom",
           backgroundSize: "cover",
         }}

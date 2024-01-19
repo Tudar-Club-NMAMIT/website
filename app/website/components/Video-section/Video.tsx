@@ -4,7 +4,7 @@ const Video = () => {
   return (
     <div className="relative h-screen overflow-hidden">
       <video autoPlay muted loop className="w-screen h-screen object-cover">
-        <source src="https://res.cloudinary.com/deax1ssmv/video/upload/f_auto:video,q_auto/dbpyvbmlmngbftsadtml" />
+        <source src="https://res.cloudinary.com/deax1ssmv/video/upload/f_auto:video,q_auto/v1/Tudar/dbpyvbmlmngbftsadtml" />
       </video>
       <div className="gradient-overlay top"></div>
       <div className="gradient-overlay bottom"></div>
