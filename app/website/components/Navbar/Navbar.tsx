@@ -72,11 +72,13 @@ const Navbar = () => {
     <nav
       className={`navbar-bg py-4 px-8 border-b w-screen fixed border-nav-border z-40 top-0 transition-style ${
         flag ? (show ? "translate-y-0" : "-translate-y-full") : "translate-y-0"
-      }`}>
+      }`}
+    >
       <div
         className="menu-container absolute top-0 left-0 w-screen"
         id="menu"
-        style={{ display: "none" }}>
+        style={{ display: "none" }}
+      >
         <Menu Navlist={NavLinks} />
       </div>
       <div className="flex w-full">
@@ -86,7 +88,8 @@ const Navbar = () => {
               src="https://res.cloudinary.com/deax1ssmv/image/upload/f_auto,q_auto/xczsl6fzq0clalmthj6f"
               alt="Tudar"
               width={40}
-              height={30}></Image>
+              height={30}
+            ></Image>
           </span>
         </Link>
         <div className="flex items-center justify-center w-screen ">
@@ -104,7 +107,8 @@ const Navbar = () => {
               <button
                 onClick={() => setOpen(!open)}
                 className="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-                type="button">
+                type="button"
+              >
                 <span className="sr-only">Open user menu</span>
                 <Image
                   className="w-11 h-9 rounded-full"
@@ -117,7 +121,8 @@ const Navbar = () => {
               <div
                 className={`z-30 ${
                   open ? null : `hidden`
-                } font-sans right-0 mr-8 mt-1 absolute bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-900 opacity-70  dark:divide-gray-100`}>
+                } font-sans right-0 mr-8 mt-1 absolute bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-900 opacity-70  dark:divide-gray-100`}
+              >
                 <div className="px-4 py-3 text-sm text-white">
                   <div>{session.user?.name}</div>
                   <div className="font-medium truncate">
@@ -127,8 +132,9 @@ const Navbar = () => {
                 <ul className="py-2 text-gray-700 ">
                   <li>
                     <Link
-                      href="/Profile"
-                      className="block px-4 py-2 text-white hover:bg-white hover:text-black">
+                      href={`/website/Profile/${session?.user?.email}`}
+                      className="block px-4 py-2 text-white hover:bg-white hover:text-black"
+                    >
                       Profile
                     </Link>
                   </li>
@@ -136,7 +142,8 @@ const Navbar = () => {
                     <li>
                       <Link
                         href="/Dashboard"
-                        className="block px-4 py-2 text-white hover:bg-white hover:text-black">
+                        className="block px-4 py-2 text-white hover:bg-white hover:text-black"
+                      >
                         Dashboard
                       </Link>
                     </li>
@@ -145,7 +152,8 @@ const Navbar = () => {
                 <div className="py-2 ">
                   <button
                     onClick={() => signOut()}
-                    className="block px-4 py-2 w-44 text-left text-white hover:bg-white hover:text-black">
+                    className="block px-4 py-2 w-44 text-left text-white hover:bg-white hover:text-black"
+                  >
                     Sign out
                   </button>
                 </div>
@@ -162,7 +170,8 @@ const Navbar = () => {
         <div
           className="md:hidden flex  w-10 h float-right m-0 hamburger p-1"
           id="hamburger"
-          onClick={handleClick}>
+          onClick={handleClick}
+        >
           <div className="bar-hamburger"></div>
           <div className="bar-hamburger"></div>
           <div className="bar-hamburger"></div>
