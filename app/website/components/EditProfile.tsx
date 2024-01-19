@@ -66,19 +66,19 @@ const EditProfile = (param: {
     <>
       <div className="flex justify-center items-center">
         {session?.user?.email == param.email && (
-          <>
+          <div className="flex justify-center items-center gap-10 m-7">
             {" "}
             <button
               onClick={() => setHidden(false)}
               data-modal-target="crud-modal"
               data-modal-toggle="crud-modal"
-              className="block text-white focus:ring-4 focus:outline-none bg-gray-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+              className="block text-black focus:ring-4 focus:outline-none bg-white font-medium rounded-lg text-sm px-5 py-2.5 text-center"
               type="button"
             >
               Edit Profile
             </button>
             <SignOut />{" "}
-          </>
+          </div>
         )}
 
         <div
@@ -88,8 +88,7 @@ const EditProfile = (param: {
             hidden ? "hidden" : " "
           } flex overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full`}
         >
-          <div className="w-screen h-screen absolute top-0 left-0  bg-   z-10"></div>
-          <div className="relative p-4 w-full max-w-md max-h-full z-20">
+          <div className="relative p-4 w-full max-w-md mt-40 z-20">
             <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
               <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -121,7 +120,7 @@ const EditProfile = (param: {
                 </button>
               </div>
 
-              <form className="p-4 md:p-5" onSubmit={handleSubmit}>
+              <form className="md:p-5" onSubmit={handleSubmit}>
                 <div className="sm:col-span-2">
                   <label
                     htmlFor="name"
@@ -190,7 +189,7 @@ const EditProfile = (param: {
                 </div>
                 <button
                   type="submit"
-                  className="text-white bg-gray-500 inline-flex items-center focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                  className="text-white bg-blue-500 inline-flex items-center focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                 >
                   {submitting ? "Updating..." : "Update"}
                 </button>
