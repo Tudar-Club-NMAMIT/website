@@ -1,4 +1,3 @@
-
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import { getUserByEmail } from "@/app/server/actions";
@@ -23,7 +22,8 @@ export default async function Profile({
               width="200"
               height="200"
               alt="Profile pic"
-              className="rounded-lg"></Image>
+              className="rounded-lg"
+            ></Image>
           </div>
 
           <div className="text-center mt-2">
@@ -53,7 +53,7 @@ export default async function Profile({
           imageUrl={user?.image || ""}
           bio={user?.bio || ""}
         />
-        <SignOut/>
+        
       </div>
     </>
   );
