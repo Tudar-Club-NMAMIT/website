@@ -1,10 +1,6 @@
-import React from "react";
-import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
 import { getAllEvents, getPosts } from "@/app/server/actions";
 
 import Image from "next/image";
-import Link from "next/link";
 
 const page = async () => {
   const events = await getAllEvents();
@@ -12,8 +8,6 @@ const page = async () => {
   console.log("pots:" + events);
   return (
     <div>
-
-      <Navbar />
       <div className="bg-black font-sans py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
