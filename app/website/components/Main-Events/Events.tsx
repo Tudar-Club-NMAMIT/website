@@ -56,35 +56,35 @@ const squareData = [
   },
   {
     id: 2,
-    src: "/src/events/MVB09703.JPG",
+    src: "https://res.cloudinary.com/deax1ssmv/image/upload/f_auto,q_auto/v1/Tudar/m87auoctdpfoyjpqvb5k",
   },
   {
     id: 3,
-    src: "/src/events/MVB09703.JPG",
+    src: "https://res.cloudinary.com/deax1ssmv/image/upload/f_auto,q_auto/v1/Tudar/auio5zajwejyotzjkcf2",
   },
   {
     id: 4,
-    src: "/src/events/MVB08973.JPG",
+    src: "https://res.cloudinary.com/deax1ssmv/image/upload/f_auto,q_auto/v1/Tudar/aakj3gs57n1yrwnqsazl",
   },
   {
     id: 5,
-    src: "/src/events/MVB09677.JPG",
+    src: "https://res.cloudinary.com/deax1ssmv/image/upload/f_auto,q_auto/v1/Tudar/eki3madd4ebwywut1xbr",
   },
   {
     id: 6,
-    src: "/src/events/MVB09688.JPG",
+    src: "https://res.cloudinary.com/deax1ssmv/image/upload/f_auto,q_auto/v1/Tudar/k95ulprkudilviigfqwt",
   },
   {
     id: 7,
-    src: "/src/events/DSC_0263.JPG",
+    src: "https://res.cloudinary.com/deax1ssmv/image/upload/f_auto,q_auto/v1/Tudar/g3tpoaswcn2kml5lsh4f",
   },
   {
     id: 8,
-    src: "/src/events/MVB08939.JPG",
+    src: "https://res.cloudinary.com/deax1ssmv/image/upload/f_auto,q_auto/v1/Tudar/ngok6vook4qjmjwk2kdw",
   },
   {
     id: 9,
-    src: "/src/events/MVB09688.JPG",
+    src: "https://res.cloudinary.com/deax1ssmv/image/upload/f_auto,q_auto/v1/Tudar/i8plm83ph7rbrzolnpai",
   },
 ];
 
