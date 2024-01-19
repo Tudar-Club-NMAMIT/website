@@ -24,7 +24,7 @@ const BlogForm = () => {
     }
     const fileSizeInMB = file.size / (1024 * 1024);
     if (fileSizeInMB > 2) {
-      alert("File size exceeds 1MB. Please choose a smaller file");
+      alert("File size exceeds 2MB. Please choose a smaller file");
       return;
     }
     const reader = new FileReader();

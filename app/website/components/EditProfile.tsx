@@ -4,17 +4,20 @@ import { useState } from "react";
 import { ChangeEvent } from "react";
 import Image from "next/image";
 import { updateUserProfile } from "@/app/server/actions";
+import { useSession } from "next-auth/react";
+import SignOut from "./SignOut";
 const EditProfile = (param: {
   email: string;
   name: string;
   imageUrl: string;
   bio: string;
 }) => {
+  const { data: session, status } = useSession();
   const [hidden, setHidden] = useState(true);
   const [username, setUsername] = useState(param.name);
   const [bio, setBio] = useState(param.bio);
   const [image, setImage] = useState(param.imageUrl);
-  const [updated, setUpdated] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const handleChangeImage = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     const file = e.target.files?.[0];
@@ -36,6 +39,7 @@ const EditProfile = (param: {
   };
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    setSubmitting(true);
     if (!image || !username || !bio) return;
     try {
       const response = await fetch("/api/upload", {
@@ -51,12 +55,8 @@ const EditProfile = (param: {
         setImage("");
         setUsername("");
         setBio("");
-        setUpdated(true);
-        setTimeout(() => {
-          //noting
-        }, 1000);
+        setHidden(true);
       }
-      setHidden(true);
     } catch (e) {
       console.log(e);
     }
@@ -65,15 +65,21 @@ const EditProfile = (param: {
   return (
     <>
       <div className="flex justify-center items-center">
-        <button
-          onClick={() => setHidden(false)}
-          data-modal-target="crud-modal"
-          data-modal-toggle="crud-modal"
-          className="block text-white focus:ring-4 focus:outline-none bg-gray-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-          type="button"
-        >
-          Edit Profile
-        </button>
+        {session?.user?.email == param.email && (
+          <>
+            {" "}
+            <button
+              onClick={() => setHidden(false)}
+              data-modal-target="crud-modal"
+              data-modal-toggle="crud-modal"
+              className="block text-white focus:ring-4 focus:outline-none bg-gray-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+              type="button"
+            >
+              Edit Profile
+            </button>
+            <SignOut />{" "}
+          </>
+        )}
 
         <div
           id="crud-modal"
@@ -184,11 +190,9 @@ const EditProfile = (param: {
                 </div>
                 <button
                   type="submit"
-                  className={`text-white inline-flex items-center ${
-                    updated ? "bg-green-500" : "bg-gray-900"
-                  }   focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center`}
+                  className="text-white bg-gray-500 inline-flex items-center focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                 >
-                  {updated ? "Updated" : "Update Profile"}
+                  {submitting ? "Updating..." : "Update"}
                 </button>
               </form>
             </div>
