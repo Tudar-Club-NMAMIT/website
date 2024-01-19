@@ -63,7 +63,7 @@ const Navbar = () => {
         </div>
         <div className="float-right gap-3 flex justify-center z-50 ">
           {session ? (
-            <div className="w-10">
+            <div className="w-10 md:block hidden">
               <button
                 onClick={() => setOpen(!open)}
                 className="flex text-sm aspect-square bg-gray-800 rounded-full md:me-0 ring-2 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
@@ -120,7 +120,7 @@ const Navbar = () => {
               </div>
             </div>
           ) : (
-            <div className="flex items-center justify-center">
+            <div className="md:flex hidden items-center justify-center">
               <Link href="/api/auth/signin" className="signIn-button ">
                 <div className="pointer p-2 px-4 whitespace-nowrap">Sign-In</div>
               </Link>
