@@ -1,20 +1,26 @@
-import React from 'react';
+// import React from 'react';
 
-const Loading = () => {
+import React from "react";
 
+const loading = () => {
+  return <div>loading...</div>;
+};
 
-  return (
-    <div className='flex items-center justify-center h-screen'>
-      <div className="container-l">
-        <div className="loader-l"></div>
-        <div className="loader-l"></div>
-        <div className="loader-l"></div>
-        <div className="loader-l"></div>
-        <div className="loader-l"></div>
-      </div>
+export default loading;
+// const Loading = () => {
 
-    </div>
-  );
-}
+//   return (
+//     <div className='flex items-center justify-center h-screen'>
+//       <div className="container-l">
+//         <div className="loader-l"></div>
+//         <div className="loader-l"></div>
+//         <div className="loader-l"></div>
+//         <div className="loader-l"></div>
+//         <div className="loader-l"></div>
+//       </div>
 
-export default Loading;
+//     </div>
+//   );
+// }
+
+// export default Loading;

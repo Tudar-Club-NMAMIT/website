@@ -10,7 +10,7 @@ const Menu = (NavLists: {
 }) => {
   const { data: session} = useSession();
   return (
-    <div className="container-menu navbar-bg-menu" id="menu-container">
+    <div className="container-menu navbar-bg-menu z-40" id="menu-container">
 
       <ul className="flex justify-center flex-col p-10 gap-3 ">
       {session ? (
