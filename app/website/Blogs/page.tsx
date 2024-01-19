@@ -2,7 +2,7 @@ import React from "react";
 import { getPosts } from "@/app/server/actions";
 import Image from "next/image";
 import Link from "next/link";
-import Footer from "../components/Footer/Footer";
+
 const page = async () => {
   const userData = await getPosts();
   const posts = userData[0].posts;
