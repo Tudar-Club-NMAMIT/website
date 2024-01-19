@@ -8,14 +8,14 @@ const Footer = () => {
         <nav className="flex flex-wrap justify-center -mx-5 -my-2">
           <div className="px-5 py-2">
             <Link
-              href="website/Aboutus"
+              href="/website/Aboutus"
               className="text-base leading-6 text-white hover:text-gray-200">
               About
             </Link>
           </div>
           <div className="px-5 py-2">
             <Link
-              href="#website/Blogs"
+              href="/website/Blogs"
               className="text-base leading-6 text-white hover:text-gray-200">
               Blog
             </Link>
