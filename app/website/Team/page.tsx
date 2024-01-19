@@ -60,10 +60,10 @@ const Team = () => {
             />
           </div>
           <div className="flex flex-col justify-center mt-5 sm:mt-0 sm:p-5 sm:col-span-2">
-            <p className="text-lg font-bold">Vishnu</p>
-            <p className="mb-4 text-xs text-gray-100">Design Team Lead</p>
+            <p className="text-lg font-bold">Vishnuprasad V Bhat</p>
+            <p className="mb-4 text-xs text-gray-100">Joint Secretary </p>
             <p className="mb-4 text-sm tracking-wide text-gray-100">
-              Amet I love liquorice jujubes pudding croissant I love pudding.
+            I ensure our club adheres to the event timeline, ensuring seamless execution of all our events.
             </p>
             <div className="flex items-center space-x-3">
               <a
@@ -93,11 +93,10 @@ const Team = () => {
             />
           </div>
           <div className="flex flex-col justify-center mt-5 sm:mt-0 sm:p-5 sm:col-span-2">
-            <p className="text-lg font-bold">Shreya</p>
-            <p className="mb-4 text-xs text-gray-100">Human Resources</p>
+            <p className="text-lg font-bold">Shreya P V</p>
+            <p className="mb-4 text-xs text-gray-100">Documentation Head</p>
             <p className="mb-4 text-sm tracking-wide text-gray-100">
-              Lorizzle ipsum bling bling sit amizzle, consectetuer adipiscing
-              elit.
+            Creating , maintaining ,managing the documentation of club events, meetings and other activities.
             </p>
             <div className="flex items-center space-x-3">
               <a
@@ -127,11 +126,10 @@ const Team = () => {
             />
           </div>
           <div className="flex flex-col justify-center mt-5 sm:mt-0 sm:p-5 sm:col-span-2">
-            <p className="text-lg font-bold">Bala</p>
-            <p className="mb-4 text-xs text-gray-100">Good guy</p>
+            <p className="text-lg font-bold">Brijwin Balakrishna</p>
+            <p className="mb-4 text-xs text-gray-100">Digital and Social Media Head</p>
             <p className="mb-4 text-sm tracking-wide text-gray-100">
-              Bacon ipsum dolor sit amet salami jowl corned beef, andouille
-              flank.
+            Designing and managing various creatives for the digital assets of the club on various social media platforms 
             </p>
             <div className="flex items-center space-x-3">
               <a
@@ -161,10 +159,10 @@ const Team = () => {
             />
           </div>
           <div className="flex flex-col justify-center mt-5 sm:mt-0 sm:p-5 sm:col-span-2">
-            <p className="text-lg font-bold">vig</p>
-            <p className="mb-4 text-xs text-gray-100">Product Manager</p>
+            <p className="text-lg font-bold"> Vignesh mallya . </p>
+            <p className="mb-4 text-xs text-gray-100">Asst tulu lipi head</p>
             <p className="mb-4 text-sm tracking-wide text-gray-100">
-              Vincent Van Gogh’s most popular painting, The Starry Night.
+To promote tulu language and lipi. Conduct various events related to same. Tulu lipi classes and other activities. 
             </p>
             <div className="flex items-center space-x-3">
               <a
@@ -194,10 +192,10 @@ const Team = () => {
             />
           </div>
           <div className="flex flex-col justify-center mt-5 sm:mt-0 sm:p-5 sm:col-span-2">
-            <p className="text-lg font-bold">amrith</p>
-            <p className="mb-4 text-xs text-gray-100">Head - Tulu Lipi</p>
+            <p className="text-lg font-bold">Amrith R Naik</p>
+            <p className="mb-4 text-xs text-gray-100">Event Management Co-head</p>
             <p className="mb-4 text-sm tracking-wide text-gray-100">
-              Amet I love liquorice jujubes pudding croissant I love pudding.
+            Collaborating in the planning and execution of events for our club with enthusiasm and precision
             </p>
             <div className="flex items-center space-x-3">
               <a
@@ -227,10 +225,10 @@ const Team = () => {
             />
           </div>
           <div className="flex flex-col justify-center mt-5 sm:mt-0 sm:p-5 sm:col-span-2">
-            <p className="text-lg font-bold">Prathama S J</p>
-            <p className="mb-4 text-xs text-gray-100"> Event Management Head</p>
+            <p className="text-lg font-bold">Gagan R Rai</p>
+            <p className="mb-4 text-xs text-gray-100">Joint Secretary </p>
             <p className="mb-4 text-sm tracking-wide text-gray-100">
-              Overseeing and coordinating various events, ensuring their successful planning, execution, and follow-up
+            Managing cultural events, coordinating activities, and supporting administrative tasks.
             </p>
             <div className="flex items-center space-x-3">
               <a
@@ -260,11 +258,10 @@ const Team = () => {
             />
           </div>
           <div className="flex flex-col justify-center mt-5 sm:mt-0 sm:p-5 sm:col-span-2">
-            <p className="text-lg font-bold">John Doe</p>
-            <p className="mb-4 text-xs text-gray-100">Good guy</p>
+            <p className="text-lg font-bold">Sampreeth T Poojary</p>
+            <p className="mb-4 text-xs text-gray-100"> Core Member </p>
             <p className="mb-4 text-sm tracking-wide text-gray-100">
-              Bacon ipsum dolor sit amet salami jowl corned beef, andouille
-              flank.
+            Writing a content for social media post, volunteering events.
             </p>
             <div className="flex items-center space-x-3">
               <a
@@ -294,10 +291,10 @@ const Team = () => {
             />
           </div>
           <div className="flex flex-col justify-center mt-5 sm:mt-0 sm:p-5 sm:col-span-2">
-            <p className="text-lg font-bold">Oliver Aguilerra</p>
-            <p className="mb-4 text-xs text-gray-100">Product Manager</p>
+            <p className="text-lg font-bold">Prathama S J</p>
+            <p className="mb-4 text-xs text-gray-100">Event Management Head</p>
             <p className="mb-4 text-sm tracking-wide text-gray-100">
-              Vincent Van Gogh’s most popular painting, The Starry Night.
+            Overseeing and coordinating various events, ensuring their successful planning, execution, and follow-up
             </p>
             <div className="flex items-center space-x-3">
               <a
@@ -323,13 +320,12 @@ const Team = () => {
           <div className="relative w-full h-48 max-h-full rounded shadow sm:h-auto">
             <img
               className="absolute object-cover w-full h-full rounded"
-              src="https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-              alt="Person"
+              src="https://res.cloudinary.com/deax1ssmv/image/upload/v1705581159/Tudar/IMG_0014_-_BLENSON_CARDOZA_nmrqje.jpg"
             />
           </div>
           <div className="flex flex-col justify-center mt-5 sm:mt-0 sm:p-5 sm:col-span-2">
-            <p className="text-lg font-bold">Marta Clermont</p>
-            <p className="mb-4 text-xs text-gray-100">Design Team Lead</p>
+            <p className="text-lg font-bold">Blenson Cardoza</p>
+            <p className="mb-4 text-xs text-gray-100">Head - Tulu Lipi </p>
             <p className="mb-4 text-sm tracking-wide text-gray-100">
               Amet I love liquorice jujubes pudding croissant I love pudding.
             </p>
