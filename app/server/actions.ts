@@ -114,3 +114,17 @@ export async function updateBlogfromDashboard(id:string, title:string, createdBy
     }
   })
 }
+
+export async function updateEventsfromDashboard(id:string, title:string, attendedBy: string, venue: string, date:string){
+  const updatequery = await prisma.events.update({
+    where:{
+      id: id,
+    },
+    data:{
+        title: title,
+        attendedBy: attendedBy,
+        venue: venue,
+        date: date,
+    }
+  })
+}

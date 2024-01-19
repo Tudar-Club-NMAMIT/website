@@ -5,8 +5,10 @@ import Image from "next/image";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import Edituser from "./Edituser";
 import Editblog from "./Editblog";
+import EditEvent from "./EditEvent";
 import { useState, useEffect } from "react";
 import { getUsers, getPosts, getEvents } from "../server/actions";
+
 type Users={
   id: string;
   name: string | null;
@@ -130,6 +132,7 @@ const Dashboard = () => {
         className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
         aria-label="Sidebar"
       >
+        
         <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
           <ul className="space-y-2 font-medium">
             <li>
@@ -323,7 +326,7 @@ const Dashboard = () => {
               id="blogs"
               role="tabpanel"
               aria-labelledby="blog-tab">
-              <div className="relative overflow-x-auto shadow-md sm:rounded-lg table-auto w-full">
+              <div className="overflow-x-auto shadow-md sm:rounded-lg table-auto w-full">
                 <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                   <caption className="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white dark:text-white dark:bg-gray-800">
                     Blogs
@@ -369,7 +372,7 @@ const Dashboard = () => {
                           {blog.show? <IoEyeOutline size={30} />: <IoEyeOffOutline size={30}/>}
                           
                         </td>
-                        <td className="px-6 py-4 text-right">
+                        <td className="px-6 py-4">
                           <Editblog blog={blog}/>
                         </td>
                       </tr>
@@ -392,7 +395,7 @@ const Dashboard = () => {
               role="tabpanel"
               aria-labelledby="event-tab"
             >
-              <div className="relative overflow-x-auto shadow-md sm:rounded-lg table-auto w-full">
+              <div className="overflow-x-auto shadow-md sm:rounded-lg table-auto w-full">
                 <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                   <caption className="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white dark:text-white dark:bg-gray-800">
                     Events
@@ -447,12 +450,7 @@ const Dashboard = () => {
                         <td className="px-6 py-4">{event.venue}</td>
 
                         <td className="px-6 py-4 text-right">
-                          <a
-                            href="#"
-                            className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                          >
-                            Edit
-                          </a>
+                          <EditEvent event={event}/>
                         </td>
                       </tr>
                     ))}
