@@ -1,5 +1,4 @@
 "use server";
-import { emit } from "process";
 import { prisma } from "../utils/db";
 
 export async function createPost(
@@ -73,9 +72,26 @@ export async function getPostById(id: string) {
       imageUrl: true,
       reference: true,
       createdBy: true,
+      credits: true,
     },
   });
   return post;
+}
+export async function getEventById(id: string) {
+  const event = await prisma.events.findFirst({
+    where: {
+      id: id,
+    },
+    select: {
+      title: true,
+      description: true,
+      imageUrl: true,
+      date: true,
+      venue: true,
+      organizedBy: true,
+    },
+  });
+  return event;
 }
 
 export async function getUsers(){
@@ -149,14 +165,14 @@ export async function updateEventsfromDashboard(id:string, title:string, attende
 }
 export async function updateUserProfile(image:string, name:string, bio:string,email:string) {
   const res = await prisma.user.update({
-    where:{
-      email:email
+    where: {
+      email: email,
     },
-    data:{
-      name:name,
-      bio:bio,
-      image:image,
-    }
-
-})
+    data: {
+      name: name,
+      bio: bio,
+      image: image,
+    },
+  });
+  return res;
 }
