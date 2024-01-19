@@ -1,16 +1,14 @@
 import React from "react";
 import { getPosts } from "@/app/server/actions";
 import Image from "next/image";
-import Navbar from "../components/Navbar/Navbar";
 import Link from "next/link";
-import Footer from "../components/Footer/Footer";
+
 const page = async () => {
   const userData = await getPosts();
   const posts = userData[0].posts;
   console.log("pots:" + posts);
   return (
     <div>
-      <Navbar />
       <div className="bg-black font-sans py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
@@ -72,7 +70,6 @@ const page = async () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
