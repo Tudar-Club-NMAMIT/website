@@ -17,9 +17,8 @@ const NavLinks = [
 ];
 
 const Navbar = () => {
-  const [flag, setflag] = useState(true);
   const { data: session } = useSession();
-
+  const flag =true;
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [open, setOpen] = useState(false);
@@ -40,46 +39,9 @@ const Navbar = () => {
     }
   }, [controlNavbar]);
 
-  const handleClick = () => {
-    const bars = document.querySelectorAll<HTMLElement>(".bar-hamburger");
-    const menu = document.getElementById("menu");
-    let color = "white";
-    if (menu) {
-      if (flag) {
-        color = "black";
-        bars[1].style.display = "none";
-        bars[0].style.animation = "cross-1 0.2s ease-in forwards";
-        bars[2].style.animation = "cross-2 0.2s ease-in forwards";
-        menu.style.display = "block";
-        menu.style.animation = "menu-click-animation 0.2s ease-in";
-      }
-      if (!flag) {
-        color = "white";
-        menu.style.display = "none";
-        menu.style.animation = "none";
-        bars[1].style.display = "block";
-        bars[0].style.animation = "none";
-        bars[2].style.animation = "none";
-      }
-      bars.forEach((bar) => {
-        bar.style.background = color;
-      });
-      setflag(!flag);
-    }
-  };
   return (
-    <nav
-      className={`navbar-bg py-4 px-8 border-b w-screen fixed border-nav-border z-40 top-0 transition-style ${
-        flag ? (show ? "translate-y-0" : "-translate-y-full") : "translate-y-0"
-      }`}
-    >
-      <div
-        className="menu-container absolute top-0 left-0 w-screen"
-        id="menu"
-        style={{ display: "none" }}
-      >
-      </div>
-      <div className="flex w-full">
+    <nav className={`navbar-bg py-4 px-8 border-b w-screen fixed border-nav-border high-z-index top-0 transition-style ${flag ? (show ? "translate-y-0" : "-translate-y-full") : "translate-y-0"}`}>
+      <div className="flex justify-center items-center w-full">
         <Link href="/" className="float-left ml-0">
           <span className="whitespace-nowrap">
             <Image
@@ -99,17 +61,17 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-        <div className=" float-right hidden md:flex justify-center ">
+        <div className="float-right gap-3 flex justify-center z-50 ">
           {session ? (
-            <div>
+            <div className="w-10">
               <button
                 onClick={() => setOpen(!open)}
-                className="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                className="flex text-sm aspect-square bg-gray-800 rounded-full md:me-0 ring-2 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                 type="button"
               >
                 <span className="sr-only">Open user menu</span>
                 <Image
-                  className="w-11 h-9 rounded-full"
+                  className="w-12 aspect-square rounded-full"
                   src={session.user?.image || ""}
                   alt="user photo"
                   width={50}
@@ -164,9 +126,8 @@ const Navbar = () => {
               </Link>
             </div>
           )}
+          <Menu Navlist={NavLinks} />
         </div>
-        <Menu Navlist={NavLinks} />
-
       </div>
     </nav>
   );
