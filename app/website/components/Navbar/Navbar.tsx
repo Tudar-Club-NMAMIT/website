@@ -78,7 +78,6 @@ const Navbar = () => {
         id="menu"
         style={{ display: "none" }}
       >
-        <Menu Navlist={NavLinks} />
       </div>
       <div className="flex w-full">
         <Link href="/" className="float-left ml-0">
@@ -100,7 +99,7 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-        <div className="float float-right hidden md:block ">
+        <div className=" float-right hidden md:flex justify-center ">
           {session ? (
             <div>
               <button
@@ -159,24 +158,16 @@ const Navbar = () => {
               </div>
             </div>
           ) : (
-            <div className="flex items-center">
-              <Link href="/api/auth/signin" className="signIn-button">
-                <div className="pointer px-1 whitespace-nowrap">Sign-In</div>
+            <div className="flex items-center justify-center">
+              <Link href="/api/auth/signin" className="signIn-button ">
+                <div className="pointer p-2 px-4 whitespace-nowrap">Sign-In</div>
               </Link>
             </div>
           )}
         </div>
-        <div
-          className="md:hidden flex  w-10 h float-right m-0 hamburger p-1"
-          id="hamburger"
-          onClick={handleClick}
-        >
-          <div className="bar-hamburger"></div>
-          <div className="bar-hamburger"></div>
-          <div className="bar-hamburger"></div>
-        </div>
+        <Menu Navlist={NavLinks} />
+
       </div>
-      <div className="flexCenter"></div>
     </nav>
   );
 };
