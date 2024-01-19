@@ -6,18 +6,14 @@ import Link from "next/link";
 const page = async () => {
   const userData = await getPosts();
   const posts = userData[0].posts;
-  console.log("pots:" + posts);
   return (
     <div>
       <div className="bg-black font-sans py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0">
+          <div className="mx-auto  lg:mx-0 flex justify-center items-center">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Tulu Chronicles
             </h2>
-            <p className="mt-2 text-lg leading-8 text-white">
-              Where Tradition Meets the Digital Age
-            </p>
           </div>
           <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             {posts.map((post) => (
@@ -62,7 +58,6 @@ const page = async () => {
                         Tudar Nitte
                       </a>
                     </p>
-                    {/* <p className="text-white">{post.author.role}</p> */}
                   </div>
                 </div>
               </Link>

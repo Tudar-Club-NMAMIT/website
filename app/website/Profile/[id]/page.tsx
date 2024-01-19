@@ -1,8 +1,8 @@
 
 import React from "react";
+import Navbar from "../../components/Navbar/Navbar";
 import { getUserByEmail } from "@/app/server/actions";
 import Image from "next/image";
-
 import EditProfile from "../../components/EditProfile";
 import { signOut } from "next-auth/react";
 import SignOut from "../../components/SignOut";
@@ -12,9 +12,7 @@ export default async function Profile({
   params: { id: string };
 }) {
   const decodedEmail = decodeURIComponent(id);
-  console.log(decodedEmail);
   const user = await getUserByEmail(decodedEmail);
-
   return (
     <>
       <div className="font-serif relative max-w-md mx-auto md:max-w-2xl mt-28 p-15 min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-xl ">
