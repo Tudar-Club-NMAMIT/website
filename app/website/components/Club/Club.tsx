@@ -31,7 +31,7 @@ export default function Club() {
           <Image
             width={250}
             height={300}
-            src="https://res.cloudinary.com/deax1ssmv/image/upload/f_auto,q_auto/klqbxupxjh776obmsubz"
+            src="https://res.cloudinary.com/deax1ssmv/image/upload/f_auto,q_auto/v1/Tudar/klqbxupxjh776obmsubz"
             alt=""
             className="pr-0 md:pr-4 m-0"
           />

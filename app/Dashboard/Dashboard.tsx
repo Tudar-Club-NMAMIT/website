@@ -1,9 +1,107 @@
-"use client";
-import React from "react";
+'use client'
+import React,  { MouseEventHandler, use }  from "react";
 import Link from "next/link";
-import User_edit from "./components/manageUser/User_edit";
+import Image from "next/image";
+import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
+import Edituser from "./Edituser";
+import Editblog from "./Editblog";
+import EditEvent from "./EditEvent";
+import { useState, useEffect } from "react";
+import { getUsers, getPosts, getEvents } from "../server/actions";
 
+type Users={
+  id: string;
+  name: string | null;
+  email: string | null;
+  emailVerified: Date | null;
+  image: string | null;
+  isMember: boolean;
+  bio: string | null;
+  role: string;
+}[]
+type Events = {
+  id: string;
+  title: string;
+  imageUrl: string;
+  description: string;
+  date: string;
+  attendedBy: string | null;
+  organizedBy: string | null;
+  venue: string;
+}[]
+type Blogs = {
+  id: string;
+  title: string;
+  content: string;
+  imageUrl: string;
+  reference: string | null;
+  createdBy: string;
+  credits: string | null;
+  createdAt: Date;
+  authorId: string | null;
+  show: boolean;
+}[]
 const Dashboard = () => {
+  const [tabflag, settabflag] = useState(0)
+
+
+  const initialvalue_users:Users = [{
+    id:" ",
+    name: "-",
+    email: "-",
+    emailVerified: "" as unknown as Date,
+    image: "",
+    isMember: true,
+    bio: "",
+    role: "-"}]
+    const initialvalue_blogs:Blogs = [{
+      id: "",
+        title: "-",
+        content: "",
+        imageUrl: "",
+        reference: "",
+        createdBy: "",
+        credits: "",
+        createdAt: 23  as unknown as Date,
+        authorId: "",
+        show: true
+    }]
+   
+  const initialvalue_events:Events = [{
+    id: "",
+    title: "-",
+    imageUrl: "",
+    description: "",
+    date: "-",
+    attendedBy: "-",
+    organizedBy: "-",
+    venue: "",
+  }]
+
+
+
+  const [users,setusers] = useState(initialvalue_users)
+  const [blogs,setblogs] = useState(initialvalue_blogs)
+  const [events,setevents] = useState(initialvalue_events)
+
+  useEffect(() =>{
+    const getuser = async() => {
+      const usersdata = await getUsers()
+      setusers(usersdata)
+    }
+    const getposts = async() => {
+      const postsdata = await getPosts()
+      const posts = postsdata[0].posts
+      setblogs(posts)
+    }
+    const getevents = async() => {
+      const evenstsdata = await getEvents();  
+      setevents(evenstsdata)
+    }
+    getuser();
+    getposts();
+    getevents();
+  },[])
   return (
     <div className="font-sans">
       <button
@@ -34,6 +132,7 @@ const Dashboard = () => {
         className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
         aria-label="Sidebar"
       >
+
         <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
           <ul className="space-y-2 font-medium">
             <li>
@@ -115,241 +214,254 @@ const Dashboard = () => {
 
       <div className="p-4 sm:ml-64">
         <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
-          <div className="grid grid-cols-3 gap-4 mb-4">
-            <div className="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">
-                <svg
-                  className="w-3.5 h-3.5"
-                  aria-hidden="false"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 1v16M1 9h16"
-                  />
-                </svg>
-              </p>
-            </div>
-            <div className="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">
-                <svg
-                  className="w-3.5 h-3.5"
-                  aria-hidden="false"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 1v16M1 9h16"
-                  />
-                </svg>
-              </p>
-            </div>
-            <div className="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">
-                <svg
-                  className="w-3.5 h-3.5"
-                  aria-hidden="false"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 1v16M1 9h16"
-                  />
-                </svg>
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
-            <User_edit />
-          </div>
-          <div className="grid grid-cols-2 gap-4 mb-4">
-            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">
-                <svg
-                  className="w-3.5 h-3.5"
-                  aria-hidden="false"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 1v16M1 9h16"
-                  />
-                </svg>
-              </p>
-            </div>
-            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">
-                <svg
-                  className="w-3.5 h-3.5"
-                  aria-hidden="false"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 1v16M1 9h16"
-                  />
-                </svg>
-              </p>
-            </div>
-            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">
-                <svg
-                  className="w-3.5 h-3.5"
-                  aria-hidden="false"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 1v16M1 9h16"
-                  />
-                </svg>
-              </p>
-            </div>
-            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">
-                <svg
-                  className="w-3.5 h-3.5"
-                  aria-hidden="false"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 1v16M1 9h16"
-                  />
-                </svg>
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
-            <p className="text-2xl text-gray-400 dark:text-gray-500">
-              <svg
-                className="w-3.5 h-3.5"
-                aria-hidden="false"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 18 18"
+          <ul
+            className="flex flex-wrap text-sm pb-5 font-medium text-center text-gray-500 dark:text-gray-400 "
+            id="default-tab"
+            data-tabs-toggle="#default-tab-content"
+            role="tablist"
+          >
+            <li className="me-2" role="presentation">
+              <button
+              onClick={()=>settabflag(0)}
+                className={`inline-block p-4 border-b-2 rounded-t-lg ${tabflag === 0 ? "text-blue-300 bg-gray-50 dark:bg-gray-800":"hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"}`}
+                id="user-tab"
+                data-tabs-target="#user"
+                type="button"
+                role="tab"
+                aria-controls="user"
+                aria-selected="false"
               >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 1v16M1 9h16"
-                />
-              </svg>
-            </p>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">
-                <svg
-                  className="w-3.5 h-3.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 1v16M1 9h16"
-                  />
-                </svg>
-              </p>
+                Users
+              </button>
+            </li>
+
+            <li className="me-2" role="presentation">
+              <button
+                onClick={()=>settabflag(1)}
+                className={`inline-block p-4 border-b-2 rounded-t-lg ${tabflag === 1 ? "text-blue-300 bg-gray-50 dark:bg-gray-800":"hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"} `}
+                id="blog-tab"
+                data-tabs-target="#blog"
+                type="button"
+                role="tab"
+                aria-controls="blog"
+                aria-selected="false"
+              >
+                Blogs
+              </button>
+            </li>
+            <li role="presentation">
+              <button
+                onClick={()=>settabflag(2)}
+                className={`inline-block p-4 border-b-2 rounded-t-lg ${tabflag === 2 ? "text-blue-300 bg-gray-50 dark:bg-gray-800":"hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"}`}
+                id="event-tab"
+                data-tabs-target="#event"
+                type="button"
+                role="tab"
+                aria-controls="event"
+                aria-selected="false"
+              >
+                Events
+              </button>
+            </li>
+          </ul>
+
+          <div id="default-tab-content">
+            {/* users */}
+            <div
+              className={`p-4 rounded-lg bg-gray-50 dark:bg-gray-800 ${tabflag === 0 ? "" : "hidden"}`}
+              id="user"
+              role="tabpanel"
+              aria-labelledby="user-tab"
+            >
+              <div className="overflow-x-auto shadow-md sm:rounded-lg table-auto w-full">
+                <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                  <caption className="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+                    Users
+                    {/* <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Browse a list of Flowbite products designed to help you work and play, stay organized, get answers, keep in touch, grow your business, and more.</p> */}
+                  </caption>
+                  <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                      <th scope="col" className="px-6 py-3">
+                        Name
+                      </th>
+                      <th scope="col" className="px-6 py-3">
+                        Email
+                      </th>
+                      <th scope="col" className="px-6 py-3">
+                        Member
+                      </th>
+                      <th scope="col" className="px-6 py-3">
+                        Role
+                      </th>
+                      <th scope="col" className="px-6 py-3">
+                        <span className="sr-only">Edit</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {users.map((user) => (
+                      <tr
+                        className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                        key={user.id}
+                      >
+                        <th
+                          scope="row"
+                          className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                        >
+                          {user.name}
+                        </th>
+                        <td className="px-6 py-4">{user.email}</td>
+                        <td className="px-6 py-4">
+                          {user.isMember ? "Yes" : "No"}
+                        </td>
+                        <td className="px-6 py-4">{user.role}</td>
+                        <td className="px-6 py-4 text-right">
+                          <Edituser user={user}/>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
-            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">
-                <svg
-                  className="w-3.5 h-3.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 1v16M1 9h16"
-                  />
-                </svg>
-              </p>
+            {/* Blog */}
+            <div
+              className={`p-4 rounded-lg bg-gray-50 dark:bg-gray-800 ${tabflag === 1 ? "" : "hidden"}`}
+              id="blogs"
+              role="tabpanel"
+              aria-labelledby="blog-tab">
+              <div className="overflow-x-auto shadow-md sm:rounded-lg table-auto w-full">
+                <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                  <caption className="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+                    Blogs
+                    {/* <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Browse a list of Flowbite products designed to help you work and play, stay organized, get answers, keep in touch, grow your business, and more.</p> */}
+                  </caption>
+                  <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                      <th scope="col" className="px-6 py-3">
+                        Title
+                      </th>
+                      <th scope="col" className="px-6 py-3">
+                        Image
+                      </th>
+                      <th scope="col" className="px-6 py-3">
+                        Author
+                      </th>
+                      <th scope="col" className="px-6 py-3">
+                        Show
+                      </th>
+                      <th scope="col" className="px-6 py-3">
+                        <span className="sr-only">Edit</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {blogs.map((blog) => (
+                      <tr
+                        className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                        key={blog.id}
+                      >
+                        
+                        <th
+                          scope="row"
+                          className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                        >
+                          {blog.title}
+                        </th>
+                        <td className="px-6 py-4">
+                          <Image src={blog.imageUrl} width={1000} height={1000} alt="err" className="hover:scale-150 w-16 h-12"></Image>
+                          </td>
+                        <td className="px-6 py-4">{blog.createdBy}</td>
+                        <td className="px-6 py-4">
+                          {blog.show? <IoEyeOutline size={30} />: <IoEyeOffOutline size={30}/>}
+                          
+                        </td>
+                        <td className="px-6 py-4">
+                          <Editblog blog={blog}/>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+
+
+
+
+
+
             </div>
-            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">
-                <svg
-                  className="w-3.5 h-3.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 1v16M1 9h16"
-                  />
-                </svg>
-              </p>
-            </div>
-            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">
-                <svg
-                  className="w-3.5 h-3.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 1v16M1 9h16"
-                  />
-                </svg>
-              </p>
+            {/* Events */}
+            <div
+              className={`${tabflag === 2 ? "" : "hidden"} p-4 rounded-lg bg-gray-50 dark:bg-gray-800`}
+              id="events"
+              role="tabpanel"
+              aria-labelledby="event-tab"
+            >
+              <div className="overflow-x-auto shadow-md sm:rounded-lg table-auto w-full">
+                <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                  <caption className="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+                    Events
+                    {/* <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Browse a list of Flowbite products designed to help you work and play, stay organized, get answers, keep in touch, grow your business, and more.</p> */}
+                  </caption>
+                  <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                      <th scope="col" className="px-6 py-3">
+                        Title
+                      </th>
+                      <th scope="col" className="px-6 py-3">
+                        Poster
+                      </th>
+                      <th scope="col" className="px-6 py-3">
+                        Date
+                      </th>
+                      <th scope="col" className="px-6 py-3">
+                        Organised by
+                      </th>
+                      <th scope="col" className="px-6 py-3">
+                        Attended by
+                      </th>
+                      <th scope="col" className="px-6 py-3">
+                        Venue
+                      </th>
+                      <th scope="col" className="px-6 py-3">
+                        <span className="sr-only">Edit</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {events.map((event) => (
+                      <tr
+                        className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                        key={event.id}
+                      >
+                        <th
+                          scope="row"
+                          className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                        >
+                          {event.title}
+                        </th>
+                        <td className="px-6 py-4">
+                        <Image src={event.imageUrl} width={1000} height={1000} alt="err" className="hover:scale-150 w-16 h-12"></Image>
+                        </td>
+                        <td className="px-6 py-4">
+                          {event.date}
+                        </td>
+                        <td className="px-6 py-4">{event.organizedBy}</td>
+                        <td className="px-6 py-4">{event.attendedBy|| 0}</td>
+
+                        <td className="px-6 py-4">{event.venue}</td>
+
+                        <td className="px-6 py-4 text-right">
+                          <EditEvent event={event}/>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+         
             </div>
           </div>
         </div>
