@@ -43,7 +43,7 @@ const Footer = () => {
           </div>
         </nav>
         <div className="flex justify-center mt-8 space-x-6">
-          <Link href="/" className=" text-white hover:text-gray-200">
+          <Link href="https://youtube.com/@tudar_nmamit" className=" text-white hover:text-gray-200">
             <span className="sr-only">Youtube</span>
             <svg
               className="w-6 h-6"
@@ -56,7 +56,7 @@ const Footer = () => {
                 clip-rule="evenodd"></path>
             </svg>
           </Link>
-          <Link href="/" className=" text-white hover:text-gray-200">
+          <Link href="https://www.instagram.com/tudar_nmamit" className=" text-white hover:text-gray-200">
             <span className="sr-only">Instagram</span>
             <svg
               className="w-6 h-6"

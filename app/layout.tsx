@@ -39,7 +39,7 @@ const berkish = Berkshire_Swash({
 
 export const metadata: Metadata = {
   title: "Tudar",
-  description: "Club at NMAMIT",
+  description: "Tudar: tulu club at NMAMIT nitte ",
 };
 
 export default function RootLayout({
