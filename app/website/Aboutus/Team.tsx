@@ -2,7 +2,7 @@
 
 
 
-const Team = () => {
+export const Team = () => {
   return (
     <>
     <div className="pt-10 pb-10 bg-black">

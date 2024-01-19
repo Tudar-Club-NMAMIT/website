@@ -1,5 +1,9 @@
 
-function Info() {
+import React from 'react'
+import Team from './Team'
+
+
+ function  Info() {
   return (
     <div>
 
@@ -108,6 +112,8 @@ function Info() {
             </div>
         </section>
 
+        <Team/>
+    
 
     </div>
   )
