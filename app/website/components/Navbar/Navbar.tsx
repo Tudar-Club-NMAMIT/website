@@ -10,8 +10,7 @@ import { signOut } from "next-auth/react";
 
 const NavLinks = [
   { href: "/", key: "Home", text: "Home" },
-  { href: "/website/Team", key: "Team", text: "Club Team" },
-  { href: "/website/Aboutus", key: "About", text: "About" },
+  { href: "/website/Aboutus", key: "About", text: "About us" },
   { href: "/website/Events", key: "Events", text: "Events" },
   { href: "/website/Blogs", key: "Blog", text: "Blog" },
   { href: "/website/ContactUs", key: "Contact", text: "Contact" },

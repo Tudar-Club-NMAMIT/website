@@ -22,7 +22,7 @@ const Footer = () => {
           </div>
           <div className="px-5 py-2">
             <Link
-              href="/website/Team"
+              href="/website/DevTeam"
               className="text-base leading-6 text-white hover:text-gray-200">
               Team
             </Link>
@@ -43,7 +43,7 @@ const Footer = () => {
           </div>
         </nav>
         <div className="flex justify-center mt-8 space-x-6">
-          <Link href="/" className=" text-white hover:text-gray-200">
+          <Link href="https://youtube.com/@tudar_nmamit" className=" text-white hover:text-gray-200">
             <span className="sr-only">Youtube</span>
             <svg
               className="w-6 h-6"
@@ -58,7 +58,7 @@ const Footer = () => {
               ></path>
             </svg>
           </Link>
-          <Link href="/" className=" text-white hover:text-gray-200">
+          <Link href="https://www.instagram.com/tudar_nmamit" className=" text-white hover:text-gray-200">
             <span className="sr-only">Instagram</span>
             <svg
               className="w-6 h-6"

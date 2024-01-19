@@ -10,7 +10,7 @@ export default function BackgroundBeamsDemo() {
           ತುಡರ್
         </h1>
         <h3 className="relative z-10 text-lg md:text-4xl  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold">
-          ತುಳು ಟ್ರಾನ್ಸ್ಲೇಟರ್ ನಾನಲಾ ಆವೊಂದುಂಡು ಚೂರ್ ಕಾಪುಲೆ
+          ತುಳು ಟ್ರಾನ್ಸ್ಲೇಟರ್ ಬೇಗೊಡು ಬರ್ರೆಗುಂಡು
         </h3>
       </div>
       <BackgroundBeams />
