@@ -1,83 +1,80 @@
 import React from "react";
 import { getPosts } from "@/app/server/actions";
+import Image from "next/image";
+import Navbar from "../components/Navbar/Navbar";
 import Link from "next/link";
-
-
+import Footer from "../components/Footer/Footer";
 const page = async () => {
   const userData = await getPosts();
   const posts = userData[0].posts;
   console.log("pots:" + posts);
   return (
-    <>
-      <section className="dark:bg-gray-800 dark:text-gray-100 font-sans pt-28">
-        <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
-          <a
-            rel="noopener noreferrer"
-            href="#"
-            className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-900"
-          >
-            <img
-              src="https://source.unsplash.com/random/480x360"
-              alt=""
-              className="object-cover w-full h-64 rounded sm:h-96 lg:col-span-7 dark:bg-gray-500"
-            />
-            <div className="p-6 space-y-2 lg:col-span-5">
-              <h3 className="text-2xl font-semibold sm:text-4xl group-hover:underline group-focus:underline">
-                Noster tincidunt reprimique ad pro
-              </h3>
-              <span className="text-xs dark:text-gray-400">
-                February 19, 2021
-              </span>
-              <p>
-                Ei delenit sensibus liberavisse pri. Quod suscipit no nam. Est
-                in graece fuisset, eos affert putent doctus id.
-              </p>
-            </div>
-          </a>
-          <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div>
+      <Navbar />
+      <div className="bg-black font-sans py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:mx-0">
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              Tulu Chronicles
+            </h2>
+            <p className="mt-2 text-lg leading-8 text-white">
+              Where Tradition Meets the Digital Age
+            </p>
+          </div>
+          <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             {posts.map((post) => (
-              <Link
-                href={`/Blog/${post.id}`}
-                rel="noopener noreferrer"
-                className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 hidden sm:block"
-              >
-                <img
-                  role="presentation"
-                  className="object-cover w-full rounded h-44 dark:bg-gray-500"
+              <Link href={`/Blog/${post.id}`}>
+                <Image
+                  className="rounded-md"
                   src={post.imageUrl}
+                  alt=""
+                  width={500}
+                  height={500}
                 />
-                <div className="p-6 space-y-2">
-                  <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
-                    {post.title}
-                  </h3>
-                  <span className="text-xs dark:text-gray-400">
+                <div className="flex justify-end p-6 gap-x-4 text-xs">
+                  <p>
                     {new Intl.DateTimeFormat("en-US", {
                       month: "short",
                       day: "numeric",
                       year: "numeric",
                     }).format(post.createdAt)}
-                  </span>
-                  <p>{post.createdBy}</p>
+                  </p>
+                </div>
+                <div className="group relative">
+                  <h3 className="mt-3 text-lg font-semibold leading-6 text-white group-hover:text-white">
+                    <a href="">
+                      <span className="absolute inset-0" />
+                      {post.title}
+                    </a>
+                  </h3>
+                  <p className="mt-5 line-clamp-3 text-sm leading-6 text-white">
+                    {post.content}
+                  </p>
+                </div>
+                <div className="relative mt-8 flex items-center gap-x-4">
+                  <img
+                    src="https://lh3.googleusercontent.com/a/ACg8ocJB_jXg-txmKOlPMmgamsf5qUgExNPG6gm2tofOXCPR=s96-c"
+                    alt=""
+                    className="h-10 w-10 rounded-full bg-gray-50"
+                  />
+                  <div className="text-sm leading-6">
+                    <p className="font-semibold text-white">
+                      <a href="">
+                        <span className="absolute inset-0" />
+                        Tudar Nitte
+                      </a>
+                    </p>
+                    {/* <p className="text-white">{post.author.role}</p> */}
+                  </div>
                 </div>
               </Link>
             ))}
           </div>
-          <div className="flex justify-center">
-            <button
-              type="button"
-              className="px-6 py-3 text-sm rounded-md hover:underline dark:bg-gray-900 dark:text-gray-400"
-            >
-              Load more posts...
-            </button>
-          </div>
         </div>
-      </section>
-    </>
+      </div>
+      <Footer />
+    </div>
   );
-}
+};
 
-export default page
-
-
-
-
+export default page;
