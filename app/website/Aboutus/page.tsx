@@ -43,7 +43,7 @@ import Image from 'next/image';
               </p>
               <p className="text-xs text-gray-400">Year 2021</p>
             </div>
-            <div className="text-gray-100 ">
+            <div className="text-gray-100 text-justify">
               <p className="p-1">
                 In the heart of NITTE College, where the echoes of Tulu culture
                 lingered in everyday conversations, three friends envisioned a
