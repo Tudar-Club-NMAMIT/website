@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <section className="bg-[#101010] rounded-lg">
+    <section className="bg-[#101010]">
       <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
         <nav className="flex flex-wrap justify-center -mx-5 -my-2">
           <div className="px-5 py-2">
@@ -17,7 +17,7 @@ const Footer = () => {
             <Link
               href="/website/Blogs"
               className="text-base leading-6 text-white hover:text-gray-200">
-              Blog
+              Blogs
             </Link>
           </div>
           <div className="px-5 py-2">
@@ -29,34 +29,41 @@ const Footer = () => {
           </div>
           <div className="px-5 py-2">
             <Link
+              href="/website/Events"
+              className="text-base leading-6 text-white hover:text-gray-200">
+              Events
+            </Link>
+          </div>
+          <div className="px-5 py-2">
+            <Link
               href="/website/ContactUs"
               className="text-base leading-6 text-white hover:text-gray-200">
               Contact
             </Link>
           </div>
-          <div className="px-5 py-2">
-            <Link
-              href="/"
-              className="text-base leading-6 text-white hover:text-gray-200">
-              Terms
-            </Link>
-          </div>
         </nav>
         <div className="flex justify-center mt-8 space-x-6">
-          <Link href="https://youtube.com/@tudar_nmamit" className=" text-white hover:text-gray-200">
+          <Link
+            href="https://youtube.com/@tudar_nmamit"
+            className=" text-white hover:text-gray-200">
             <span className="sr-only">Youtube</span>
             <svg
+              xmlns="http://www.w3.org/2000/svg"
               className="w-6 h-6"
-              aria-hidden="true"
-              fill="currentColor"
-              viewBox="0 0 24 24">
+              viewBox="0 0 256 180">
               <path
-                fill-rule="evenodd"
-                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                clip-rule="evenodd"></path>
+                fill="white"
+                d="M250.346 28.075A32.18 32.18 0 0 0 227.69 5.418C207.824 0 127.87 0 127.87 0S47.912.164 28.046 5.582A32.18 32.18 0 0 0 5.39 28.24c-6.009 35.298-8.34 89.084.165 122.97a32.18 32.18 0 0 0 22.656 22.657c19.866 5.418 99.822 5.418 99.822 5.418s79.955 0 99.82-5.418a32.18 32.18 0 0 0 22.657-22.657c6.338-35.348 8.291-89.1-.164-123.134"
+              />
+              <path
+                fill="#000"
+                d="m102.421 128.06l66.328-38.418l-66.328-38.418z"
+              />
             </svg>
           </Link>
-          <Link href="https://www.instagram.com/tudar_nmamit" className=" text-white hover:text-gray-200">
+          <Link
+            href="https://www.instagram.com/tudar_nmamit"
+            className=" text-white hover:text-gray-200">
             <span className="sr-only">Instagram</span>
             <svg
               className="w-6 h-6"
@@ -94,7 +101,9 @@ const Footer = () => {
             </svg>
           </Link>
         </div>
-        <p className="mt-8 text-base leading-6 text-center text-white">© Tudar  NMAMIT</p>
+        <p className="mt-8 text-base leading-6 text-center text-white">
+          © Tudar NMAMIT
+        </p>
       </div>
     </section>
   );

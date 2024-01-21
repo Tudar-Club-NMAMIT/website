@@ -9,7 +9,7 @@ const Video = () => {
       <div className="gradient-overlay top"></div>
       <div className="gradient-overlay bottom"></div>
       <div className="absolute inset-0 flex items-center justify-center">
-        <p className="text-6xl bg-clip-text  bg-gradient-to-b from-neutral-200 to-neutral-400  text-center font-bold">
+        <p className=" text-4xl md:text-7xl text-white  text-center font-bold">
           Cultivating future Culture! Here at Tudar
         </p>
       </div>
