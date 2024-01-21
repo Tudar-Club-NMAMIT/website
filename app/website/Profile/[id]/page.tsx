@@ -1,10 +1,7 @@
-import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
 import { getUserByEmail } from "@/app/server/actions";
 import Image from "next/image";
 import EditProfile from "../../components/EditProfile";
-import { signOut } from "next-auth/react";
-import SignOut from "../../components/SignOut";
+
 export default async function Profile({
   params: { id },
 }: {
@@ -13,9 +10,9 @@ export default async function Profile({
   const decodedEmail = decodeURIComponent(id);
   const user = await getUserByEmail(decodedEmail);
   return (
-    <>
-      <div className="font-serif relative max-w-md mx-auto md:max-w-2xl mt-28 p-15 min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-xl ">
-        <div className="px-6">
+    <div className="bg-black ">
+      <div className="font-serif relative max-w-md mx-auto md:max-w-2xl mt-28 p-15 min-w-0 break-words bg-zinc-200 w-full mb-6 shadow-lg rounded-xl ">
+        <div className="px-6 rounded-md bg-zinc-200">
           <div className="flex items-center flex-wrap justify-center pt-10">
             <Image
               src={user?.image || ""}
@@ -55,6 +52,6 @@ export default async function Profile({
         />
         
       </div>
-    </>
+    </div>
   );
 }
