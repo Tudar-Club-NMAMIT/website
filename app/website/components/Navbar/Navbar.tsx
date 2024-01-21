@@ -66,7 +66,7 @@ const Navbar = () => {
         <div className="float-right gap-3 flex justify-center z-50 ">
           {session ? (
             <div className="w-10 md:block hidden">
-              <button
+             <Link href={`/website/Profile/${session?.user?.email}`}><button
                 onClick={() => setOpen(!open)}
                 className="flex text-sm aspect-square bg-gray-800 rounded-full md:me-0 ring-2 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                 type="button">
@@ -79,6 +79,7 @@ const Navbar = () => {
                   height={50}
                 />
               </button>
+              </Link>
               <div
                 className={`z-30 ${
                   open ? null : `hidden`
@@ -89,7 +90,7 @@ const Navbar = () => {
                     {session.user?.email}
                   </div>
                 </div>
-                <ul className="py-2 text-gray-700 ">
+                <ul className="py-2 text-gray-700 hover:bg-slate-400">
                   <li>
                     <Link
                       href={`/website/Profile/${session?.user?.email}`}
@@ -107,7 +108,7 @@ const Navbar = () => {
                     </li>
                   ) : null}
                 </ul>
-                <div className="py-2 ">
+                <div className="py-2  hover:bg-slate-400">
                   <button
                     onClick={() => signOut()}
                     className="block px-4 py-2 w-44 text-left text-white hover:bg-white hover:text-black">
@@ -117,7 +118,7 @@ const Navbar = () => {
               </div>
             </div>
           ) : (
-            <div className="md:flex hidden items-center justify-center">
+            <div className="md:flex hidden items-center justify-center text-white">
               <Link href="/api/auth/signin" className="signIn-button ">
                 <div className="pointer p-2 bg-[#afa18f] text-white px-4 whitespace-nowrap">
                   Sign-In
