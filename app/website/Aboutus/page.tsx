@@ -33,19 +33,17 @@ import Image from 'next/image';
             alt=""
             width={400}
             height={400}
-            className="w-full h-60 sm:h-96 dark:bg-gray-500"
+            className="w-full h-60 sm:h-96 bg-gray-500"
           />
-          <div className="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 lg:max-w-2xl sm:px-10 sm:mx-12 lg:rounded-md dark:bg-gray-900">
+          <div className="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 lg:max-w-2xl sm:px-10 sm:mx-12 lg:rounded-md bg-gray-900">
             <div className="space-y-2">
-              <a
-                rel="noopener noreferrer"
-                href="#"
+              <p
                 className="inline-block text-2xl font-semibold sm:text-3xl">
                 Reviving Roots: The Birth of Tudar Club
-              </a>
+              </p>
               <p className="text-xs text-gray-400">Year 2021</p>
             </div>
-            <div className="text-gray-100">
+            <div className="text-gray-100 ">
               <p className="p-1">
                 In the heart of NITTE College, where the echoes of Tulu culture
                 lingered in everyday conversations, three friends envisioned a
@@ -74,29 +72,29 @@ import Image from 'next/image';
       </div>
 
       <section className="p-6 font-sans bg-black text-gray-100">
-        <div className="container mx-auto grid justify-center grid-cols-2 text-center lg:grid-cols-3">
+        <div className=" mx-auto grid justify-center grid-cols-2 text-center lg:grid-cols-3">
           <div className="flex flex-col justify-start m-2 lg:m-6">
-            <p className="text-4xl font-bold leadi lg:text-6xl">990+</p>
+            <p className="text-4xl font-bold lg:text-6xl">990+</p>
             <p className="text-sm sm:text-base">Members</p>
           </div>
           <div className="flex flex-col justify-start m-2 lg:m-6">
-            <p className="text-4xl font-bold leadi lg:text-6xl">1000+</p>
+            <p className="text-4xl font-bold lg:text-6xl">1000+</p>
             <p className="text-sm sm:text-base">Followers on social media</p>
           </div>
           <div className="flex flex-col justify-start m-2 lg:m-6">
-            <p className="text-4xl font-bold leadi lg:text-6xl">15+</p>
+            <p className="text-4xl font-bold lg:text-6xl">15+</p>
             <p className="text-sm sm:text-base">Articles</p>
           </div>
           <div className="flex flex-col justify-start m-2 lg:m-6">
-            <p className="text-4xl font-bold leadi lg:text-6xl">3</p>
+            <p className="text-4xl font-bold lg:text-6xl">3</p>
             <p className="text-sm sm:text-base">Workshops</p>
           </div>
           <div className="flex flex-col justify-start m-2 lg:m-6">
-            <p className="text-4xl font-bold leadi lg:text-6xl">3</p>
+            <p className="text-4xl font-bold lg:text-6xl">3</p>
             <p className="text-sm sm:text-base">Years of Tudar</p>
           </div>
           <div className="flex flex-col justify-start m-2 lg:m-6">
-            <p className="text-4xl font-bold leadi lg:text-6xl">10+</p>
+            <p className="text-4xl font-bold lg:text-6xl">10+</p>
             <p className="text-sm sm:text-base">Events</p>
           </div>
         </div>
