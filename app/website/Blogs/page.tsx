@@ -8,7 +8,7 @@ const page = async () => {
   const posts = userData[0].posts;
   return (
     <div>
-      <div className="bg-black font-sans py-24 sm:py-32">
+      <div className="bg-black text-justify font-sans py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto  lg:mx-0 flex justify-center items-center">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
