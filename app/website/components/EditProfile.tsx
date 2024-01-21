@@ -51,7 +51,6 @@ const EditProfile = (param: {
       const imageUrl = data.data.url;
       if (imageUrl) {
         const res = await updateUserProfile(image, username, bio, param.email);
-        console.log(res);
         setImage("");
         setUsername("");
         setBio("");
