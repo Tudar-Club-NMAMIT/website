@@ -81,19 +81,18 @@ const Navbar = () => {
               <div
                 className={`z-30 ${
                   open ? null : `hidden`
-                } font-sans right-0 mr-8 mt-1 absolute bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-900 opacity-70  dark:divide-gray-100`}
-              >
-                <div className="px-4 py-3 text-sm text-black dark:text-white  hover:bg-slate-700">
+                } font-sans right-0 mr-8 mt-1 absolute bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-900 opacity-70 font-semibold  dark:divide-gray-100 `}>
+                <div className="px-4 py-3 text-sm text-black dark:text-white   hover:bg-slate-400 ">
                   <div>{session.user?.name}</div>
                   <div className="font-medium truncate">
                     {session.user?.email}
                   </div>
                 </div>
-                <ul className="py-2 text-gray-700 ">
+                <ul className="py-2 text-gray-700 hover:bg-slate-400">
                   <li>
                     <Link
                       href={`/website/Profile/${session?.user?.email}`}
-                      className="block px-4 py-2 text-black dark:text-white  hover:bg-slate-700"
+                      className="block px-4 py-2 text-black dark:text-white  "
                     >
                       Profile
                     </Link>
@@ -102,17 +101,17 @@ const Navbar = () => {
                     <li>
                       <Link
                         href="/Dashboard"
-                        className="block px-4 py-2 text-black dark:text-white  hover:bg-slate-700"
+                        className="block px-4 py-2 text-black dark:text-white "
                       >
                         Dashboard
                       </Link>
                     </li>
                   ) : null}
                 </ul>
-                <div className="py-2 ">
+                <div className="py-2  hover:bg-slate-400">
                   <button
                     onClick={() => signOut()}
-                    className="block px-4 py-2 w-44 text-left text-black dark:text-white  hover:bg-slate-700  "
+                    className="block px-4 py-2 w-44 text-left text-black dark:text-white"
                   >
                     Sign out
                   </button>
