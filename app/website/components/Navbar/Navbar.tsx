@@ -40,7 +40,10 @@ const Navbar = () => {
   }, [controlNavbar]);
 
   return (
-    <nav className={`navbar-bg py-4 px-8 border-b w-screen fixed border-nav-border high-z-index top-0 transition-style ${flag ? (show ? "translate-y-0" : "-translate-y-full") : "translate-y-0"}`}>
+    <nav
+      className={`navbar-bg py-4 px-8 border-b w-screen fixed border-nav-border high-z-index top-0 transition-style ${
+        flag ? (show ? "translate-y-0" : "-translate-y-full") : "translate-y-0"
+      }`}>
       <div className="flex justify-center items-center w-full">
         <Link href="/" className="float-left ml-0">
           <span className="whitespace-nowrap">
@@ -48,8 +51,7 @@ const Navbar = () => {
               src="https://res.cloudinary.com/deax1ssmv/image/upload/f_auto,q_auto/xczsl6fzq0clalmthj6f"
               alt="Tudar"
               width={40}
-              height={30}
-            ></Image>
+              height={30}></Image>
           </span>
         </Link>
         <div className="flex items-center justify-center w-screen ">
@@ -67,8 +69,7 @@ const Navbar = () => {
              <Link href={`/website/Profile/${session?.user?.email}`}><button
                 onClick={() => setOpen(!open)}
                 className="flex text-sm aspect-square bg-gray-800 rounded-full md:me-0 ring-2 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-                type="button"
-              >
+                type="button">
                 <span className="sr-only">Open user menu</span>
                 <Image
                   className="w-12 aspect-square rounded-full"
@@ -82,8 +83,8 @@ const Navbar = () => {
               <div
                 className={`z-30 ${
                   open ? null : `hidden`
-                } font-sans right-0 mr-8 mt-1 absolute bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-900 opacity-70 font-semibold  dark:divide-gray-100 `}>
-                <div className="px-4 py-3 text-sm text-black dark:text-white   hover:bg-slate-400 ">
+                } font-sans right-0 mr-8 mt-1 absolute  divide-y rounded-lg shadow w-44 bg-gray-900 opacity-70  divide-gray-100`}>
+                <div className="px-4 py-3 text-sm text-white">
                   <div>{session.user?.name}</div>
                   <div className="font-medium truncate">
                     {session.user?.email}
@@ -93,8 +94,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       href={`/website/Profile/${session?.user?.email}`}
-                      className="block px-4 py-2 text-black dark:text-white  "
-                    >
+                      className="block px-4 py-2 text-white hover:bg-white hover:text-black">
                       Profile
                     </Link>
                   </li>
@@ -102,8 +102,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         href="/Dashboard"
-                        className="block px-4 py-2 text-black dark:text-white "
-                      >
+                        className="block px-4 py-2 text-white hover:bg-white hover:text-black">
                         Dashboard
                       </Link>
                     </li>
@@ -112,8 +111,7 @@ const Navbar = () => {
                 <div className="py-2  hover:bg-slate-400">
                   <button
                     onClick={() => signOut()}
-                    className="block px-4 py-2 w-44 text-left text-black dark:text-white"
-                  >
+                    className="block px-4 py-2 w-44 text-left text-white hover:bg-white hover:text-black">
                     Sign out
                   </button>
                 </div>
@@ -122,7 +120,9 @@ const Navbar = () => {
           ) : (
             <div className="md:flex hidden items-center justify-center text-white">
               <Link href="/api/auth/signin" className="signIn-button ">
-                <div className="pointer p-2 px-4 whitespace-nowrap ">Sign-In</div>
+                <div className="pointer p-2 bg-[#afa18f] text-white px-4 whitespace-nowrap">
+                  Sign-In
+                </div>
               </Link>
             </div>
           )}
