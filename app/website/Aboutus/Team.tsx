@@ -556,9 +556,9 @@ export const Team = () => {
               </div>
               <div className="flex flex-col justify-center mt-5 sm:mt-0 sm:p-5 sm:col-span-2">
                 <p className="text-lg font-bold">Mayur Shet</p>
-                <p className="mb-4 text-xs text-gray-100">Product Manager</p>
+                <p className="mb-4 text-xs text-gray-100">co head SMC</p>
                 <p className="mb-4 text-sm tracking-wide text-gray-100">
-                  Vincent Van Gogh’s most popular painting, The Starry Night.
+                  Undu dada padun marey saav😭
                 </p>
               </div>
             </div>
