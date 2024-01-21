@@ -64,7 +64,7 @@ const Navbar = () => {
         <div className="float-right gap-3 flex justify-center z-50 ">
           {session ? (
             <div className="w-10 md:block hidden">
-              <button
+             <Link href={`/website/Profile/${session?.user?.email}`}><button
                 onClick={() => setOpen(!open)}
                 className="flex text-sm aspect-square bg-gray-800 rounded-full md:me-0 ring-2 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                 type="button"
@@ -78,6 +78,7 @@ const Navbar = () => {
                   height={50}
                 />
               </button>
+              </Link>
               <div
                 className={`z-30 ${
                   open ? null : `hidden`
@@ -119,9 +120,9 @@ const Navbar = () => {
               </div>
             </div>
           ) : (
-            <div className="md:flex hidden items-center justify-center">
+            <div className="md:flex hidden items-center justify-center text-white">
               <Link href="/api/auth/signin" className="signIn-button ">
-                <div className="pointer p-2 px-4 whitespace-nowrap">Sign-In</div>
+                <div className="pointer p-2 px-4 whitespace-nowrap ">Sign-In</div>
               </Link>
             </div>
           )}
