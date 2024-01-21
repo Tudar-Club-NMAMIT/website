@@ -25,9 +25,9 @@ const Menu = (NavLists: {Navlist: { href: string; key: string; text: string }[];
 
         <ul className="flex justify-center flex-col p-10 gap-3 ">
           {session ? (
-            <div className=" flex items-center gap-7"><Image width={50} height={50} src={session?.user?.image || ""} alt="err" className="rounded-full border border-white"></Image>
+            <Link href={`/website/Profile/${session.user?.email}`}><div className=" flex items-center gap-7"><Image width={50} height={50} src={session?.user?.image || ""} alt="err" className="rounded-full border border-white"></Image>
                 <span className="text-black">{session?.user?.name}</span>
-            </div> ) : 
+            </div></Link> ) : 
             (
               <Link href="/api/auth/signin" className="text-black">Sign in</Link>
             )
