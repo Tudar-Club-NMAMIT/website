@@ -243,7 +243,7 @@ export const Team = () => {
               </div>
               <div className="flex flex-col justify-center mt-5 sm:mt-0 sm:p-5 sm:col-span-2">
                 <p className="text-lg font-bold">Suvith Kumar</p>
-                <p className="mb-4 text-xs text-gray-100">Techinical Head</p>
+                <p className="mb-4 text-xs text-gray-100">Technical Head</p>
                 <p className="mb-4 text-sm tracking-wide text-gray-100">
                   In my role as the Technical Head, I'm a forward-thinking
                   technologist propelling our cultural community into the
