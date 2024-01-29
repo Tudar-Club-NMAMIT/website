@@ -10,7 +10,7 @@ const Video = () => {
       <div className="gradient-overlay bottom"></div>
       <div className="absolute inset-0 flex items-center justify-center">
         <p className=" text-4xl md:text-7xl text-white  text-center font-bold">
-          Cultivating future Culture! Here at Tudar
+          Preserving Culture! Here at Tudar NMAMIT.
         </p>
       </div>
     </div>
