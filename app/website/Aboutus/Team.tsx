@@ -558,7 +558,7 @@ export const Team = () => {
                 <p className="text-lg font-bold">Mayur Shet</p>
                 <p className="mb-4 text-xs text-gray-100">co head SMC</p>
                 <p className="mb-4 text-sm tracking-wide text-gray-100">
-                  Undu dada padun marey saav😭
+                  Undu dada padun marey 😭
                 </p>
               </div>
             </div>
