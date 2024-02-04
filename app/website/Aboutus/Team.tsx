@@ -36,7 +36,7 @@ export const Team = () => {
                 </p>
                 <div className="flex items-center space-x-3">
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -48,7 +48,7 @@ export const Team = () => {
                     </svg>
                   </a>
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -81,7 +81,7 @@ export const Team = () => {
             </p>
             <div className="flex items-center space-x-3">
               <a
-                href="/"
+                href="#"
                 className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
               >
                 <svg viewBox="0 0 24 24" fill="currentColor" className="h-5">
@@ -89,7 +89,7 @@ export const Team = () => {
                 </svg>
               </a>
               <a
-                href="/"
+                href="#"
                 className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
               >
                 <svg viewBox="0 0 24 24" fill="currentColor" className="h-5">
@@ -119,7 +119,7 @@ export const Team = () => {
                 </p>
                 <div className="flex items-center space-x-3">
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -131,7 +131,7 @@ export const Team = () => {
                     </svg>
                   </a>
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -163,7 +163,7 @@ export const Team = () => {
                 </p>
                 <div className="flex items-center space-x-3">
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -175,7 +175,7 @@ export const Team = () => {
                     </svg>
                   </a>
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -207,7 +207,7 @@ export const Team = () => {
                 </p>
                 <div className="flex items-center space-x-3">
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -219,7 +219,7 @@ export const Team = () => {
                     </svg>
                   </a>
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -251,7 +251,7 @@ export const Team = () => {
                 </p>
                 <div className="flex items-center space-x-3">
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -263,7 +263,7 @@ export const Team = () => {
                     </svg>
                   </a>
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -296,7 +296,7 @@ export const Team = () => {
                 </p>
                 <div className="flex items-center space-x-3">
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -308,7 +308,7 @@ export const Team = () => {
                     </svg>
                   </a>
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -339,7 +339,7 @@ export const Team = () => {
                 </p>
                 <div className="flex items-center space-x-3">
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -351,7 +351,7 @@ export const Team = () => {
                     </svg>
                   </a>
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -382,7 +382,7 @@ export const Team = () => {
                 </p>
                 <div className="flex items-center space-x-3">
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -394,7 +394,7 @@ export const Team = () => {
                     </svg>
                   </a>
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -429,7 +429,7 @@ export const Team = () => {
                 </p>
                 <div className="flex items-center space-x-3">
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -441,7 +441,7 @@ export const Team = () => {
                     </svg>
                   </a>
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -474,7 +474,7 @@ export const Team = () => {
                 </p>
                 <div className="flex items-center space-x-3">
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -486,7 +486,7 @@ export const Team = () => {
                     </svg>
                   </a>
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -519,7 +519,7 @@ export const Team = () => {
                 </p>
                 <div className="flex items-center space-x-3">
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -531,7 +531,7 @@ export const Team = () => {
                     </svg>
                   </a>
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -581,7 +581,7 @@ export const Team = () => {
                 </p>
                 <div className="flex items-center space-x-3">
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -593,7 +593,7 @@ export const Team = () => {
                     </svg>
                   </a>
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -624,7 +624,7 @@ export const Team = () => {
                 </p>
                 <div className="flex items-center space-x-3">
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -636,7 +636,7 @@ export const Team = () => {
                     </svg>
                   </a>
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -666,7 +666,7 @@ export const Team = () => {
                 </p>
                 <div className="flex items-center space-x-3">
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
@@ -678,7 +678,7 @@ export const Team = () => {
                     </svg>
                   </a>
                   <a
-                    href="/"
+                    href="#"
                     className="text-gray-100 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     <svg
