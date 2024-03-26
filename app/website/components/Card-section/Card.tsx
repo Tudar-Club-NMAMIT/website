@@ -22,7 +22,7 @@ const Card = () => {
         <p className=" font-bold text-gray-100 text-center text-xl">
           Discover Tulu's Secrets: Your Language Companion Awaits!
         </p>
-        <Link href="/translator">
+        <Link href="/https://appdeployment-3shmg6yetbyacddlrsbcpq.streamlit.app/">
           <button className="relative cursor-pointer opacity-90 hover:opacity-100 transition-opacity p-[2px] bg-black rounded-[16px] bg-gradient-to-t from-[#212121] to-[#212121] active:scale-95">
             <span className="w-full h-full flex items-center gap-2 px-8 py-3 bg-[#212121] text-[#212121] rounded-[14px] bg-gradient-to-t from-[#fff] to-[#fff]">
               <LiaLanguageSolid />
