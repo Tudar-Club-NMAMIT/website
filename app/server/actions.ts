@@ -176,3 +176,79 @@ export async function updateUserProfile(image:string, name:string, bio:string,em
   });
   return res;
 }
+export const addScoreToUser = async (userId: string, isRight: boolean, points: number) => {
+  const perform = await prisma.user.findUnique({
+    where: {
+      id: userId
+    },
+    select: {
+      perform: true
+    }
+  })
+  console.log(perform)
+  const performId = perform?.perform?.id
+  var updated;
+  if (isRight) {
+    updated = await prisma.perform.update({
+      where: {
+        id: performId
+      },
+      data: {
+        streak: {
+          increment: 1
+        },
+        score: {
+          increment: points
+        },
+      }
+    })
+  } else {
+    updated = await prisma.perform.update({
+      where: {
+        id: performId
+      }, 
+      data: {
+        streak: 0
+      }
+    })
+  }
+  return updated;
+}
+export const getPerform = async (userId: string) => {
+  const perform = await prisma.perform.findUnique({where: {
+    userId: userId
+  }})
+  if (perform) {
+    return perform
+  } else {
+    const newperform = await prisma.perform.create({
+      data: {
+        userId: userId,
+        score: 0,
+        streak: 0,
+      }
+      
+    })
+    const updateuser = await prisma.user.update({
+      where: {
+        id: userId
+      },
+      data: {
+        perform: {
+          connect: {
+            id: newperform.id
+          }
+        }
+      }
+    })
+    return newperform
+  }
+}
+export const getUserId = async (email: string) => {
+  const user = await prisma.user.findUnique({
+    where: {
+      email: email
+    }
+  })
+  return user?.id
+}
