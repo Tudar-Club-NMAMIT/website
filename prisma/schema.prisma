@@ -71,6 +71,10 @@ model User {
   isMember      Boolean   @default(false)
   bio           String?
   role          Role      @default(GUEST)
+  usn           String?   @unique
+  year          Int?
+  branch        String?
+  phoneNumber   String?   @unique
   perform       Perform?
   posts         Post[]
   accounts      Account[]
