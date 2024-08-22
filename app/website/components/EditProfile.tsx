@@ -9,12 +9,16 @@ import SignOut from "./SignOut";
 const EditProfile = (param: {
   email: string;
   name: string;
+  usn: string | null;
+  year: number;
   imageUrl: string;
   bio: string;
 }) => {
   const { data: session, status } = useSession();
   const [hidden, setHidden] = useState(true);
   const [username, setUsername] = useState(param.name);
+  const usn = param.usn;
+  const year = param.year;
   const [bio, setBio] = useState(param.bio);
   const [image, setImage] = useState(param.imageUrl);
   const [submitting, setSubmitting] = useState(false);
@@ -85,7 +89,7 @@ const EditProfile = (param: {
           aria-hidden="true"
           className={` ${
             hidden ? "hidden" : " "
-          } flex overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full`}
+          } flex overflow-y-auto backdrop-blur-md backdrop-brightness-50 pt-40 border-2 border-red-500 overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[100svh] max-h-full`}
         >
           <div className="relative p-4 w-full max-w-md mt-40 z-20">
             <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
@@ -119,7 +123,7 @@ const EditProfile = (param: {
                 </button>
               </div>
 
-              <form className="md:p-5" onSubmit={handleSubmit}>
+              <form className="p-5 flex flex-col" onSubmit={handleSubmit}>
                 <div className="sm:col-span-2">
                   <label
                     htmlFor="name"
@@ -130,7 +134,7 @@ const EditProfile = (param: {
                   <div className="flex items-center justify-center w-full">
                     <label
                       htmlFor="blog-image"
-                      className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+                      className="flex flex-col items-center justify-center px-4 md:w-full md:h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
                     >
                       <div className="flex flex-col items-center justify-center pt-5 pb-6">
                         {image && (
@@ -170,6 +174,39 @@ const EditProfile = (param: {
                       required
                     />
                   </div>
+                  {usn && (
+                    <div className="col-span-2 bord">
+                      <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        USN
+                      </label>
+                      <input
+                        type="text"
+                        value={usn || ""}
+                        name="usn"
+                        id="usn"
+                        className="bg-gray-200 font-mono border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white/50 dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        readOnly
+                        disabled
+                      />
+                    </div>
+                  )}
+
+                  {usn && (
+                    <div className="col-span-2 bord">
+                      <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        Year
+                      </label>
+                      <input
+                        type="text"
+                        value={year || ""}
+                        name="usn"
+                        id="usn"
+                        className="bg-gray-200 font-mono border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white/50 dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        readOnly
+                        disabled
+                      />
+                    </div>
+                  )}
 
                   <div className="col-span-2">
                     <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
@@ -188,7 +225,7 @@ const EditProfile = (param: {
                 </div>
                 <button
                   type="submit"
-                  className="text-white bg-blue-500 inline-flex items-center focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                  className="text-white w-fit self-center bg-blue-500 inline-flex items-center focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                 >
                   {submitting ? "Updating..." : "Update"}
                 </button>

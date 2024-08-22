@@ -112,6 +112,9 @@ export async function getUserByEmail(email: string) {
     select: {
       name: true,
       image: true,
+      usn: true,
+      year: true,
+      role: true,
       isMember: true,
       bio: true,
     },
@@ -196,6 +199,7 @@ export async function updateUserProfile(
       image: image,
     },
   });
+  console.log("updated");
   return res;
 }
 
@@ -203,7 +207,7 @@ export async function createMemberProfile( //TODO: Add branch field and see whet
   email: string,
   name: string,
   usn: string,
-  year: number,
+  year: string,
   phone: string
 ) {
   const res = await prisma.user.update({
@@ -213,8 +217,7 @@ export async function createMemberProfile( //TODO: Add branch field and see whet
     data: {
       name: name,
       usn: usn,
-      year: year,
-      phoneNumber: phone,
+      year: parseInt(year),
       role: Role.MEMBER,
       isMember: true,
     },
