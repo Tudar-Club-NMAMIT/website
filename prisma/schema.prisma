@@ -74,7 +74,6 @@ model User {
   usn           String?   @unique
   year          Int?
   branch        String?
-  phoneNumber   String?   @unique
   perform       Perform?
   posts         Post[]
   accounts      Account[]
