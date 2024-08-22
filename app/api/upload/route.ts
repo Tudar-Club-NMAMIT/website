@@ -5,9 +5,9 @@ type ResponseData = {
   message: string;
 };
 cloudinary.config({
-  cloud_name: "deax1ssmv",
-  api_key: "782763488224328",
-  api_secret: "ghLKmmoUmfhCgORQdKn09xrmr4A",
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 export async function POST(request: NextRequest, response: NextResponse) {
