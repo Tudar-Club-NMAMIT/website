@@ -1,6 +1,7 @@
 "use server";
 import { Role } from "@prisma/client";
 import { prisma } from "../utils/db";
+import { userAgent } from "next/server";
 
 export async function createPost(
   title: string,
@@ -47,6 +48,32 @@ export async function createEvent(
     },
   });
   console.log(res);
+}
+
+export async function registerMember(
+  email: string,
+  name: string,
+  usn: string,
+  year: number,
+  branch: string
+) {
+  try {
+    const res = await prisma.user.update({
+      where: {
+        email: email,
+      },
+      data: {
+        name: name,
+        usn: usn,
+        year: year,
+        branch: branch,
+        role: Role.MEMBER,
+        isMember: true,
+      },
+    });
+  } catch (e: any) {
+    throw new Error(`Failed to register member: ${e.message}`);
+  }
 }
 
 export async function getPosts() {
@@ -110,13 +137,16 @@ export async function getUserByEmail(email: string) {
       email: email,
     },
     select: {
+      id: true,
       name: true,
       image: true,
+      email: true,
       usn: true,
       year: true,
-      role: true,
+      branch: true,
       isMember: true,
       bio: true,
+      role: true,
     },
   });
   return user;
@@ -203,27 +233,6 @@ export async function updateUserProfile(
   return res;
 }
 
-export async function createMemberProfile( //TODO: Add branch field and see whether to remove name field
-  email: string,
-  name: string,
-  usn: string,
-  year: string,
-  phone: string
-) {
-  const res = await prisma.user.update({
-    where: {
-      email: email,
-    },
-    data: {
-      name: name,
-      usn: usn,
-      year: parseInt(year),
-      role: Role.MEMBER,
-      isMember: true,
-    },
-  });
-  return res;
-}
 export const addScoreToUser = async (
   userId: string,
   isRight: boolean,
