@@ -1,92 +1,62 @@
 "use client";
-import React, { useState } from "react";
-import { useSession, signIn } from "next-auth/react";
-import { createMemberProfile } from "../server/actions";
+import React, { useEffect, useState } from "react";
+import { useSession } from "next-auth/react";
+import { getUserByEmail } from "../server/actions";
+import Loader from "../website/components/Loader/Loader";
+import SignInWithGoogleButton from "../website/components/SignInWithGoogleButton/SignInWithGoogleButton";
+
+type User = {
+  id: string;
+  name: string | null;
+  image: string | null;
+  email: string | null;
+  usn: string | null;
+  year: number | null;
+  branch: string | null;
+  isMember: boolean;
+  bio: string | null;
+  role: string;
+};
 
 const RegisterPage = () => {
   const { data: session, status } = useSession();
-  const [formData, setFormData] = useState({
-    name: session?.user?.name || "",
-    usn: session?.user?.usn || "",
-    year: session?.user?.year || 1,
-    phone: session?.user?.phone || "",
-  });
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    const getUser = async () => {
+      // action that calls the prisma function and returns the user based on session.email
+      const user = await getUserByEmail(session?.user?.email || "");
+      setUser(user);
+    };
+    getUser();
+  }, [session]);
 
   if (status == "loading")
     return (
-      // TODO: Display a loader here
-      <div className="flex h-screen justify-center items-center">
-        <h1>Loading...</h1>
+      <div className="w-full h-full flex justify-center items-center ">
+        <Loader />
       </div>
     );
 
-  if (!session) {
-    signIn();
-    return null;
+  if (!user) {
+    return (
+      <div className="flex flex-col justify-center gap-4 h-full items-center p-4">
+        <h1 className="text-3xl  font-bold text-center md:w-2/3">
+          Registrations Open for Tudar Club
+        </h1>
+        <p className="font-sans text-center w-4/5 text-opacity-50 ">
+          Sign in with your <strong>NMAMIT Email ID</strong>
+        </p>
+        <SignInWithGoogleButton />
+      </div>
+    );
   }
 
-  const onFormChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-  };
-  const handleRegister = async (event: React.FormEvent) => {
-    event.preventDefault();
-    if (!formData.name || !formData.usn || !formData.year || !formData.phone) {
-      alert("Please fill all the fields");
-    } else {
-      await createMemberProfile(
-        session.user?.email || "",
-        formData.name,
-        formData.usn,
-        formData.year,
-        formData.phone
-      );
-      alert("Registered Successfully");
-    }
-  };
+  // TODO: if email does not end with @nmamit.in
 
-  return (
-    <div className="flex flex-col justify-evenly h-screen items-center pt-20">
-      <h1 className="text-2xl">Register for Tudar Club</h1>
-      <form onSubmit={handleRegister} className="flex flex-col gap-8">
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={formData.name}
-          onChange={onFormChange}
-          className="bg-black font-mono border-white/50 focus:bg-white/10 border-2 rounded-md pl-3 text-sm py-2"
-        />
-        <input
-          type="text"
-          name="usn"
-          placeholder="USN"
-          value={formData.usn}
-          onChange={onFormChange}
-          className="bg-black font-mono border-white/50 focus:bg-white/10 border-2 rounded-md pl-3 text-sm py-2"
-        />
-        <input
-          type="number"
-          name="year"
-          placeholder="Year"
-          value={formData.year}
-          onChange={onFormChange}
-          className="bg-black font-mono border-white/50 focus:bg-white/10 border-2 rounded-md pl-3 text-sm py-2"
-        />
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Phone"
-          value={formData.phone}
-          onChange={onFormChange}
-          className="bg-black font-mono border-white/50 focus:bg-white/10 border-2 rounded-md pl-3 text-sm py-2"
-        />
-        <button type="submit" className="bg-green-700 px-4 py-2 rounded-md">
-          Register
-        </button>
-      </form>
-    </div>
-  );
+  // TODO: else if user is already a member
+
+  // TODO: else registration form
 };
 
 export default RegisterPage;
