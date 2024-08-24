@@ -11,7 +11,6 @@ const Menu = (NavLists: {
 }) => {
   const [menuToggleFlag, setmenuToggleFlag] = useState(true);
   const { data: session } = useSession();
-  console.log("session", session);
   return (
     <div className="flex justify-center items-center">
       {/* Hamberger*/}
