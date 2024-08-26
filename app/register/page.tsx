@@ -6,6 +6,8 @@ import RegistrationForm from "./registrationForm";
 import Loader from "../website/components/Loader/Loader";
 import SignInWithGoogleButton from "../website/components/SignInWithGoogleButton/SignInWithGoogleButton";
 import CantBeMember from "./cantBeMember";
+import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+import { FaWhatsapp } from "react-icons/fa";
 
 type User = {
   id: string;
@@ -71,13 +73,28 @@ const RegisterPage = () => {
     );
   }
 
-  // TODO: else display user is already registerd and whatsapp group link
+  // else display user is already registerd and whatsapp group link
 
   if (user?.isMember) {
     return (
-      <h1 className="w-full h-screen pt-20 flex justify-center items-center">
-        Already registered
-      </h1>
+      <div className="w-full p-8 relative h-full flex flex-col justify-center items-center gap-4">
+        <IoMdCheckmarkCircleOutline className="invert sm:invert-0  h-fit w-1/2 text-green-800 sm:text-green-600" />
+        <h1 className="text-4xl text-center">You are Registered!</h1>
+        <p className="text-center font-sans">
+          Click the below button to join the Whatsapp group
+        </p>
+        <button
+          type="button"
+          className="invert sm:invert-0 mb-2 w-fit h-10 flex gap-2 justify-center items-center rounded bg-[#128c7e] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          onClick={() => {
+            // TODO: Change the below link
+            window.open("https://chat.whatsapp.com/ELyNxjFxOlO7RuzbsskuTs");
+          }}
+        >
+          <FaWhatsapp className="w-fit h-full" />
+          <p className="font-sans">Join the Group</p>
+        </button>
+      </div>
     );
   }
 };
