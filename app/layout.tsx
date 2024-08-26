@@ -1,4 +1,5 @@
 import "./globals.css";
+
 import type { Metadata } from "next";
 import Berkshire_Swash from "next/font/local";
 import { NextAuthProvider } from "./website/components/providers/providers";
@@ -51,10 +52,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={berkish.className}>
         <NextAuthProvider>
-        <Navbar/>
+          <Navbar />
           {children}
-          <Footer/>
-          </NextAuthProvider>
+          <Footer />
+        </NextAuthProvider>
       </body>
     </html>
   );

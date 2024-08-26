@@ -2,8 +2,10 @@
 import React, { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { getUserByEmail } from "../server/actions";
+import RegistrationForm from "./registrationForm";
 import Loader from "../website/components/Loader/Loader";
 import SignInWithGoogleButton from "../website/components/SignInWithGoogleButton/SignInWithGoogleButton";
+import CantBeMember from "./cantBeMember";
 
 type User = {
   id: string;
@@ -37,8 +39,7 @@ const RegisterPage = () => {
         <Loader />
       </div>
     );
-
-  if (!user) {
+  else if (!user) {
     return (
       <div className="flex flex-col justify-center gap-4 h-full items-center p-4">
         <h1 className="text-3xl  font-bold text-center md:w-2/3">
@@ -52,11 +53,33 @@ const RegisterPage = () => {
     );
   }
 
-  // TODO: if email does not end with @nmamit.in
+  // if email does not end with @nmamit.in
+  else if (!user.email?.endsWith("@nmamit.in")) {
+    return (
+      <div className="w-full h-full flex justify-center items-center ">
+        <CantBeMember />
+      </div>
+    );
+  }
 
-  // TODO: else if user is already a member
+  // else if user is not a member
+  else if (!user.isMember) {
+    return (
+      <div className="w-full h-full flex justify-center">
+        <RegistrationForm user={user} />
+      </div>
+    );
+  }
 
-  // TODO: else registration form
+  // TODO: else display user is already registerd and whatsapp group link
+
+  if (user?.isMember) {
+    return (
+      <h1 className="w-full h-screen pt-20 flex justify-center items-center">
+        Already registered
+      </h1>
+    );
+  }
 };
 
 export default RegisterPage;
