@@ -18,12 +18,12 @@ const ShuffleHero = () => {
           beauty of Tulu traditions.
         </p>
         <Link href="/website/Events">
-         <button className="fancy">
-          <span className="top-key"></span>
-          <span className="text">Know More</span>
-          <span className="bottom-key-1"></span>
-          <span className="bottom-key-2"></span>
-        </button>
+          <button className="fancy">
+            <span className="top-key"></span>
+            <span className="text">Know More</span>
+            <span className="bottom-key-1"></span>
+            <span className="bottom-key-2"></span>
+          </button>
         </Link>
       </div>
 
@@ -98,7 +98,8 @@ const generateSquares = () => {
       style={{
         backgroundImage: `url(${sq.src})`,
         backgroundSize: "cover",
-      }}></motion.div>
+      }}
+    ></motion.div>
   ));
 };
 

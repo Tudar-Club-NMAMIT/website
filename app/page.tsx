@@ -7,19 +7,18 @@ import Card from "./website/components/Card-section/Card";
 import Blog from "./website/components/Carousel/Blog";
 import Video from "./website/components/Video-section/Video";
 import { useSession } from "next-auth/react";
-import Link from "next/link";
-import { prisma } from "./utils/db";
 import FAQ from "./website/components/FAQ/FAQ";
+import RegisterPopup from "./register/registerPopup";
 
-
-export default  function Home() {
+export default function Home() {
   const { data: session, status } = useSession();
   // const user = await prisma.user.findMany();
   // console.log("user"+user)
-  new Promise(resolve=>setTimeout(resolve,2000));
+  new Promise((resolve) => setTimeout(resolve, 2000));
 
   return (
     <>
+      <RegisterPopup />
       <div className="bg-[#000] tulu-font">
         <Hero />
         <Club />
@@ -27,7 +26,7 @@ export default  function Home() {
         <Events />
         <Card />
         <Blog />
-        <FAQ/>
+        <FAQ />
       </div>
     </>
   );
