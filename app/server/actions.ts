@@ -69,6 +69,7 @@ export async function registerMember(
         branch: branch,
         role: Role.MEMBER,
         isMember: true,
+        bio: "Edit profile to add bio",
       },
     });
   } catch (e: any) {

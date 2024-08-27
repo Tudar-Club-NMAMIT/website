@@ -1,11 +1,11 @@
 "use client";
-import React, { use } from "react";
-import { useState } from "react";
-import { ChangeEvent } from "react";
+import React, { useState, ChangeEvent } from "react";
 import Image from "next/image";
 import { updateUserProfile } from "@/app/server/actions";
 import { useSession } from "next-auth/react";
 import SignOut from "./SignOut";
+import { useRouter } from "next/navigation";
+
 const EditProfile = (param: {
   email: string;
   name: string;
@@ -22,18 +22,23 @@ const EditProfile = (param: {
   const [bio, setBio] = useState(param.bio);
   const [image, setImage] = useState(param.imageUrl);
   const [submitting, setSubmitting] = useState(false);
+  const router = useRouter();
   const handleChangeImage = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     const file = e.target.files?.[0];
     if (!file) return;
+
     if (!file.type.includes("image")) {
-      alert("Please upload an image");
+      alert("Please upload a valid image file.");
+      return;
     }
+
     const fileSizeInMB = file.size / (1024 * 1024);
     if (fileSizeInMB > 1) {
       alert("File size exceeds 1MB. Please choose a smaller file.");
       return;
     }
+
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => {
@@ -41,27 +46,39 @@ const EditProfile = (param: {
       setImage(result);
     };
   };
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setSubmitting(true);
-    if (!image || !username || !bio) return;
+
+    if (!image || !username || !bio) {
+      alert("All fields are required.");
+      setSubmitting(false);
+      return;
+    }
+
     try {
       const response = await fetch("/api/upload", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ path: image }),
       });
+
+      if (!response.ok) {
+        throw new Error("Failed to upload image");
+      }
+
       const data = await response.json();
       const imageUrl = data.data.url;
+
       if (imageUrl) {
-        const res = await updateUserProfile(image, username, bio, param.email);
-        setImage("");
-        setUsername("");
-        setBio("");
-        setHidden(true);
+        await updateUserProfile(imageUrl, username, bio, param.email);
+        router.refresh;
       }
-    } catch (e) {
-      console.log(e);
+    } catch (error: any) {
+      alert(`Error: ${error.message}`);
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -89,7 +106,7 @@ const EditProfile = (param: {
           aria-hidden="true"
           className={` ${
             hidden ? "hidden" : " "
-          } flex overflow-y-auto backdrop-blur-md backdrop-brightness-50 pt-40 border-2 border-red-500 overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[100svh] max-h-full`}
+          } flex overflow-y-auto backdrop-blur-md backdrop-brightness-50 pt-40 overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[100svh] max-h-full`}
         >
           <div className="relative p-4 w-full max-w-md mt-40 z-20">
             <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">

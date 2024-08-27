@@ -19,20 +19,32 @@ export default async function Profile({
               width={200}
               height={200}
               alt="Profile pic"
-              className="rounded-lg max-h-[200px] object-cover"
-            ></Image>
+              className="rounded-lg object-cover"
+            />
           </div>
 
           <div className="text-center mt-2">
             <h3 className="text-2xl text-white font-bold leading-normal mb-1">
               {user?.name}
 
-              {user?.usn && (
-                <div
-                  className={`text-xs mt-0 mb-2 text-opacity-50 text-white font-bold uppercase`}
-                >
-                  {user?.usn}
-                </div>
+              {user?.isMember && (
+                <>
+                  <div
+                    className={`text-xs mt-0 mb-2 text-opacity-50 text-white font-bold uppercase`}
+                  >
+                    {user?.usn}
+                  </div>
+                  <div
+                    className={`text-xs mt-0 mb-2 text-opacity-50 text-white font-bold uppercase`}
+                  >
+                    {user?.branch}
+                  </div>
+                  <div
+                    className={`text-xs mt-0 mb-2 text-opacity-50 text-white font-bold uppercase`}
+                  >
+                    Year - {user?.year}
+                  </div>
+                </>
               )}
             </h3>
             <div
