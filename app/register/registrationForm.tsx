@@ -20,7 +20,7 @@ type User = {
 const RegistrationForm = ({ user }: { user: User }) => {
   const [usn, setUsn] = useState<string>("");
   const [year, setYear] = useState<number>(0);
-  const [branch, setBranch] = useState<string>();
+  const [branch, setBranch] = useState<string>("temp");
 
   const handleChangeImage = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -46,23 +46,26 @@ const RegistrationForm = ({ user }: { user: User }) => {
     const email = user.email;
     // extract usn from email
     if (email) setUsn(email.split("@")[0].toUpperCase());
+
     // extract year from email //TODO: the conditions are hardcoded for this year, please make the logic dynamic
-    if (usn[1] == "U") setYear(1);
+    if (usn[1] === "U") setYear(1);
     else {
-      if (usn[4] == "3") setYear(2);
-      else if (usn[4] == "2") setYear(3);
-      setYear(4);
+      if (usn[4] === "3") setYear(2);
+      else if (usn[4] === "2") setYear(3);
+      else setYear(4);
+
       // extract branch from email
       setBranch(branches[(usn[5] + usn[6]) as keyof typeof branches]);
     }
     // set name and image url from the user object
     setName(user.name as string);
     setImage(user.image as string);
-  }, [user, usn]);
+    if (branch === undefined) setBranch(branches.AD);
+    console.log(branch);
+  }, [user, usn, branch]);
 
   const email = user?.email || "";
   const [name, setName] = useState<string>(user?.name as string);
-  console.log(email, usn);
   const [image, setImage] = useState<string>(user?.image as string);
 
   const handleSubmit = async () => {
@@ -71,6 +74,8 @@ const RegistrationForm = ({ user }: { user: User }) => {
       alert("Enter a valid year!");
       return;
     }
+    console.log("Branch : " + branch);
+    if (branch === undefined) setBranch(branches.AD);
     const res = await registerMember(email, name, usn, year, branch || "");
   };
 
@@ -145,6 +150,7 @@ const RegistrationForm = ({ user }: { user: User }) => {
           type="text"
           name="usn"
           placeholder="USN"
+          defaultValue={usn}
           value={usn}
           onChange={(e) => {
             setUsn(e.target.value);
