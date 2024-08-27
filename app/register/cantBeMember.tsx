@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { PiSmileySad } from "react-icons/pi";
 import { signIn, signOut } from "next-auth/react";
+import Link from "next/link";
 
 const CantBeMember = () => {
   return (
@@ -10,9 +11,12 @@ const CantBeMember = () => {
       <h1 className="text-2xl font-black text-center md:w-2/3 font-sans ">
         WE ARE SORRY, YOU CANNOT BE A MEMBER OF THIS CLUB!
       </h1>
-      <button className="border-2 invert sm:invert-0 border-yellow-800 text-yellow-700 sm:border-yellow-600 w-2/3 sm:text-yellow-800 hover:bg-yellow-800/10 hover:text-yellow-600 font-bold py-2 px-4 rounded">
+      <Link
+        href="/"
+        className="border-2 invert sm:invert-0 border-yellow-800 text-yellow-700 sm:border-yellow-600 w-2/3 sm:text-yellow-800 hover:bg-yellow-800/10 hover:text-yellow-600 font-bold py-2 px-4 rounded"
+      >
         Go Back to Home
-      </button>
+      </Link>
 
       <button
         onClick={(e) => {
