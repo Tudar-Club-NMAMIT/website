@@ -62,7 +62,12 @@ const Menu = (NavLists: {
       >
         <ul className="flex justify-center flex-col p-10 gap-3 ">
           {session ? (
-            <Link href={`/website/Profile/${session.user?.email}`}>
+            <Link
+              href={`/website/Profile/${session.user?.email}`}
+              onClick={() => {
+                setmenuToggleFlag(!menuToggleFlag);
+              }}
+            >
               <div className=" flex items-center gap-7">
                 <Image
                   width={50}
