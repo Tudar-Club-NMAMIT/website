@@ -104,7 +104,7 @@ const Navbar = () => {
                       Profile
                     </Link>
                   </li>
-                  {session.user?.email === "nittetudar@gmail.com" ? (
+                  {session.user?.email === "tudar@nmamit.in" ? (
                     <li>
                       <Link
                         href="/Dashboard"

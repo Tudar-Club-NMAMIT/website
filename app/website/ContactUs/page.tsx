@@ -79,7 +79,8 @@ const Contact = () => {
                         value={message}
                         className="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none "
                         id="exampleFormControlTextarea1"
-                        placeholder="Your message"></textarea>
+                        placeholder="Your message"
+                      ></textarea>
                     </div>
 
                     <button
@@ -88,7 +89,8 @@ const Contact = () => {
                       data-te-ripple-color="light"
                       className={`mb-6 inline-block w-full ${
                         sent ? "bg-green-500" : ""
-                      } rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] lg:mb-0`}>
+                      } rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] lg:mb-0`}
+                    >
                       {submitting ? "sending" : sent ? "Sent" : "Send"}
                     </button>
                   </form>
@@ -105,7 +107,8 @@ const Contact = () => {
                               viewBox="0 0 24 24"
                               strokeWidth="2"
                               stroke="currentColor"
-                              className="h-6 w-6">
+                              className="h-6 w-6"
+                            >
                               <path
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
@@ -118,9 +121,7 @@ const Contact = () => {
                           <p className="mb-2 font-bold text-white">
                             Technical support
                           </p>
-                          <p className=" text-neutral-200">
-                            nittetudar@gmail.com
-                          </p>
+                          <p className=" text-neutral-200">tudar@nmamit.in</p>
                           <p className="text-neutral-200">+91 8088957450</p>
                         </div>
                       </div>
@@ -135,7 +136,8 @@ const Contact = () => {
                               viewBox="0 0 24 24"
                               strokeWidth="2"
                               stroke="currentColor"
-                              className="h-6 w-6">
+                              className="h-6 w-6"
+                            >
                               <path
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
@@ -148,9 +150,7 @@ const Contact = () => {
                           <p className="mb-2 font-bold text-white">
                             Media Queries
                           </p>
-                          <p className="text-neutral-200">
-                            nittetudar@gmail.com
-                          </p>
+                          <p className="text-neutral-200">tudar@nmamit.in</p>
                           <p className="text-neutral-200">+91 8088782845</p>
                         </div>
                       </div>
