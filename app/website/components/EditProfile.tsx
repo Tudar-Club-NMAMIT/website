@@ -1,35 +1,44 @@
 "use client";
-import React, { use } from "react";
-import { useState } from "react";
-import { ChangeEvent } from "react";
+import React, { useState, ChangeEvent } from "react";
 import Image from "next/image";
 import { updateUserProfile } from "@/app/server/actions";
 import { useSession } from "next-auth/react";
 import SignOut from "./SignOut";
+import { useRouter } from "next/navigation";
+
 const EditProfile = (param: {
   email: string;
   name: string;
+  usn: string | null;
+  year: number;
   imageUrl: string;
   bio: string;
 }) => {
   const { data: session, status } = useSession();
   const [hidden, setHidden] = useState(true);
   const [username, setUsername] = useState(param.name);
+  const usn = param.usn;
+  const year = param.year;
   const [bio, setBio] = useState(param.bio);
   const [image, setImage] = useState(param.imageUrl);
   const [submitting, setSubmitting] = useState(false);
+  const router = useRouter();
   const handleChangeImage = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     const file = e.target.files?.[0];
     if (!file) return;
+
     if (!file.type.includes("image")) {
-      alert("Please upload an image");
+      alert("Please upload a valid image file.");
+      return;
     }
+
     const fileSizeInMB = file.size / (1024 * 1024);
     if (fileSizeInMB > 1) {
       alert("File size exceeds 1MB. Please choose a smaller file.");
       return;
     }
+
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => {
@@ -37,27 +46,39 @@ const EditProfile = (param: {
       setImage(result);
     };
   };
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setSubmitting(true);
-    if (!image || !username || !bio) return;
+
+    if (!image || !username || !bio) {
+      alert("All fields are required.");
+      setSubmitting(false);
+      return;
+    }
+
     try {
       const response = await fetch("/api/upload", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ path: image }),
       });
+
+      if (!response.ok) {
+        throw new Error("Failed to upload image");
+      }
+
       const data = await response.json();
       const imageUrl = data.data.url;
+
       if (imageUrl) {
-        const res = await updateUserProfile(image, username, bio, param.email);
-        setImage("");
-        setUsername("");
-        setBio("");
-        setHidden(true);
+        await updateUserProfile(imageUrl, username, bio, param.email);
+        router.refresh;
       }
-    } catch (e) {
-      console.log(e);
+    } catch (error: any) {
+      alert(`Error: ${error.message}`);
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -85,7 +106,7 @@ const EditProfile = (param: {
           aria-hidden="true"
           className={` ${
             hidden ? "hidden" : " "
-          } flex overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full`}
+          } flex overflow-y-auto backdrop-blur-md backdrop-brightness-50 pt-40 overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[100svh] max-h-full`}
         >
           <div className="relative p-4 w-full max-w-md mt-40 z-20">
             <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
@@ -119,7 +140,7 @@ const EditProfile = (param: {
                 </button>
               </div>
 
-              <form className="md:p-5" onSubmit={handleSubmit}>
+              <form className="p-5 flex flex-col" onSubmit={handleSubmit}>
                 <div className="sm:col-span-2">
                   <label
                     htmlFor="name"
@@ -130,7 +151,7 @@ const EditProfile = (param: {
                   <div className="flex items-center justify-center w-full">
                     <label
                       htmlFor="blog-image"
-                      className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+                      className="flex flex-col items-center justify-center px-4 md:w-full md:h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
                     >
                       <div className="flex flex-col items-center justify-center pt-5 pb-6">
                         {image && (
@@ -170,6 +191,39 @@ const EditProfile = (param: {
                       required
                     />
                   </div>
+                  {usn && (
+                    <div className="col-span-2 bord">
+                      <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        USN
+                      </label>
+                      <input
+                        type="text"
+                        value={usn || ""}
+                        name="usn"
+                        id="usn"
+                        className="bg-gray-200 font-mono border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white/50 dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        readOnly
+                        disabled
+                      />
+                    </div>
+                  )}
+
+                  {usn && (
+                    <div className="col-span-2 bord">
+                      <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        Year
+                      </label>
+                      <input
+                        type="text"
+                        value={year || ""}
+                        name="usn"
+                        id="usn"
+                        className="bg-gray-200 font-mono border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white/50 dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        readOnly
+                        disabled
+                      />
+                    </div>
+                  )}
 
                   <div className="col-span-2">
                     <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
@@ -188,7 +242,7 @@ const EditProfile = (param: {
                 </div>
                 <button
                   type="submit"
-                  className="text-white bg-blue-500 inline-flex items-center focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                  className="text-white w-fit self-center bg-blue-500 inline-flex items-center focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                 >
                   {submitting ? "Updating..." : "Update"}
                 </button>
