@@ -1,10 +1,8 @@
+import React from "react";
+import Team from "./Team";
+import Image from "next/image";
 
-import React from 'react'
-import Team from './Team'
-import Image from 'next/image';
-
-
- function  Info() {
+function Info() {
   return (
     <div>
       {/* Hero page  */}
@@ -16,7 +14,7 @@ import Image from 'next/image';
           <p className="mb-8 text-lg font-normal text-justify lg:text-xl sm:px-16 xl:px-48 text-gray-400">
             Our primary mission is to provide a platform for students to
             showcase their talents and share knowledge about the rich tapestry
-            of Tulu culture. In today's fast-paced journey towards
+            of Tulu culture. In today&apos;s fast-paced journey towards
             globalization, we recognize the importance of preserving,
             understanding, and practicing regional knowledge for a sustainable
             ecosystem. Tudar aims to create awareness among students about
@@ -37,8 +35,7 @@ import Image from 'next/image';
           />
           <div className="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 lg:max-w-2xl sm:px-10 sm:mx-12 lg:rounded-md bg-gray-900">
             <div className="space-y-2">
-              <p
-                className="inline-block text-2xl font-semibold sm:text-3xl">
+              <p className="inline-block text-2xl font-semibold sm:text-3xl">
                 Reviving Roots: The Birth of Tudar Club
               </p>
               <p className="text-xs text-gray-400">Year 2021</p>
@@ -105,4 +102,4 @@ import Image from 'next/image';
   );
 }
 
-export default Info
+export default Info;
