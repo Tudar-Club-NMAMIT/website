@@ -15,4 +15,5 @@ export const branches = {
   IS: "Information Science",
   ME: "Mechanical Engineering",
   RI: "Robotics and Artificial Intelligence",
+  MC: "Master of Computer Applications"
 };
