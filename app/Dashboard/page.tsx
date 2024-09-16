@@ -9,7 +9,7 @@ function page() {
 
   return (
     <div>
-      {session?.user?.email == "nittetudar@gmail.com" ? (
+      {session?.user?.email == "tudar@nmamit.in" ? (
         <Dashboard/>
       ) : (
         <AccessDenied />
