@@ -10,7 +10,7 @@ function page() {
   return (
     <div>
       {session?.user?.email == "tudar@nmamit.in" ? (
-        <Dashboard />
+        <Dashboard/>
       ) : (
         <AccessDenied />
       )}
