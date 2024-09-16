@@ -119,7 +119,7 @@ const Contact = () => {
                             Technical support
                           </p>
                           <p className=" text-neutral-200">
-                            nittetudar@gmail.com
+                            tudar@nmamit.in
                           </p>
                           <p className="text-neutral-200">+91 8088957450</p>
                         </div>
@@ -149,7 +149,7 @@ const Contact = () => {
                             Media Queries
                           </p>
                           <p className="text-neutral-200">
-                            nittetudar@gmail.com
+                            tudar@nmamit.in
                           </p>
                           <p className="text-neutral-200">+91 8088782845</p>
                         </div>

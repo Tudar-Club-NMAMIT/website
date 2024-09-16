@@ -13,7 +13,7 @@ export async function createPost(
 ) {
   const user = await prisma.user.findUnique({
     where: {
-      email: "nittetudar@gmail.com",
+      email: "tudar@nmamit.in",
     },
   });
   await prisma.post.create({
@@ -80,7 +80,7 @@ export async function registerMember(
 export async function getPosts() {
   const posts = await prisma.user.findMany({
     where: {
-      email: "nittetudar@gmail.com",
+      email: "tudar@nmamit.in",
     },
     include: {
       posts: true,
