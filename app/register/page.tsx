@@ -88,7 +88,7 @@ const RegisterPage = () => {
           className="invert sm:invert-0 mb-2 w-fit h-10 flex gap-2 justify-center items-center rounded bg-[#128c7e] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           onClick={() => {
             // TODO: Change the below link
-            window.open("https://chat.whatsapp.com/ELyNxjFxOlO7RuzbsskuTs");
+            window.open("https://chat.whatsapp.com/LbbWSjxvq2PG0b0MBKLg6e");
           }}
         >
           <FaWhatsapp className="w-fit h-full" />

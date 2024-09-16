@@ -169,7 +169,8 @@ const RegistrationForm = ({ user }: { user: User }) => {
           onChange={(e) => {
             setBranch(e.target.value);
           }}
-          className=" font-mono border-black/50 focus:bg-white/10 border-2 rounded-md pl-3 text-sm py-2 overflow-x-hidden"
+          className="font-mono text-black/30 border-black/20 border-2 rounded-md pl-3 text-sm py-2"
+          disabled
         >
           {Object.values(branches).map((branch) => (
             <option key={branch} value={branch}>
@@ -189,7 +190,8 @@ const RegistrationForm = ({ user }: { user: User }) => {
           onChange={(e) => {
             setYear(parseInt(e.target.value));
           }}
-          className="font-mono border-black/50 focus:bg-white/10 border-2 rounded-md pl-3 text-sm py-2"
+          className="font-mono text-black/30 border-black/20 border-2 rounded-md pl-3 text-sm py-2"
+          disabled
         />
       </div>
 
