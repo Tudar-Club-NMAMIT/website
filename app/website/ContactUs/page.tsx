@@ -121,7 +121,9 @@ const Contact = () => {
                           <p className="mb-2 font-bold text-white">
                             Technical support
                           </p>
-                          <p className=" text-neutral-200">tudar@nmamit.in</p>
+                          <p className=" text-neutral-200">
+                            tudar@nmamit.in
+                          </p>
                           <p className="text-neutral-200">+91 8088957450</p>
                         </div>
                       </div>
@@ -150,7 +152,9 @@ const Contact = () => {
                           <p className="mb-2 font-bold text-white">
                             Media Queries
                           </p>
-                          <p className="text-neutral-200">tudar@nmamit.in</p>
+                          <p className="text-neutral-200">
+                            tudar@nmamit.in
+                          </p>
                           <p className="text-neutral-200">+91 8088782845</p>
                         </div>
                       </div>
