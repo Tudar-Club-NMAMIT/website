@@ -55,13 +55,13 @@ const RegistrationForm = ({ user }: { user: User }) => {
       else setYear(4);
 
       // extract branch from email
-      setBranch(branches[(usn[5] + usn[6]) as keyof typeof branches]);
+      
+    if (branch === undefined) setBranch(branches[(usn[5] + usn[6]) as keyof typeof branches]);
     }
     // set name and image url from the user object
     setName(user.name as string);
     setImage(user.image as string);
     if (branch === undefined) setBranch(branches.AD);
-    console.log(branch);
   }, [user, usn, branch]);
 
   const email = user?.email || "";
@@ -165,12 +165,11 @@ const RegistrationForm = ({ user }: { user: User }) => {
         <select
           name="branch"
           placeholder="Branch"
-          value={branch}
           onChange={(e) => {
             setBranch(e.target.value);
+            console.log(e.target.value,branch);
           }}
-          className="font-mono text-black/30 border-black/20 border-2 rounded-md pl-3 text-sm py-2"
-          disabled
+          className=" font-mono border-black/50 focus:bg-white/10 border-2 rounded-md pl-3 text-sm py-2"
         >
           {Object.values(branches).map((branch) => (
             <option key={branch} value={branch}>
