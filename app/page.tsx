@@ -18,7 +18,8 @@ export default function Home() {
 
   return (
     <>
-      <RegisterPopup />
+      {/* TODO(Amrith) : Uncomment the below line and rename _register page to enable registration. */}
+      {/* <RegisterPopup /> */}
       <div className="bg-[#000] tulu-font">
         <Hero />
         <Club />
