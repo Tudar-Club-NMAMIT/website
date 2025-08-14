@@ -71,7 +71,7 @@ const RegisterPopup: React.FC = () => {
       ) : (
         <div className="w-full h-full flex flex-col gap-2 justify-center items-center">
           <h3 className="text-lg text-black font-sans font-semibold text-center px-2">
-            Registrations for the year 2024-25 is open!
+            Registrations for the year 2025-26 is open!
           </h3>
           <Link
             href="/register"
