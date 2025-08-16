@@ -49,10 +49,10 @@ const RegistrationForm = ({ user }: { user: User }) => {
 
     // extract year from email //TODO: the conditions are hardcoded for this year, please make the logic dynamic
     if (usn[1] === "U") setYear(1);
-    else if (usn[0] === "D") setYear(2);
+    else if (usn[3] === "4") setYear(2);
     else {
-      if (usn[4] === "3") setYear(2);
-      else if (usn[4] === "2") setYear(3);
+      if (usn[4] === "4") setYear(2);
+      else if (usn[4] === "3") setYear(3);
       else setYear(4);
 
       // extract branch from email
